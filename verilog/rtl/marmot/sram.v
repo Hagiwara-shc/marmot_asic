@@ -1,3 +1,6 @@
+`ifndef VERBOSE
+  `define VERBOSE 0
+`endif
 
 module data_arrays_0_ext(
   input RW0_clk,
