@@ -18,6 +18,17 @@ set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_hd"
 
 set script_dir [file dirname [file normalize [info script]]]
 
+# SRAM macro
+set ::env(VERILOG_FILES_BLACKBOX) "\
+        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_2kbyte_1rw1r_32x512_8.v \
+        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
+set ::env(EXTRA_LEFS) "\
+        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef \
+        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
+set ::env(EXTRA_GDS_FILES) "\
+        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds \
+        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
+
 # Define
 set ::env(SYNTH_DEFINES) "SYNTHESIS"
 
@@ -39,7 +50,7 @@ set ::env(DIE_AREA) "0 0 2800 3400"
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.1
+set ::env(PL_TARGET_DENSITY) 0.4
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
