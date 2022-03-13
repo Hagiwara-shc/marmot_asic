@@ -18,23 +18,20 @@ set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_hd"
 
 set script_dir [file dirname [file normalize [info script]]]
 
-set ::env(DESIGN_NAME) marmot
+# Define
+set ::env(SYNTH_DEFINES) "SYNTHESIS"
+
+set ::env(DESIGN_NAME) Marmot
 
 set ::env(VERILOG_FILES) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/marmot/top/marmot.v \
-	$script_dir/../../verilog/rtl/marmot/AsyncResetReg.v \
-	$script_dir/../../verilog/rtl/marmot/BootROM.v \
-	$script_dir/../../verilog/rtl/marmot/plusarg_reader.v \
-	$script_dir/../../verilog/rtl/marmot/shc.marmotcaravel.MarmotCaravelConfig.sram.v \
-	$script_dir/../../verilog/rtl/marmot/shc.marmotcaravel.MarmotCaravelConfig.v \
-	$script_dir/../../verilog/rtl/marmot/SRLatch.v"
+	$script_dir/../../verilog/rtl/marmot/*.v"
 
 set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
-set ::env(CLOCK_NET) "counter.clk"
-set ::env(CLOCK_PERIOD) "10"
+set ::env(CLOCK_NET)  "MarmotCaravelChip.clk"
+set ::env(CLOCK_PERIOD) "20"
 
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2800 3400"
@@ -42,7 +39,7 @@ set ::env(DIE_AREA) "0 0 2800 3400"
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(PL_BASIC_PLACEMENT) 1
-set ::env(PL_TARGET_DENSITY) 0.4
+set ::env(PL_TARGET_DENSITY) 0.1
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
