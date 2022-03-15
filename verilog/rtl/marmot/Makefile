@@ -1,9 +1,9 @@
-BUILD_DIR = /home/shc/Development/RISC-V/freedom/builds/marmotcaravel
-VSRCS = $(BUILD_DIR)/shc.marmotcaravel.MarmotCaravelConfig.vsrcs.F
+MARMOT_DIR = /home/shc/Development/RISC-V/freedom/marmotcaravel
+VSRCS = $(MARMOT_DIR)/Marmot.vc
 
 copy:
 	cp -p `grep -v '+incdir+' $(VSRCS)` .
-	cp -p $(BUILD_DIR)/rom.vh .
+	cp -p $(MARMOT_DIR)/rom.vh .
 	
 clean:
 	rm -f *.v *.vh
