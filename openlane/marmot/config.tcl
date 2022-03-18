@@ -33,15 +33,17 @@ set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "Marmot.clk"
 set ::env(CLOCK_PERIOD) "20"
 
-#set ::env(FP_CORE_UTIL) 50
+set ::env(FP_CORE_UTIL) 30
 
 set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 2800 3400"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
-set ::env(PL_BASIC_PLACEMENT) 1
+set ::env(PL_BASIC_PLACEMENT) 0
 set ::env(PL_TARGET_DENSITY) 0.2
+
+set ::env(CELL_PAD) 2
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
