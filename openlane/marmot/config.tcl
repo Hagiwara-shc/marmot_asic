@@ -18,6 +18,8 @@ set ::env(STD_CELL_LIBRARY) "sky130_fd_sc_hd"
 
 set script_dir [file dirname [file normalize [info script]]]
 
+set ::env(ROUTING_CORES) 4
+
 # Define
 set ::env(SYNTH_DEFINES) "SYNTHESIS"
 
@@ -31,17 +33,21 @@ set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "Marmot.clk"
-set ::env(CLOCK_PERIOD) "20"
+set ::env(CLOCK_PERIOD) "100"
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
+
+#set ::env(SYNTH_STRATEGY) "AREA 0"
 
 set ::env(FP_CORE_UTIL) 30
 
-set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2800 3400"
+#set ::env(FP_SIZING) absolute
+#set ::env(DIE_AREA) "0 0 900 3300"
+#set ::env(DIE_AREA) "0 0 1500 3300"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
 set ::env(PL_BASIC_PLACEMENT) 0
-set ::env(PL_TARGET_DENSITY) 0.2
+set ::env(PL_TARGET_DENSITY) 0.33
 
 set ::env(CELL_PAD) 2
 

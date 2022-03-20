@@ -32,6 +32,17 @@ set ::env(DESIGN_NAME) user_project_wrapper
 
 # User Configurations
 
+# save some time
+set ::env(RUN_KLAYOUT_XOR) 0
+set ::env(RUN_KLAYOUT_DRC) 0
+# no point in running DRC with magic once openram is in because it will find 3M issues
+# try to turn off all DRC checking so the flow completes and use precheck for DRC instead.
+set ::env(MAGIC_DRC_USE_GDS) 0
+set ::env(RUN_MAGIC_DRC) 0
+set ::env(QUIT_ON_MAGIC_DRC) 0
+
+set ::env(ROUTING_CORES) 4
+
 ## Source Verilog Files
 set ::env(VERILOG_FILES) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
@@ -51,10 +62,6 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	data_arrays_0_ext_ram1 vccd1 vssd1 \
 	data_arrays_0_ext_ram2 vccd1 vssd1 \
 	data_arrays_0_ext_ram3 vccd1 vssd1 \
-	data_arrays_0_ext_ram4 vccd1 vssd1 \
-	data_arrays_0_ext_ram5 vccd1 vssd1 \
-	data_arrays_0_ext_ram6 vccd1 vssd1 \
-	data_arrays_0_ext_ram7 vccd1 vssd1 \
 	tag_array_ext_ram0h vccd1 vssd1 \
 	tag_array_ext_ram0l vccd1 vssd1 \
 	data_arrays_0_0_ext_ram0h vccd1 vssd1 \
@@ -65,6 +72,11 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	data_arrays_0_0_ext_ram2l vccd1 vssd1 \
 	data_arrays_0_0_ext_ram3h vccd1 vssd1 \
 	data_arrays_0_0_ext_ram3l vccd1 vssd1"
+
+#	data_arrays_0_ext_ram4 vccd1 vssd1 \
+#	data_arrays_0_ext_ram5 vccd1 vssd1 \
+#	data_arrays_0_ext_ram6 vccd1 vssd1 \
+#	data_arrays_0_ext_ram7 vccd1 vssd1 \
 
 ### Macro Placement
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
@@ -77,12 +89,12 @@ set ::env(VERILOG_FILES_BLACKBOX) "\
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
 
 set ::env(EXTRA_LEFS) "\
-	$script_dir/../../lef/Marmot_empty.lef \
+	$script_dir/../../lef/Marmot.lef \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
 
 set ::env(EXTRA_GDS_FILES) "\
-	$script_dir/../../gds/Marmot_empty.gds \
+	$script_dir/../../gds/Marmot.gds \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
 
