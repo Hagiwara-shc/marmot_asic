@@ -41,7 +41,7 @@ set ::env(VERILOG_FILES) "\
 set ::env(CLOCK_PORT) "user_clock2"
 set ::env(CLOCK_NET) "Marmot.clk"
 
-set ::env(CLOCK_PERIOD) "20"
+set ::env(CLOCK_PERIOD) "100"
 
 ## Internal Macros
 ### Macro PDN Connections
@@ -77,12 +77,12 @@ set ::env(VERILOG_FILES_BLACKBOX) "\
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
 
 set ::env(EXTRA_LEFS) "\
-	$script_dir/../../lef/Marmot.lef \
+	$script_dir/../../lef/Marmot_empty.lef \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
 
 set ::env(EXTRA_GDS_FILES) "\
-	$script_dir/../../gds/Marmot.gds \
+	$script_dir/../../gds/Marmot_empty.gds \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
 
