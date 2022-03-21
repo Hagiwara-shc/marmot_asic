@@ -82,22 +82,22 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
   // For data_arrays_0_ext
-  wire [8:0]  data_arrays_0_ext_ram_addr;
-  wire        data_arrays_0_ext_ram_clk;
-  wire [31:0] data_arrays_0_ext_ram_wdata;
-  wire [3:0]  data_arrays_0_ext_ram_wmask;
-  wire [7:0]  data_arrays_0_ext_ram_csb;
-  wire        data_arrays_0_ext_ram_web;
-  wire [31:0] data_arrays_0_ext_ram_rdata0;
-  wire [31:0] data_arrays_0_ext_ram_rdata1;
-  wire [31:0] data_arrays_0_ext_ram_rdata2;
-  wire [31:0] data_arrays_0_ext_ram_rdata3;
+//wire [8:0]  data_arrays_0_ext_ram_addr;
+//wire        data_arrays_0_ext_ram_clk;
+//wire [31:0] data_arrays_0_ext_ram_wdata;
+//wire [3:0]  data_arrays_0_ext_ram_wmask;
+//wire [7:0]  data_arrays_0_ext_ram_csb;
+//wire        data_arrays_0_ext_ram_web;
+//wire [31:0] data_arrays_0_ext_ram_rdata0;
+//wire [31:0] data_arrays_0_ext_ram_rdata1;
+//wire [31:0] data_arrays_0_ext_ram_rdata2;
+//wire [31:0] data_arrays_0_ext_ram_rdata3;
 //wire [31:0] data_arrays_0_ext_ram_rdata4;
 //wire [31:0] data_arrays_0_ext_ram_rdata5;
 //wire [31:0] data_arrays_0_ext_ram_rdata6;
 //wire [31:0] data_arrays_0_ext_ram_rdata7;
-  wire [7:0]  data_arrays_0_ext_ram_csb1;
-  wire [8:0]  data_arrays_0_ext_ram_addr1;
+//wire [7:0]  data_arrays_0_ext_ram_csb1;
+//wire [8:0]  data_arrays_0_ext_ram_addr1;
 
   // For tag_array_ext
   wire [7:0]  tag_array_ext_ram_addr;
@@ -161,22 +161,22 @@ Marmot Marmot (
     .irq(user_irq),
 
     // RAM Signals
-    .data_arrays_0_ext_ram_addr(data_arrays_0_ext_ram_addr),
-    .data_arrays_0_ext_ram_clk(data_arrays_0_ext_ram_clk),
-    .data_arrays_0_ext_ram_wdata(data_arrays_0_ext_ram_wdata),
-    .data_arrays_0_ext_ram_wmask(data_arrays_0_ext_ram_wmask),
-    .data_arrays_0_ext_ram_csb(data_arrays_0_ext_ram_csb),
-    .data_arrays_0_ext_ram_web(data_arrays_0_ext_ram_web),
-    .data_arrays_0_ext_ram_rdata0(data_arrays_0_ext_ram_rdata0),
-    .data_arrays_0_ext_ram_rdata1(data_arrays_0_ext_ram_rdata1),
-    .data_arrays_0_ext_ram_rdata2(data_arrays_0_ext_ram_rdata2),
-    .data_arrays_0_ext_ram_rdata3(data_arrays_0_ext_ram_rdata3),
+//  .data_arrays_0_ext_ram_addr(data_arrays_0_ext_ram_addr),
+//  .data_arrays_0_ext_ram_clk(data_arrays_0_ext_ram_clk),
+//  .data_arrays_0_ext_ram_wdata(data_arrays_0_ext_ram_wdata),
+//  .data_arrays_0_ext_ram_wmask(data_arrays_0_ext_ram_wmask),
+//  .data_arrays_0_ext_ram_csb(data_arrays_0_ext_ram_csb),
+//  .data_arrays_0_ext_ram_web(data_arrays_0_ext_ram_web),
+//  .data_arrays_0_ext_ram_rdata0(data_arrays_0_ext_ram_rdata0),
+//  .data_arrays_0_ext_ram_rdata1(data_arrays_0_ext_ram_rdata1),
+//  .data_arrays_0_ext_ram_rdata2(data_arrays_0_ext_ram_rdata2),
+//  .data_arrays_0_ext_ram_rdata3(data_arrays_0_ext_ram_rdata3),
 //  .data_arrays_0_ext_ram_rdata4(data_arrays_0_ext_ram_rdata4),
 //  .data_arrays_0_ext_ram_rdata5(data_arrays_0_ext_ram_rdata5),
 //  .data_arrays_0_ext_ram_rdata6(data_arrays_0_ext_ram_rdata6),
 //  .data_arrays_0_ext_ram_rdata7(data_arrays_0_ext_ram_rdata7),
-    .data_arrays_0_ext_ram_csb1(data_arrays_0_ext_ram_csb1),
-    .data_arrays_0_ext_ram_addr1(data_arrays_0_ext_ram_addr1),
+//  .data_arrays_0_ext_ram_csb1(data_arrays_0_ext_ram_csb1),
+//  .data_arrays_0_ext_ram_addr1(data_arrays_0_ext_ram_addr1),
 
     .tag_array_ext_ram_addr(tag_array_ext_ram_addr),
     .tag_array_ext_ram_clk(tag_array_ext_ram_clk),
@@ -211,6 +211,7 @@ Marmot Marmot (
 // RAMs for data_arrays_0_ext
 //-----------------------------------------------------------------------
 
+`ifdef HOGE
   sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram0 (
 `ifdef USE_POWER_PINS
     .vccd1  (vccd1),
@@ -283,7 +284,6 @@ Marmot Marmot (
     .dout1  ()
   );
 
-`ifdef HOGE
   sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram4 (
 `ifdef USE_POWER_PINS
     .vccd1  (vccd1),

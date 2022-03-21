@@ -48,22 +48,22 @@ module Marmot
     output [2:0] irq,
 
     // RAM signals
-    output [8:0]  data_arrays_0_ext_ram_addr,
-    output        data_arrays_0_ext_ram_clk,
-    output [31:0] data_arrays_0_ext_ram_wdata,
-    output [3:0]  data_arrays_0_ext_ram_wmask,
-    output [7:0]  data_arrays_0_ext_ram_csb,    // [7:4] is not used.
-    output        data_arrays_0_ext_ram_web,
-    input  [31:0] data_arrays_0_ext_ram_rdata0,
-    input  [31:0] data_arrays_0_ext_ram_rdata1,
-    input  [31:0] data_arrays_0_ext_ram_rdata2,
-    input  [31:0] data_arrays_0_ext_ram_rdata3,
+//  output [8:0]  data_arrays_0_ext_ram_addr,
+//  output        data_arrays_0_ext_ram_clk,
+//  output [31:0] data_arrays_0_ext_ram_wdata,
+//  output [3:0]  data_arrays_0_ext_ram_wmask,
+//  output [7:0]  data_arrays_0_ext_ram_csb,    // [7:4] is not used.
+//  output        data_arrays_0_ext_ram_web,
+//  input  [31:0] data_arrays_0_ext_ram_rdata0,
+//  input  [31:0] data_arrays_0_ext_ram_rdata1,
+//  input  [31:0] data_arrays_0_ext_ram_rdata2,
+//  input  [31:0] data_arrays_0_ext_ram_rdata3,
 //  input  [31:0] data_arrays_0_ext_ram_rdata4,
 //  input  [31:0] data_arrays_0_ext_ram_rdata5,
 //  input  [31:0] data_arrays_0_ext_ram_rdata6,
 //  input  [31:0] data_arrays_0_ext_ram_rdata7,
-    output [7:0]  data_arrays_0_ext_ram_csb1,  // [7:4] is not used.
-    output [8:0]  data_arrays_0_ext_ram_addr1,
+//  output [7:0]  data_arrays_0_ext_ram_csb1,  // [7:4] is not used.
+//  output [8:0]  data_arrays_0_ext_ram_addr1,
 
     output [7:0]  tag_array_ext_ram_addr,
     output        tag_array_ext_ram_clk,
@@ -114,6 +114,18 @@ module Marmot
     wire        data_arrays_0_0_ext_RW0_wmode;
     wire [63:0] data_arrays_0_0_ext_RW0_rdata;
 
+    wire [8:0]  data_arrays_0_ext_ram_addr;
+    wire        data_arrays_0_ext_ram_clk;
+    wire [31:0] data_arrays_0_ext_ram_wdata;
+    wire [3:0]  data_arrays_0_ext_ram_wmask;
+    wire [7:0]  data_arrays_0_ext_ram_csb;
+    wire        data_arrays_0_ext_ram_web;
+    wire [7:0]  data_arrays_0_ext_ram_csb1;
+    wire [8:0]  data_arrays_0_ext_ram_addr1;
+    wire [31:0] data_arrays_0_ext_ram_rdata0 = 32'd0;
+    wire [31:0] data_arrays_0_ext_ram_rdata1 = 32'd0;
+    wire [31:0] data_arrays_0_ext_ram_rdata2 = 32'd0;
+    wire [31:0] data_arrays_0_ext_ram_rdata3 = 32'd0;
     wire [31:0] data_arrays_0_ext_ram_rdata4 = 32'd0;
     wire [31:0] data_arrays_0_ext_ram_rdata5 = 32'd0;
     wire [31:0] data_arrays_0_ext_ram_rdata6 = 32'd0;

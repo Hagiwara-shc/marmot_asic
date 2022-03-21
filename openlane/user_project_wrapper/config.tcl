@@ -52,16 +52,18 @@ set ::env(VERILOG_FILES) "\
 set ::env(CLOCK_PORT) "user_clock2"
 set ::env(CLOCK_NET) "Marmot.clk"
 
-set ::env(CLOCK_PERIOD) "100"
+set ::env(CLOCK_PERIOD) "30"
+
+#set ::env(FP_PDN_HORIZONTAL_HALO) 50
+#set ::env(FP_PDN_VERTICAL_HALO) 50
+
+set ::env(FP_PDN_HPITCH) 100
+set ::env(FP_PDN_VPITCH) 100
 
 ## Internal Macros
 ### Macro PDN Connections
 set ::env(FP_PDN_MACRO_HOOKS) "\
 	Marmot vccd1 vssd1 \
-	data_arrays_0_ext_ram0 vccd1 vssd1 \
-	data_arrays_0_ext_ram1 vccd1 vssd1 \
-	data_arrays_0_ext_ram2 vccd1 vssd1 \
-	data_arrays_0_ext_ram3 vccd1 vssd1 \
 	tag_array_ext_ram0h vccd1 vssd1 \
 	tag_array_ext_ram0l vccd1 vssd1 \
 	data_arrays_0_0_ext_ram0h vccd1 vssd1 \
@@ -73,6 +75,10 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	data_arrays_0_0_ext_ram3h vccd1 vssd1 \
 	data_arrays_0_0_ext_ram3l vccd1 vssd1"
 
+#	data_arrays_0_ext_ram0 vccd1 vssd1 \
+#	data_arrays_0_ext_ram1 vccd1 vssd1 \
+#	data_arrays_0_ext_ram2 vccd1 vssd1 \
+#	data_arrays_0_ext_ram3 vccd1 vssd1 \
 #	data_arrays_0_ext_ram4 vccd1 vssd1 \
 #	data_arrays_0_ext_ram5 vccd1 vssd1 \
 #	data_arrays_0_ext_ram6 vccd1 vssd1 \
