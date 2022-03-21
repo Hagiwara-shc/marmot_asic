@@ -85,7 +85,7 @@ module Marmot
     input  [63:0] data_arrays_0_0_ext_ram_rdata0,
     input  [63:0] data_arrays_0_0_ext_ram_rdata1,
     input  [63:0] data_arrays_0_0_ext_ram_rdata2,
-    input  [63:0] data_arrays_0_0_ext_ram_rdata3,
+//  input  [63:0] data_arrays_0_0_ext_ram_rdata3,
     output [7:0]  data_arrays_0_0_ext_ram_csb1,
     output [8:0]  data_arrays_0_0_ext_ram_addr1
 );
@@ -130,6 +130,8 @@ module Marmot
     wire [31:0] data_arrays_0_ext_ram_rdata5 = 32'd0;
     wire [31:0] data_arrays_0_ext_ram_rdata6 = 32'd0;
     wire [31:0] data_arrays_0_ext_ram_rdata7 = 32'd0;
+
+    wire [63:0] data_arrays_0_0_ext_ram_rdata3 = 64'd0;
 
     //------------------------------------------------------------------------------
     // Wishbone Slave ports (WB MI A)

@@ -198,7 +198,7 @@ Marmot Marmot (
     .data_arrays_0_0_ext_ram_rdata0(data_arrays_0_0_ext_ram_rdata0),
     .data_arrays_0_0_ext_ram_rdata1(data_arrays_0_0_ext_ram_rdata1),
     .data_arrays_0_0_ext_ram_rdata2(data_arrays_0_0_ext_ram_rdata2),
-    .data_arrays_0_0_ext_ram_rdata3(data_arrays_0_0_ext_ram_rdata3),
+//  .data_arrays_0_0_ext_ram_rdata3(data_arrays_0_0_ext_ram_rdata3),
     .data_arrays_0_0_ext_ram_csb1(data_arrays_0_0_ext_ram_csb1),
     .data_arrays_0_0_ext_ram_addr1(data_arrays_0_0_ext_ram_addr1)
 );
@@ -509,6 +509,7 @@ Marmot Marmot (
     .dout1  ()
   );
 
+`ifdef HOGE
   sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram3h (
 `ifdef USE_POWER_PINS
     .vccd1  (vccd1),
@@ -544,6 +545,7 @@ Marmot Marmot (
     .addr1  (data_arrays_0_0_ext_ram_addr1),
     .dout1  ()
   );
+`endif  // HOGE
 
 endmodule	// user_project_wrapper
 
