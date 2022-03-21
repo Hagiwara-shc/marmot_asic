@@ -33,7 +33,7 @@ set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_NET)  "Marmot.clk"
-set ::env(CLOCK_PERIOD) "100"
+set ::env(CLOCK_PERIOD) "30"
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
 
 #set ::env(SYNTH_STRATEGY) "AREA 0"

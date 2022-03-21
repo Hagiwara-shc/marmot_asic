@@ -92,10 +92,10 @@ module user_project_wrapper #(
   wire [31:0] data_arrays_0_ext_ram_rdata1;
   wire [31:0] data_arrays_0_ext_ram_rdata2;
   wire [31:0] data_arrays_0_ext_ram_rdata3;
-  wire [31:0] data_arrays_0_ext_ram_rdata4 = data_arrays_0_ext_ram_rdata3;
-  wire [31:0] data_arrays_0_ext_ram_rdata5 = data_arrays_0_ext_ram_rdata3;
-  wire [31:0] data_arrays_0_ext_ram_rdata6 = data_arrays_0_ext_ram_rdata3;
-  wire [31:0] data_arrays_0_ext_ram_rdata7 = data_arrays_0_ext_ram_rdata3;
+//wire [31:0] data_arrays_0_ext_ram_rdata4;
+//wire [31:0] data_arrays_0_ext_ram_rdata5;
+//wire [31:0] data_arrays_0_ext_ram_rdata6;
+//wire [31:0] data_arrays_0_ext_ram_rdata7;
   wire [7:0]  data_arrays_0_ext_ram_csb1;
   wire [8:0]  data_arrays_0_ext_ram_addr1;
 
@@ -171,10 +171,10 @@ Marmot Marmot (
     .data_arrays_0_ext_ram_rdata1(data_arrays_0_ext_ram_rdata1),
     .data_arrays_0_ext_ram_rdata2(data_arrays_0_ext_ram_rdata2),
     .data_arrays_0_ext_ram_rdata3(data_arrays_0_ext_ram_rdata3),
-    .data_arrays_0_ext_ram_rdata4(data_arrays_0_ext_ram_rdata4),
-    .data_arrays_0_ext_ram_rdata5(data_arrays_0_ext_ram_rdata5),
-    .data_arrays_0_ext_ram_rdata6(data_arrays_0_ext_ram_rdata6),
-    .data_arrays_0_ext_ram_rdata7(data_arrays_0_ext_ram_rdata7),
+//  .data_arrays_0_ext_ram_rdata4(data_arrays_0_ext_ram_rdata4),
+//  .data_arrays_0_ext_ram_rdata5(data_arrays_0_ext_ram_rdata5),
+//  .data_arrays_0_ext_ram_rdata6(data_arrays_0_ext_ram_rdata6),
+//  .data_arrays_0_ext_ram_rdata7(data_arrays_0_ext_ram_rdata7),
     .data_arrays_0_ext_ram_csb1(data_arrays_0_ext_ram_csb1),
     .data_arrays_0_ext_ram_addr1(data_arrays_0_ext_ram_addr1),
 
