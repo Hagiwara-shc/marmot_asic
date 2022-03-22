@@ -71,9 +71,7 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 	data_arrays_0_0_ext_ram1h vccd1 vssd1 \
 	data_arrays_0_0_ext_ram1l vccd1 vssd1 \
 	data_arrays_0_0_ext_ram2h vccd1 vssd1 \
-	data_arrays_0_0_ext_ram2l vccd1 vssd1 \
-	data_arrays_0_0_ext_ram3h vccd1 vssd1 \
-	data_arrays_0_0_ext_ram3l vccd1 vssd1"
+	data_arrays_0_0_ext_ram2l vccd1 vssd1"
 
 #	data_arrays_0_ext_ram0 vccd1 vssd1 \
 #	data_arrays_0_ext_ram1 vccd1 vssd1 \
@@ -83,6 +81,8 @@ set ::env(FP_PDN_MACRO_HOOKS) "\
 #	data_arrays_0_ext_ram5 vccd1 vssd1 \
 #	data_arrays_0_ext_ram6 vccd1 vssd1 \
 #	data_arrays_0_ext_ram7 vccd1 vssd1 \
+#	data_arrays_0_0_ext_ram3h vccd1 vssd1 \
+#	data_arrays_0_0_ext_ram3l vccd1 vssd1"
 
 ### Macro Placement
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
