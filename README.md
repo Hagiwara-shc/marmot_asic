@@ -119,7 +119,7 @@ Base|Top|Attribute|Description|Notes
 0x0200_0000|0x0200_FFFF|RW A|CLINT|On-Chip Peripherals
 0x0201_0000|0x07FF_FFFF||Reserved|On-Chip Peripherals
 0x0800_0000|0x0800_1FFF|RWX A|ITIM (8 KiB)[^1]|On-Chip Volatile Memory
-0x0800_2000|0x0BFF_FFFF|Reserved|On-Chip Volatile Memory
+0x0800_2000|0x0BFF_FFFF||Reserved|On-Chip Volatile Memory
 0x0C00_0000|0x0FFF_FFFF|RW A|PLIC|On-Chip Peripherals
 0x1000_0000|0x1000_0FFF|RW A|AON|On-Chip Peripherals
 0x1000_1000|0x1001_1FFF||Reserved|On-Chip Peripherals
