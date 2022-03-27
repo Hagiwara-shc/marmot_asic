@@ -32,17 +32,19 @@ set ::env(VERILOG_FILES) "\
 set ::env(DESIGN_IS_CORE) 0
 
 set ::env(CLOCK_PORT) "wb_clk_i"
-set ::env(CLOCK_NET)  "Marmot.clk"
-set ::env(CLOCK_PERIOD) "30"
-set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.35
+#set ::env(CLOCK_NET)  "clk"
+set ::env(CLOCK_PERIOD) "40"
+
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
+
+set ::env(BASE_SDC_FILE) $script_dir/base.sdc
 
 #set ::env(SYNTH_STRATEGY) "AREA 0"
 
 set ::env(FP_CORE_UTIL) 30
 
 #set ::env(FP_SIZING) absolute
-#set ::env(DIE_AREA) "0 0 900 3300"
-#set ::env(DIE_AREA) "0 0 1500 3300"
+#set ::env(DIE_AREA) "0 0 1757 1767"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 

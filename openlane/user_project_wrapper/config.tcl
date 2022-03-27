@@ -43,19 +43,19 @@ set ::env(QUIT_ON_MAGIC_DRC) 0
 
 set ::env(ROUTING_CORES) 4
 
+# Define
+set ::env(SYNTH_DEFINES) "MARMOT_EMPTY"
+
 ## Source Verilog Files
 set ::env(VERILOG_FILES) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
 	$script_dir/../../verilog/rtl/user_project_wrapper.v"
 
 ## Clock configurations
-set ::env(CLOCK_PORT) "user_clock2"
-set ::env(CLOCK_NET) "Marmot.clk"
+set ::env(CLOCK_PORT) "wb_clk_i"
+#set ::env(CLOCK_NET) "Marmot.clk"
 
-set ::env(CLOCK_PERIOD) "30"
-
-#set ::env(FP_PDN_HORIZONTAL_HALO) 50
-#set ::env(FP_PDN_VERTICAL_HALO) 50
+set ::env(CLOCK_PERIOD) "40"
 
 set ::env(FP_PDN_HPITCH) 100
 set ::env(FP_PDN_VPITCH) 100
@@ -64,25 +64,16 @@ set ::env(FP_PDN_VPITCH) 100
 ### Macro PDN Connections
 set ::env(FP_PDN_MACRO_HOOKS) "\
 	Marmot vccd1 vssd1 \
-	tag_array_ext_ram0h vccd1 vssd1 \
-	tag_array_ext_ram0l vccd1 vssd1 \
-	data_arrays_0_0_ext_ram0h vccd1 vssd1 \
-	data_arrays_0_0_ext_ram0l vccd1 vssd1 \
-	data_arrays_0_0_ext_ram1h vccd1 vssd1 \
-	data_arrays_0_0_ext_ram1l vccd1 vssd1 \
-	data_arrays_0_0_ext_ram2h vccd1 vssd1 \
-	data_arrays_0_0_ext_ram2l vccd1 vssd1"
-
-#	data_arrays_0_ext_ram0 vccd1 vssd1 \
-#	data_arrays_0_ext_ram1 vccd1 vssd1 \
-#	data_arrays_0_ext_ram2 vccd1 vssd1 \
-#	data_arrays_0_ext_ram3 vccd1 vssd1 \
-#	data_arrays_0_ext_ram4 vccd1 vssd1 \
-#	data_arrays_0_ext_ram5 vccd1 vssd1 \
-#	data_arrays_0_ext_ram6 vccd1 vssd1 \
-#	data_arrays_0_ext_ram7 vccd1 vssd1 \
-#	data_arrays_0_0_ext_ram3h vccd1 vssd1 \
-#	data_arrays_0_0_ext_ram3l vccd1 vssd1"
+        data_arrays_0_0_ext_ram0l vccd1 vssd1 \
+        data_arrays_0_0_ext_ram0h vccd1 vssd1 \
+        data_arrays_0_0_ext_ram1l vccd1 vssd1 \
+        data_arrays_0_0_ext_ram1h vccd1 vssd1 \
+        data_arrays_0_0_ext_ram2l vccd1 vssd1 \
+        data_arrays_0_0_ext_ram2h vccd1 vssd1 \
+        data_arrays_0_0_ext_ram3l vccd1 vssd1 \
+        data_arrays_0_0_ext_ram3h vccd1 vssd1 \
+        tag_array_ext_ram0l vccd1 vssd1 \
+        tag_array_ext_ram0h vccd1 vssd1"
 
 ### Macro Placement
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
@@ -90,7 +81,7 @@ set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
 ### Black-box verilog and views
 set ::env(VERILOG_FILES_BLACKBOX) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/Marmot_empty.v \
+	$script_dir/../../verilog/rtl/marmot/Marmot.v \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_2kbyte_1rw1r_32x512_8.v \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
 
@@ -108,8 +99,53 @@ set ::env(EXTRA_LIBS) "\
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib \
         $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib"
 
+# Obstruction over SRAMs
+set ::env(GLB_RT_OBS) " \
+    met1  150.00  150.00  833.10  566.54,
+    met2  150.00  150.00  833.10  566.54,
+    met3  150.00  150.00  833.10  566.54,
+    met4  150.00  150.00  833.10  566.54,
+    met1  150.00  710.00  833.10 1126.54,
+    met2  150.00  710.00  833.10 1126.54,
+    met3  150.00  710.00  833.10 1126.54,
+    met4  150.00  710.00  833.10 1126.54,
+    met1  150.00 1270.00  833.10 1686.54,
+    met2  150.00 1270.00  833.10 1686.54,
+    met3  150.00 1270.00  833.10 1686.54,
+    met4  150.00 1270.00  833.10 1686.54,
+    met1  150.00 1830.00  833.10 2246.54,
+    met2  150.00 1830.00  833.10 2246.54,
+    met3  150.00 1830.00  833.10 2246.54,
+    met4  150.00 1830.00  833.10 2246.54,
+    met1  150.00 2390.00  833.10 2806.54,
+    met2  150.00 2390.00  833.10 2806.54,
+    met3  150.00 2390.00  833.10 2806.54,
+    met4  150.00 2390.00  833.10 2806.54,
+    met1  150.00 2950.00  833.10 3366.54,
+    met2  150.00 2950.00  833.10 3366.54,
+    met3  150.00 2950.00  833.10 3366.54,
+    met4  150.00 2950.00  833.10 3366.54,
+    met1 1000.00 2270.00 1683.10 2686.54,
+    met2 1000.00 2270.00 1683.10 2686.54,
+    met3 1000.00 2270.00 1683.10 2686.54,
+    met4 1000.00 2270.00 1683.10 2686.54,
+    met1 2050.00 2270.00 2733.10 2686.54,
+    met2 2050.00 2270.00 2733.10 2686.54,
+    met3 2050.00 2270.00 2733.10 2686.54,
+    met4 2050.00 2270.00 2733.10 2686.54,
+    met1 1200.00 2890.00 1679.78 3287.50,
+    met2 1200.00 2890.00 1679.78 3287.50,
+    met3 1200.00 2890.00 1679.78 3287.50,
+    met4 1200.00 2890.00 1679.78 3287.50,
+    met1 2050.00 2890.00 2529.78 3287.50,
+    met2 2050.00 2890.00 2529.78 3287.50,
+    met3 2050.00 2890.00 2529.78 3287.50,
+    met4 2050.00 2890.00 2529.78 3287.50"
+
 # set ::env(GLB_RT_MAXLAYER) 5
 set ::env(RT_MAX_LAYER) {met4}
+
+set ::env(GLB_RT_ALLOW_CONGESTION) 1
 
 # disable pdn check nodes becuase it hangs with multiple power domains.
 # any issue with pdn connections will be flagged with LVS so it is not a critical check.
