@@ -81,8 +81,51 @@ module user_project_wrapper #(
 /*--------------------------------------*/
 /* User project is instantiated  here   */
 /*--------------------------------------*/
+  // For data_arrays_0_ext
+//wire [8:0]  data_arrays_0_ext_ram_addr;
+//wire        data_arrays_0_ext_ram_clk;
+//wire [31:0] data_arrays_0_ext_ram_wdata;
+//wire [3:0]  data_arrays_0_ext_ram_wmask;
+//wire [7:0]  data_arrays_0_ext_ram_csb;
+//wire        data_arrays_0_ext_ram_web;
+//wire [31:0] data_arrays_0_ext_ram_rdata0;
+//wire [31:0] data_arrays_0_ext_ram_rdata1;
+//wire [31:0] data_arrays_0_ext_ram_rdata2;
+//wire [31:0] data_arrays_0_ext_ram_rdata3;
+//wire [31:0] data_arrays_0_ext_ram_rdata4;
+//wire [31:0] data_arrays_0_ext_ram_rdata5;
+//wire [31:0] data_arrays_0_ext_ram_rdata6;
+//wire [31:0] data_arrays_0_ext_ram_rdata7;
+//wire [7:0]  data_arrays_0_ext_ram_csb1;
+//wire [8:0]  data_arrays_0_ext_ram_addr1;
 
-user_proj_example mprj (
+  // For tag_array_ext
+  wire [7:0]  tag_array_ext_ram_addr;
+  wire        tag_array_ext_ram_clk;
+  wire [63:0] tag_array_ext_ram_wdata;
+  wire [1:0]  tag_array_ext_ram_wmask;
+  wire        tag_array_ext_ram_csb;
+  wire        tag_array_ext_ram_web;
+  wire [31:0] tag_array_ext_ram_rdata0;
+  wire [31:0] tag_array_ext_ram_rdata1;
+  wire [1:0]  tag_array_ext_ram_csb1;
+  wire [7:0]  tag_array_ext_ram_addr1;
+
+  // For data_arrays_0_0_ext
+  wire [8:0]  data_arrays_0_0_ext_ram_addr;
+  wire        data_arrays_0_0_ext_ram_clk;
+  wire [63:0] data_arrays_0_0_ext_ram_wdata;
+  wire [1:0]  data_arrays_0_0_ext_ram_wmask;
+  wire [3:0]  data_arrays_0_0_ext_ram_csb;
+  wire        data_arrays_0_0_ext_ram_web;
+  wire [63:0] data_arrays_0_0_ext_ram_rdata0;
+  wire [63:0] data_arrays_0_0_ext_ram_rdata1;
+  wire [63:0] data_arrays_0_0_ext_ram_rdata2;
+  wire [63:0] data_arrays_0_0_ext_ram_rdata3;
+  wire [7:0]  data_arrays_0_0_ext_ram_csb1;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr1;
+
+Marmot Marmot (
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground
@@ -115,8 +158,389 @@ user_proj_example mprj (
     .io_oeb(io_oeb),
 
     // IRQ
-    .irq(user_irq)
+    .irq(user_irq),
+
+    // RAM Signals
+//  .data_arrays_0_ext_ram_addr(data_arrays_0_ext_ram_addr),
+//  .data_arrays_0_ext_ram_clk(data_arrays_0_ext_ram_clk),
+//  .data_arrays_0_ext_ram_wdata(data_arrays_0_ext_ram_wdata),
+//  .data_arrays_0_ext_ram_wmask(data_arrays_0_ext_ram_wmask),
+//  .data_arrays_0_ext_ram_csb(data_arrays_0_ext_ram_csb),
+//  .data_arrays_0_ext_ram_web(data_arrays_0_ext_ram_web),
+//  .data_arrays_0_ext_ram_rdata0(data_arrays_0_ext_ram_rdata0),
+//  .data_arrays_0_ext_ram_rdata1(data_arrays_0_ext_ram_rdata1),
+//  .data_arrays_0_ext_ram_rdata2(data_arrays_0_ext_ram_rdata2),
+//  .data_arrays_0_ext_ram_rdata3(data_arrays_0_ext_ram_rdata3),
+//  .data_arrays_0_ext_ram_rdata4(data_arrays_0_ext_ram_rdata4),
+//  .data_arrays_0_ext_ram_rdata5(data_arrays_0_ext_ram_rdata5),
+//  .data_arrays_0_ext_ram_rdata6(data_arrays_0_ext_ram_rdata6),
+//  .data_arrays_0_ext_ram_rdata7(data_arrays_0_ext_ram_rdata7),
+//  .data_arrays_0_ext_ram_csb1(data_arrays_0_ext_ram_csb1),
+//  .data_arrays_0_ext_ram_addr1(data_arrays_0_ext_ram_addr1),
+
+    .tag_array_ext_ram_addr(tag_array_ext_ram_addr),
+    .tag_array_ext_ram_clk(tag_array_ext_ram_clk),
+    .tag_array_ext_ram_wdata(tag_array_ext_ram_wdata),
+    .tag_array_ext_ram_wmask(tag_array_ext_ram_wmask),
+    .tag_array_ext_ram_csb(tag_array_ext_ram_csb),
+    .tag_array_ext_ram_web(tag_array_ext_ram_web),
+    .tag_array_ext_ram_rdata0(tag_array_ext_ram_rdata0),
+    .tag_array_ext_ram_rdata1(tag_array_ext_ram_rdata1),
+    .tag_array_ext_ram_csb1(tag_array_ext_ram_csb1),
+    .tag_array_ext_ram_addr1(tag_array_ext_ram_addr1),
+
+    .data_arrays_0_0_ext_ram_addr(data_arrays_0_0_ext_ram_addr),
+    .data_arrays_0_0_ext_ram_clk(data_arrays_0_0_ext_ram_clk),
+    .data_arrays_0_0_ext_ram_wdata(data_arrays_0_0_ext_ram_wdata),
+    .data_arrays_0_0_ext_ram_wmask(data_arrays_0_0_ext_ram_wmask),
+    .data_arrays_0_0_ext_ram_csb(data_arrays_0_0_ext_ram_csb),
+    .data_arrays_0_0_ext_ram_web(data_arrays_0_0_ext_ram_web),
+    .data_arrays_0_0_ext_ram_rdata0(data_arrays_0_0_ext_ram_rdata0),
+    .data_arrays_0_0_ext_ram_rdata1(data_arrays_0_0_ext_ram_rdata1),
+    .data_arrays_0_0_ext_ram_rdata2(data_arrays_0_0_ext_ram_rdata2),
+    .data_arrays_0_0_ext_ram_rdata3(data_arrays_0_0_ext_ram_rdata3),
+    .data_arrays_0_0_ext_ram_csb1(data_arrays_0_0_ext_ram_csb1),
+    .data_arrays_0_0_ext_ram_addr1(data_arrays_0_0_ext_ram_addr1)
 );
+
+`ifndef VERBOSE
+  `define VERBOSE 0
+`endif
+
+//-----------------------------------------------------------------------
+// RAMs for data_arrays_0_ext
+//-----------------------------------------------------------------------
+`ifdef DO_NOT_DEFINE
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram0 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[0]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata0),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[0]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram1 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[1]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata1),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[1]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram2 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[2]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata2),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[2]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram3 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[3]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata3),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[3]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram4 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[4]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata4),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[4]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram5 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[5]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata5),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[5]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram6 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[6]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata6),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[6]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_ext_ram7 (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_ext_ram_csb[7]), // active low chip select
+    .web0   (data_arrays_0_ext_ram_web),    // active low write control
+    .wmask0 (data_arrays_0_ext_ram_wmask),  // write mask
+    .addr0  (data_arrays_0_ext_ram_addr),
+    .din0   (data_arrays_0_ext_ram_wdata),
+    .dout0  (data_arrays_0_ext_ram_rdata7),
+    .clk1   (data_arrays_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_ext_ram_csb1[7]),// active low chip select
+    .addr1  (data_arrays_0_ext_ram_addr1),
+    .dout1  ()
+  );
+`endif // DO_NOT_DEFINE
+
+//-----------------------------------------------------------------------
+// RAMs for tag_array_ext
+//-----------------------------------------------------------------------
+  sky130_sram_1kbyte_1rw1r_32x256_8 #(.VERBOSE(`VERBOSE)) tag_array_ext_ram0h (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (tag_array_ext_ram_clk),    // clock
+    .csb0   (tag_array_ext_ram_csb),    // active low chip select
+    .web0   (tag_array_ext_ram_web),    // active low write control
+    .wmask0 ({4{tag_array_ext_ram_wmask[1]}}), // write mask
+    .addr0  (tag_array_ext_ram_addr),
+    .din0   (tag_array_ext_ram_wdata[63:32]),
+    .dout0  (tag_array_ext_ram_rdata1),
+    .clk1   (tag_array_ext_ram_clk),    // clock
+    .csb1   (tag_array_ext_ram_csb1[1]),// active low chip select
+    .addr1  (tag_array_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_1kbyte_1rw1r_32x256_8 #(.VERBOSE(`VERBOSE)) tag_array_ext_ram0l (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (tag_array_ext_ram_clk),    // clock
+    .csb0   (tag_array_ext_ram_csb),    // active low chip select
+    .web0   (tag_array_ext_ram_web),    // active low write control
+    .wmask0 ({4{tag_array_ext_ram_wmask[0]}}), // write mask
+    .addr0  (tag_array_ext_ram_addr),
+    .din0   (tag_array_ext_ram_wdata[31:0]),
+    .dout0  (tag_array_ext_ram_rdata0),
+    .clk1   (tag_array_ext_ram_clk),    // clock
+    .csb1   (tag_array_ext_ram_csb1[0]),// active low chip select
+    .addr1  (tag_array_ext_ram_addr1),
+    .dout1  ()
+  );
+
+//-----------------------------------------------------------------------
+// RAMs for  data_arrays_0_0_ext
+//-----------------------------------------------------------------------
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram0h (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[0]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata0[63:32]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[0]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram0l (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[0]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata0[31:0]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),   // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[1]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram1h (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[1]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata1[63:32]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[2]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram1l (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[1]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata1[31:0]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[3]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram2h (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[2]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata2[63:32]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[4]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram2l (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[2]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata2[31:0]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[5]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram3h (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[3]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata3[63:32]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[6]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
+
+  sky130_sram_2kbyte_1rw1r_32x512_8 #(.VERBOSE(`VERBOSE)) data_arrays_0_0_ext_ram3l (
+`ifdef USE_POWER_PINS
+    .vccd1  (vccd1),
+    .vssd1  (vssd1),
+`endif
+    .clk0   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb0   (data_arrays_0_0_ext_ram_csb[3]), // active low chip select
+    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr),
+    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .dout0  (data_arrays_0_0_ext_ram_rdata3[31:0]),
+    .clk1   (data_arrays_0_0_ext_ram_clk),    // clock
+    .csb1   (data_arrays_0_0_ext_ram_csb1[7]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .dout1  ()
+  );
 
 endmodule	// user_project_wrapper
 
