@@ -53,8 +53,518 @@ module user_project_wrapper (user_clock2,
  output [31:0] wbs_dat_o;
  input [3:0] wbs_sel_i;
 
+ wire \data_arrays_0_0_ext_ram_addr1[0] ;
+ wire \data_arrays_0_0_ext_ram_addr1[1] ;
+ wire \data_arrays_0_0_ext_ram_addr1[2] ;
+ wire \data_arrays_0_0_ext_ram_addr1[3] ;
+ wire \data_arrays_0_0_ext_ram_addr1[4] ;
+ wire \data_arrays_0_0_ext_ram_addr1[5] ;
+ wire \data_arrays_0_0_ext_ram_addr1[6] ;
+ wire \data_arrays_0_0_ext_ram_addr1[7] ;
+ wire \data_arrays_0_0_ext_ram_addr1[8] ;
+ wire \data_arrays_0_0_ext_ram_addr[0] ;
+ wire \data_arrays_0_0_ext_ram_addr[1] ;
+ wire \data_arrays_0_0_ext_ram_addr[2] ;
+ wire \data_arrays_0_0_ext_ram_addr[3] ;
+ wire \data_arrays_0_0_ext_ram_addr[4] ;
+ wire \data_arrays_0_0_ext_ram_addr[5] ;
+ wire \data_arrays_0_0_ext_ram_addr[6] ;
+ wire \data_arrays_0_0_ext_ram_addr[7] ;
+ wire \data_arrays_0_0_ext_ram_addr[8] ;
+ wire data_arrays_0_0_ext_ram_clk;
+ wire \data_arrays_0_0_ext_ram_csb1[0] ;
+ wire \data_arrays_0_0_ext_ram_csb1[1] ;
+ wire \data_arrays_0_0_ext_ram_csb1[2] ;
+ wire \data_arrays_0_0_ext_ram_csb1[3] ;
+ wire \data_arrays_0_0_ext_ram_csb1[4] ;
+ wire \data_arrays_0_0_ext_ram_csb1[5] ;
+ wire \data_arrays_0_0_ext_ram_csb1[6] ;
+ wire \data_arrays_0_0_ext_ram_csb1[7] ;
+ wire \data_arrays_0_0_ext_ram_csb[0] ;
+ wire \data_arrays_0_0_ext_ram_csb[1] ;
+ wire \data_arrays_0_0_ext_ram_csb[2] ;
+ wire \data_arrays_0_0_ext_ram_csb[3] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[0] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[10] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[11] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[12] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[13] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[14] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[15] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[16] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[17] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[18] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[19] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[1] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[20] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[21] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[22] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[23] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[24] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[25] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[26] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[27] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[28] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[29] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[2] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[30] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[31] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[32] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[33] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[34] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[35] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[36] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[37] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[38] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[39] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[3] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[40] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[41] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[42] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[43] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[44] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[45] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[46] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[47] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[48] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[49] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[4] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[50] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[51] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[52] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[53] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[54] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[55] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[56] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[57] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[58] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[59] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[5] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[60] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[61] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[62] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[63] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[6] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[7] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[8] ;
+ wire \data_arrays_0_0_ext_ram_rdata0[9] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[0] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[10] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[11] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[12] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[13] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[14] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[15] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[16] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[17] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[18] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[19] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[1] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[20] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[21] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[22] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[23] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[24] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[25] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[26] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[27] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[28] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[29] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[2] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[30] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[31] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[32] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[33] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[34] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[35] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[36] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[37] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[38] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[39] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[3] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[40] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[41] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[42] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[43] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[44] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[45] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[46] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[47] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[48] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[49] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[4] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[50] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[51] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[52] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[53] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[54] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[55] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[56] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[57] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[58] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[59] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[5] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[60] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[61] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[62] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[63] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[6] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[7] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[8] ;
+ wire \data_arrays_0_0_ext_ram_rdata1[9] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[0] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[10] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[11] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[12] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[13] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[14] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[15] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[16] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[17] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[18] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[19] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[1] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[20] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[21] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[22] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[23] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[24] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[25] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[26] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[27] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[28] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[29] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[2] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[30] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[31] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[32] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[33] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[34] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[35] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[36] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[37] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[38] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[39] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[3] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[40] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[41] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[42] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[43] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[44] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[45] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[46] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[47] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[48] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[49] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[4] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[50] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[51] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[52] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[53] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[54] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[55] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[56] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[57] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[58] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[59] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[5] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[60] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[61] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[62] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[63] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[6] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[7] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[8] ;
+ wire \data_arrays_0_0_ext_ram_rdata2[9] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[0] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[10] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[11] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[12] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[13] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[14] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[15] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[16] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[17] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[18] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[19] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[1] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[20] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[21] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[22] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[23] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[24] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[25] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[26] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[27] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[28] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[29] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[2] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[30] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[31] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[32] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[33] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[34] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[35] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[36] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[37] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[38] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[39] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[3] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[40] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[41] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[42] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[43] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[44] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[45] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[46] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[47] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[48] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[49] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[4] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[50] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[51] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[52] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[53] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[54] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[55] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[56] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[57] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[58] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[59] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[5] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[60] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[61] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[62] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[63] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[6] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[7] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[8] ;
+ wire \data_arrays_0_0_ext_ram_rdata3[9] ;
+ wire \data_arrays_0_0_ext_ram_wdata[0] ;
+ wire \data_arrays_0_0_ext_ram_wdata[10] ;
+ wire \data_arrays_0_0_ext_ram_wdata[11] ;
+ wire \data_arrays_0_0_ext_ram_wdata[12] ;
+ wire \data_arrays_0_0_ext_ram_wdata[13] ;
+ wire \data_arrays_0_0_ext_ram_wdata[14] ;
+ wire \data_arrays_0_0_ext_ram_wdata[15] ;
+ wire \data_arrays_0_0_ext_ram_wdata[16] ;
+ wire \data_arrays_0_0_ext_ram_wdata[17] ;
+ wire \data_arrays_0_0_ext_ram_wdata[18] ;
+ wire \data_arrays_0_0_ext_ram_wdata[19] ;
+ wire \data_arrays_0_0_ext_ram_wdata[1] ;
+ wire \data_arrays_0_0_ext_ram_wdata[20] ;
+ wire \data_arrays_0_0_ext_ram_wdata[21] ;
+ wire \data_arrays_0_0_ext_ram_wdata[22] ;
+ wire \data_arrays_0_0_ext_ram_wdata[23] ;
+ wire \data_arrays_0_0_ext_ram_wdata[24] ;
+ wire \data_arrays_0_0_ext_ram_wdata[25] ;
+ wire \data_arrays_0_0_ext_ram_wdata[26] ;
+ wire \data_arrays_0_0_ext_ram_wdata[27] ;
+ wire \data_arrays_0_0_ext_ram_wdata[28] ;
+ wire \data_arrays_0_0_ext_ram_wdata[29] ;
+ wire \data_arrays_0_0_ext_ram_wdata[2] ;
+ wire \data_arrays_0_0_ext_ram_wdata[30] ;
+ wire \data_arrays_0_0_ext_ram_wdata[31] ;
+ wire \data_arrays_0_0_ext_ram_wdata[32] ;
+ wire \data_arrays_0_0_ext_ram_wdata[33] ;
+ wire \data_arrays_0_0_ext_ram_wdata[34] ;
+ wire \data_arrays_0_0_ext_ram_wdata[35] ;
+ wire \data_arrays_0_0_ext_ram_wdata[36] ;
+ wire \data_arrays_0_0_ext_ram_wdata[37] ;
+ wire \data_arrays_0_0_ext_ram_wdata[38] ;
+ wire \data_arrays_0_0_ext_ram_wdata[39] ;
+ wire \data_arrays_0_0_ext_ram_wdata[3] ;
+ wire \data_arrays_0_0_ext_ram_wdata[40] ;
+ wire \data_arrays_0_0_ext_ram_wdata[41] ;
+ wire \data_arrays_0_0_ext_ram_wdata[42] ;
+ wire \data_arrays_0_0_ext_ram_wdata[43] ;
+ wire \data_arrays_0_0_ext_ram_wdata[44] ;
+ wire \data_arrays_0_0_ext_ram_wdata[45] ;
+ wire \data_arrays_0_0_ext_ram_wdata[46] ;
+ wire \data_arrays_0_0_ext_ram_wdata[47] ;
+ wire \data_arrays_0_0_ext_ram_wdata[48] ;
+ wire \data_arrays_0_0_ext_ram_wdata[49] ;
+ wire \data_arrays_0_0_ext_ram_wdata[4] ;
+ wire \data_arrays_0_0_ext_ram_wdata[50] ;
+ wire \data_arrays_0_0_ext_ram_wdata[51] ;
+ wire \data_arrays_0_0_ext_ram_wdata[52] ;
+ wire \data_arrays_0_0_ext_ram_wdata[53] ;
+ wire \data_arrays_0_0_ext_ram_wdata[54] ;
+ wire \data_arrays_0_0_ext_ram_wdata[55] ;
+ wire \data_arrays_0_0_ext_ram_wdata[56] ;
+ wire \data_arrays_0_0_ext_ram_wdata[57] ;
+ wire \data_arrays_0_0_ext_ram_wdata[58] ;
+ wire \data_arrays_0_0_ext_ram_wdata[59] ;
+ wire \data_arrays_0_0_ext_ram_wdata[5] ;
+ wire \data_arrays_0_0_ext_ram_wdata[60] ;
+ wire \data_arrays_0_0_ext_ram_wdata[61] ;
+ wire \data_arrays_0_0_ext_ram_wdata[62] ;
+ wire \data_arrays_0_0_ext_ram_wdata[63] ;
+ wire \data_arrays_0_0_ext_ram_wdata[6] ;
+ wire \data_arrays_0_0_ext_ram_wdata[7] ;
+ wire \data_arrays_0_0_ext_ram_wdata[8] ;
+ wire \data_arrays_0_0_ext_ram_wdata[9] ;
+ wire data_arrays_0_0_ext_ram_web;
+ wire \data_arrays_0_0_ext_ram_wmask[0] ;
+ wire \data_arrays_0_0_ext_ram_wmask[1] ;
+ wire \tag_array_ext_ram_addr1[0] ;
+ wire \tag_array_ext_ram_addr1[1] ;
+ wire \tag_array_ext_ram_addr1[2] ;
+ wire \tag_array_ext_ram_addr1[3] ;
+ wire \tag_array_ext_ram_addr1[4] ;
+ wire \tag_array_ext_ram_addr1[5] ;
+ wire \tag_array_ext_ram_addr1[6] ;
+ wire \tag_array_ext_ram_addr1[7] ;
+ wire \tag_array_ext_ram_addr[0] ;
+ wire \tag_array_ext_ram_addr[1] ;
+ wire \tag_array_ext_ram_addr[2] ;
+ wire \tag_array_ext_ram_addr[3] ;
+ wire \tag_array_ext_ram_addr[4] ;
+ wire \tag_array_ext_ram_addr[5] ;
+ wire \tag_array_ext_ram_addr[6] ;
+ wire \tag_array_ext_ram_addr[7] ;
+ wire tag_array_ext_ram_clk;
+ wire tag_array_ext_ram_csb;
+ wire \tag_array_ext_ram_csb1[0] ;
+ wire \tag_array_ext_ram_csb1[1] ;
+ wire \tag_array_ext_ram_rdata0[0] ;
+ wire \tag_array_ext_ram_rdata0[10] ;
+ wire \tag_array_ext_ram_rdata0[11] ;
+ wire \tag_array_ext_ram_rdata0[12] ;
+ wire \tag_array_ext_ram_rdata0[13] ;
+ wire \tag_array_ext_ram_rdata0[14] ;
+ wire \tag_array_ext_ram_rdata0[15] ;
+ wire \tag_array_ext_ram_rdata0[16] ;
+ wire \tag_array_ext_ram_rdata0[17] ;
+ wire \tag_array_ext_ram_rdata0[18] ;
+ wire \tag_array_ext_ram_rdata0[19] ;
+ wire \tag_array_ext_ram_rdata0[1] ;
+ wire \tag_array_ext_ram_rdata0[20] ;
+ wire \tag_array_ext_ram_rdata0[21] ;
+ wire \tag_array_ext_ram_rdata0[22] ;
+ wire \tag_array_ext_ram_rdata0[23] ;
+ wire \tag_array_ext_ram_rdata0[24] ;
+ wire \tag_array_ext_ram_rdata0[25] ;
+ wire \tag_array_ext_ram_rdata0[26] ;
+ wire \tag_array_ext_ram_rdata0[27] ;
+ wire \tag_array_ext_ram_rdata0[28] ;
+ wire \tag_array_ext_ram_rdata0[29] ;
+ wire \tag_array_ext_ram_rdata0[2] ;
+ wire \tag_array_ext_ram_rdata0[30] ;
+ wire \tag_array_ext_ram_rdata0[31] ;
+ wire \tag_array_ext_ram_rdata0[3] ;
+ wire \tag_array_ext_ram_rdata0[4] ;
+ wire \tag_array_ext_ram_rdata0[5] ;
+ wire \tag_array_ext_ram_rdata0[6] ;
+ wire \tag_array_ext_ram_rdata0[7] ;
+ wire \tag_array_ext_ram_rdata0[8] ;
+ wire \tag_array_ext_ram_rdata0[9] ;
+ wire \tag_array_ext_ram_rdata1[0] ;
+ wire \tag_array_ext_ram_rdata1[10] ;
+ wire \tag_array_ext_ram_rdata1[11] ;
+ wire \tag_array_ext_ram_rdata1[12] ;
+ wire \tag_array_ext_ram_rdata1[13] ;
+ wire \tag_array_ext_ram_rdata1[14] ;
+ wire \tag_array_ext_ram_rdata1[15] ;
+ wire \tag_array_ext_ram_rdata1[16] ;
+ wire \tag_array_ext_ram_rdata1[17] ;
+ wire \tag_array_ext_ram_rdata1[18] ;
+ wire \tag_array_ext_ram_rdata1[19] ;
+ wire \tag_array_ext_ram_rdata1[1] ;
+ wire \tag_array_ext_ram_rdata1[20] ;
+ wire \tag_array_ext_ram_rdata1[21] ;
+ wire \tag_array_ext_ram_rdata1[22] ;
+ wire \tag_array_ext_ram_rdata1[23] ;
+ wire \tag_array_ext_ram_rdata1[24] ;
+ wire \tag_array_ext_ram_rdata1[25] ;
+ wire \tag_array_ext_ram_rdata1[26] ;
+ wire \tag_array_ext_ram_rdata1[27] ;
+ wire \tag_array_ext_ram_rdata1[28] ;
+ wire \tag_array_ext_ram_rdata1[29] ;
+ wire \tag_array_ext_ram_rdata1[2] ;
+ wire \tag_array_ext_ram_rdata1[30] ;
+ wire \tag_array_ext_ram_rdata1[31] ;
+ wire \tag_array_ext_ram_rdata1[3] ;
+ wire \tag_array_ext_ram_rdata1[4] ;
+ wire \tag_array_ext_ram_rdata1[5] ;
+ wire \tag_array_ext_ram_rdata1[6] ;
+ wire \tag_array_ext_ram_rdata1[7] ;
+ wire \tag_array_ext_ram_rdata1[8] ;
+ wire \tag_array_ext_ram_rdata1[9] ;
+ wire \tag_array_ext_ram_wdata[0] ;
+ wire \tag_array_ext_ram_wdata[10] ;
+ wire \tag_array_ext_ram_wdata[11] ;
+ wire \tag_array_ext_ram_wdata[12] ;
+ wire \tag_array_ext_ram_wdata[13] ;
+ wire \tag_array_ext_ram_wdata[14] ;
+ wire \tag_array_ext_ram_wdata[15] ;
+ wire \tag_array_ext_ram_wdata[16] ;
+ wire \tag_array_ext_ram_wdata[17] ;
+ wire \tag_array_ext_ram_wdata[18] ;
+ wire \tag_array_ext_ram_wdata[19] ;
+ wire \tag_array_ext_ram_wdata[1] ;
+ wire \tag_array_ext_ram_wdata[20] ;
+ wire \tag_array_ext_ram_wdata[21] ;
+ wire \tag_array_ext_ram_wdata[22] ;
+ wire \tag_array_ext_ram_wdata[23] ;
+ wire \tag_array_ext_ram_wdata[24] ;
+ wire \tag_array_ext_ram_wdata[25] ;
+ wire \tag_array_ext_ram_wdata[26] ;
+ wire \tag_array_ext_ram_wdata[27] ;
+ wire \tag_array_ext_ram_wdata[28] ;
+ wire \tag_array_ext_ram_wdata[29] ;
+ wire \tag_array_ext_ram_wdata[2] ;
+ wire \tag_array_ext_ram_wdata[30] ;
+ wire \tag_array_ext_ram_wdata[31] ;
+ wire \tag_array_ext_ram_wdata[32] ;
+ wire \tag_array_ext_ram_wdata[33] ;
+ wire \tag_array_ext_ram_wdata[34] ;
+ wire \tag_array_ext_ram_wdata[35] ;
+ wire \tag_array_ext_ram_wdata[36] ;
+ wire \tag_array_ext_ram_wdata[37] ;
+ wire \tag_array_ext_ram_wdata[38] ;
+ wire \tag_array_ext_ram_wdata[39] ;
+ wire \tag_array_ext_ram_wdata[3] ;
+ wire \tag_array_ext_ram_wdata[40] ;
+ wire \tag_array_ext_ram_wdata[41] ;
+ wire \tag_array_ext_ram_wdata[42] ;
+ wire \tag_array_ext_ram_wdata[43] ;
+ wire \tag_array_ext_ram_wdata[44] ;
+ wire \tag_array_ext_ram_wdata[45] ;
+ wire \tag_array_ext_ram_wdata[46] ;
+ wire \tag_array_ext_ram_wdata[47] ;
+ wire \tag_array_ext_ram_wdata[48] ;
+ wire \tag_array_ext_ram_wdata[49] ;
+ wire \tag_array_ext_ram_wdata[4] ;
+ wire \tag_array_ext_ram_wdata[50] ;
+ wire \tag_array_ext_ram_wdata[51] ;
+ wire \tag_array_ext_ram_wdata[52] ;
+ wire \tag_array_ext_ram_wdata[53] ;
+ wire \tag_array_ext_ram_wdata[54] ;
+ wire \tag_array_ext_ram_wdata[55] ;
+ wire \tag_array_ext_ram_wdata[56] ;
+ wire \tag_array_ext_ram_wdata[57] ;
+ wire \tag_array_ext_ram_wdata[58] ;
+ wire \tag_array_ext_ram_wdata[59] ;
+ wire \tag_array_ext_ram_wdata[5] ;
+ wire \tag_array_ext_ram_wdata[60] ;
+ wire \tag_array_ext_ram_wdata[61] ;
+ wire \tag_array_ext_ram_wdata[62] ;
+ wire \tag_array_ext_ram_wdata[63] ;
+ wire \tag_array_ext_ram_wdata[6] ;
+ wire \tag_array_ext_ram_wdata[7] ;
+ wire \tag_array_ext_ram_wdata[8] ;
+ wire \tag_array_ext_ram_wdata[9] ;
+ wire tag_array_ext_ram_web;
+ wire \tag_array_ext_ram_wmask[0] ;
+ wire \tag_array_ext_ram_wmask[1] ;
 
- user_proj_example mprj (.vccd1(vccd1),
+ Marmot Marmot (.data_arrays_0_0_ext_ram_clk(data_arrays_0_0_ext_ram_clk),
+    .data_arrays_0_0_ext_ram_web(data_arrays_0_0_ext_ram_web),
+    .tag_array_ext_ram_clk(tag_array_ext_ram_clk),
+    .tag_array_ext_ram_csb(tag_array_ext_ram_csb),
+    .tag_array_ext_ram_web(tag_array_ext_ram_web),
+    .vccd1(vccd1),
     .vssd1(vssd1),
     .wb_clk_i(wb_clk_i),
     .wb_rst_i(wb_rst_i),
@@ -62,6 +572,358 @@ module user_project_wrapper (user_clock2,
     .wbs_cyc_i(wbs_cyc_i),
     .wbs_stb_i(wbs_stb_i),
     .wbs_we_i(wbs_we_i),
+    .data_arrays_0_0_ext_ram_addr({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .data_arrays_0_0_ext_ram_addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .data_arrays_0_0_ext_ram_csb({\data_arrays_0_0_ext_ram_csb[3] ,
+    \data_arrays_0_0_ext_ram_csb[2] ,
+    \data_arrays_0_0_ext_ram_csb[1] ,
+    \data_arrays_0_0_ext_ram_csb[0] }),
+    .data_arrays_0_0_ext_ram_csb1({\data_arrays_0_0_ext_ram_csb1[7] ,
+    \data_arrays_0_0_ext_ram_csb1[6] ,
+    \data_arrays_0_0_ext_ram_csb1[5] ,
+    \data_arrays_0_0_ext_ram_csb1[4] ,
+    \data_arrays_0_0_ext_ram_csb1[3] ,
+    \data_arrays_0_0_ext_ram_csb1[2] ,
+    \data_arrays_0_0_ext_ram_csb1[1] ,
+    \data_arrays_0_0_ext_ram_csb1[0] }),
+    .data_arrays_0_0_ext_ram_rdata0({\data_arrays_0_0_ext_ram_rdata0[63] ,
+    \data_arrays_0_0_ext_ram_rdata0[62] ,
+    \data_arrays_0_0_ext_ram_rdata0[61] ,
+    \data_arrays_0_0_ext_ram_rdata0[60] ,
+    \data_arrays_0_0_ext_ram_rdata0[59] ,
+    \data_arrays_0_0_ext_ram_rdata0[58] ,
+    \data_arrays_0_0_ext_ram_rdata0[57] ,
+    \data_arrays_0_0_ext_ram_rdata0[56] ,
+    \data_arrays_0_0_ext_ram_rdata0[55] ,
+    \data_arrays_0_0_ext_ram_rdata0[54] ,
+    \data_arrays_0_0_ext_ram_rdata0[53] ,
+    \data_arrays_0_0_ext_ram_rdata0[52] ,
+    \data_arrays_0_0_ext_ram_rdata0[51] ,
+    \data_arrays_0_0_ext_ram_rdata0[50] ,
+    \data_arrays_0_0_ext_ram_rdata0[49] ,
+    \data_arrays_0_0_ext_ram_rdata0[48] ,
+    \data_arrays_0_0_ext_ram_rdata0[47] ,
+    \data_arrays_0_0_ext_ram_rdata0[46] ,
+    \data_arrays_0_0_ext_ram_rdata0[45] ,
+    \data_arrays_0_0_ext_ram_rdata0[44] ,
+    \data_arrays_0_0_ext_ram_rdata0[43] ,
+    \data_arrays_0_0_ext_ram_rdata0[42] ,
+    \data_arrays_0_0_ext_ram_rdata0[41] ,
+    \data_arrays_0_0_ext_ram_rdata0[40] ,
+    \data_arrays_0_0_ext_ram_rdata0[39] ,
+    \data_arrays_0_0_ext_ram_rdata0[38] ,
+    \data_arrays_0_0_ext_ram_rdata0[37] ,
+    \data_arrays_0_0_ext_ram_rdata0[36] ,
+    \data_arrays_0_0_ext_ram_rdata0[35] ,
+    \data_arrays_0_0_ext_ram_rdata0[34] ,
+    \data_arrays_0_0_ext_ram_rdata0[33] ,
+    \data_arrays_0_0_ext_ram_rdata0[32] ,
+    \data_arrays_0_0_ext_ram_rdata0[31] ,
+    \data_arrays_0_0_ext_ram_rdata0[30] ,
+    \data_arrays_0_0_ext_ram_rdata0[29] ,
+    \data_arrays_0_0_ext_ram_rdata0[28] ,
+    \data_arrays_0_0_ext_ram_rdata0[27] ,
+    \data_arrays_0_0_ext_ram_rdata0[26] ,
+    \data_arrays_0_0_ext_ram_rdata0[25] ,
+    \data_arrays_0_0_ext_ram_rdata0[24] ,
+    \data_arrays_0_0_ext_ram_rdata0[23] ,
+    \data_arrays_0_0_ext_ram_rdata0[22] ,
+    \data_arrays_0_0_ext_ram_rdata0[21] ,
+    \data_arrays_0_0_ext_ram_rdata0[20] ,
+    \data_arrays_0_0_ext_ram_rdata0[19] ,
+    \data_arrays_0_0_ext_ram_rdata0[18] ,
+    \data_arrays_0_0_ext_ram_rdata0[17] ,
+    \data_arrays_0_0_ext_ram_rdata0[16] ,
+    \data_arrays_0_0_ext_ram_rdata0[15] ,
+    \data_arrays_0_0_ext_ram_rdata0[14] ,
+    \data_arrays_0_0_ext_ram_rdata0[13] ,
+    \data_arrays_0_0_ext_ram_rdata0[12] ,
+    \data_arrays_0_0_ext_ram_rdata0[11] ,
+    \data_arrays_0_0_ext_ram_rdata0[10] ,
+    \data_arrays_0_0_ext_ram_rdata0[9] ,
+    \data_arrays_0_0_ext_ram_rdata0[8] ,
+    \data_arrays_0_0_ext_ram_rdata0[7] ,
+    \data_arrays_0_0_ext_ram_rdata0[6] ,
+    \data_arrays_0_0_ext_ram_rdata0[5] ,
+    \data_arrays_0_0_ext_ram_rdata0[4] ,
+    \data_arrays_0_0_ext_ram_rdata0[3] ,
+    \data_arrays_0_0_ext_ram_rdata0[2] ,
+    \data_arrays_0_0_ext_ram_rdata0[1] ,
+    \data_arrays_0_0_ext_ram_rdata0[0] }),
+    .data_arrays_0_0_ext_ram_rdata1({\data_arrays_0_0_ext_ram_rdata1[63] ,
+    \data_arrays_0_0_ext_ram_rdata1[62] ,
+    \data_arrays_0_0_ext_ram_rdata1[61] ,
+    \data_arrays_0_0_ext_ram_rdata1[60] ,
+    \data_arrays_0_0_ext_ram_rdata1[59] ,
+    \data_arrays_0_0_ext_ram_rdata1[58] ,
+    \data_arrays_0_0_ext_ram_rdata1[57] ,
+    \data_arrays_0_0_ext_ram_rdata1[56] ,
+    \data_arrays_0_0_ext_ram_rdata1[55] ,
+    \data_arrays_0_0_ext_ram_rdata1[54] ,
+    \data_arrays_0_0_ext_ram_rdata1[53] ,
+    \data_arrays_0_0_ext_ram_rdata1[52] ,
+    \data_arrays_0_0_ext_ram_rdata1[51] ,
+    \data_arrays_0_0_ext_ram_rdata1[50] ,
+    \data_arrays_0_0_ext_ram_rdata1[49] ,
+    \data_arrays_0_0_ext_ram_rdata1[48] ,
+    \data_arrays_0_0_ext_ram_rdata1[47] ,
+    \data_arrays_0_0_ext_ram_rdata1[46] ,
+    \data_arrays_0_0_ext_ram_rdata1[45] ,
+    \data_arrays_0_0_ext_ram_rdata1[44] ,
+    \data_arrays_0_0_ext_ram_rdata1[43] ,
+    \data_arrays_0_0_ext_ram_rdata1[42] ,
+    \data_arrays_0_0_ext_ram_rdata1[41] ,
+    \data_arrays_0_0_ext_ram_rdata1[40] ,
+    \data_arrays_0_0_ext_ram_rdata1[39] ,
+    \data_arrays_0_0_ext_ram_rdata1[38] ,
+    \data_arrays_0_0_ext_ram_rdata1[37] ,
+    \data_arrays_0_0_ext_ram_rdata1[36] ,
+    \data_arrays_0_0_ext_ram_rdata1[35] ,
+    \data_arrays_0_0_ext_ram_rdata1[34] ,
+    \data_arrays_0_0_ext_ram_rdata1[33] ,
+    \data_arrays_0_0_ext_ram_rdata1[32] ,
+    \data_arrays_0_0_ext_ram_rdata1[31] ,
+    \data_arrays_0_0_ext_ram_rdata1[30] ,
+    \data_arrays_0_0_ext_ram_rdata1[29] ,
+    \data_arrays_0_0_ext_ram_rdata1[28] ,
+    \data_arrays_0_0_ext_ram_rdata1[27] ,
+    \data_arrays_0_0_ext_ram_rdata1[26] ,
+    \data_arrays_0_0_ext_ram_rdata1[25] ,
+    \data_arrays_0_0_ext_ram_rdata1[24] ,
+    \data_arrays_0_0_ext_ram_rdata1[23] ,
+    \data_arrays_0_0_ext_ram_rdata1[22] ,
+    \data_arrays_0_0_ext_ram_rdata1[21] ,
+    \data_arrays_0_0_ext_ram_rdata1[20] ,
+    \data_arrays_0_0_ext_ram_rdata1[19] ,
+    \data_arrays_0_0_ext_ram_rdata1[18] ,
+    \data_arrays_0_0_ext_ram_rdata1[17] ,
+    \data_arrays_0_0_ext_ram_rdata1[16] ,
+    \data_arrays_0_0_ext_ram_rdata1[15] ,
+    \data_arrays_0_0_ext_ram_rdata1[14] ,
+    \data_arrays_0_0_ext_ram_rdata1[13] ,
+    \data_arrays_0_0_ext_ram_rdata1[12] ,
+    \data_arrays_0_0_ext_ram_rdata1[11] ,
+    \data_arrays_0_0_ext_ram_rdata1[10] ,
+    \data_arrays_0_0_ext_ram_rdata1[9] ,
+    \data_arrays_0_0_ext_ram_rdata1[8] ,
+    \data_arrays_0_0_ext_ram_rdata1[7] ,
+    \data_arrays_0_0_ext_ram_rdata1[6] ,
+    \data_arrays_0_0_ext_ram_rdata1[5] ,
+    \data_arrays_0_0_ext_ram_rdata1[4] ,
+    \data_arrays_0_0_ext_ram_rdata1[3] ,
+    \data_arrays_0_0_ext_ram_rdata1[2] ,
+    \data_arrays_0_0_ext_ram_rdata1[1] ,
+    \data_arrays_0_0_ext_ram_rdata1[0] }),
+    .data_arrays_0_0_ext_ram_rdata2({\data_arrays_0_0_ext_ram_rdata2[63] ,
+    \data_arrays_0_0_ext_ram_rdata2[62] ,
+    \data_arrays_0_0_ext_ram_rdata2[61] ,
+    \data_arrays_0_0_ext_ram_rdata2[60] ,
+    \data_arrays_0_0_ext_ram_rdata2[59] ,
+    \data_arrays_0_0_ext_ram_rdata2[58] ,
+    \data_arrays_0_0_ext_ram_rdata2[57] ,
+    \data_arrays_0_0_ext_ram_rdata2[56] ,
+    \data_arrays_0_0_ext_ram_rdata2[55] ,
+    \data_arrays_0_0_ext_ram_rdata2[54] ,
+    \data_arrays_0_0_ext_ram_rdata2[53] ,
+    \data_arrays_0_0_ext_ram_rdata2[52] ,
+    \data_arrays_0_0_ext_ram_rdata2[51] ,
+    \data_arrays_0_0_ext_ram_rdata2[50] ,
+    \data_arrays_0_0_ext_ram_rdata2[49] ,
+    \data_arrays_0_0_ext_ram_rdata2[48] ,
+    \data_arrays_0_0_ext_ram_rdata2[47] ,
+    \data_arrays_0_0_ext_ram_rdata2[46] ,
+    \data_arrays_0_0_ext_ram_rdata2[45] ,
+    \data_arrays_0_0_ext_ram_rdata2[44] ,
+    \data_arrays_0_0_ext_ram_rdata2[43] ,
+    \data_arrays_0_0_ext_ram_rdata2[42] ,
+    \data_arrays_0_0_ext_ram_rdata2[41] ,
+    \data_arrays_0_0_ext_ram_rdata2[40] ,
+    \data_arrays_0_0_ext_ram_rdata2[39] ,
+    \data_arrays_0_0_ext_ram_rdata2[38] ,
+    \data_arrays_0_0_ext_ram_rdata2[37] ,
+    \data_arrays_0_0_ext_ram_rdata2[36] ,
+    \data_arrays_0_0_ext_ram_rdata2[35] ,
+    \data_arrays_0_0_ext_ram_rdata2[34] ,
+    \data_arrays_0_0_ext_ram_rdata2[33] ,
+    \data_arrays_0_0_ext_ram_rdata2[32] ,
+    \data_arrays_0_0_ext_ram_rdata2[31] ,
+    \data_arrays_0_0_ext_ram_rdata2[30] ,
+    \data_arrays_0_0_ext_ram_rdata2[29] ,
+    \data_arrays_0_0_ext_ram_rdata2[28] ,
+    \data_arrays_0_0_ext_ram_rdata2[27] ,
+    \data_arrays_0_0_ext_ram_rdata2[26] ,
+    \data_arrays_0_0_ext_ram_rdata2[25] ,
+    \data_arrays_0_0_ext_ram_rdata2[24] ,
+    \data_arrays_0_0_ext_ram_rdata2[23] ,
+    \data_arrays_0_0_ext_ram_rdata2[22] ,
+    \data_arrays_0_0_ext_ram_rdata2[21] ,
+    \data_arrays_0_0_ext_ram_rdata2[20] ,
+    \data_arrays_0_0_ext_ram_rdata2[19] ,
+    \data_arrays_0_0_ext_ram_rdata2[18] ,
+    \data_arrays_0_0_ext_ram_rdata2[17] ,
+    \data_arrays_0_0_ext_ram_rdata2[16] ,
+    \data_arrays_0_0_ext_ram_rdata2[15] ,
+    \data_arrays_0_0_ext_ram_rdata2[14] ,
+    \data_arrays_0_0_ext_ram_rdata2[13] ,
+    \data_arrays_0_0_ext_ram_rdata2[12] ,
+    \data_arrays_0_0_ext_ram_rdata2[11] ,
+    \data_arrays_0_0_ext_ram_rdata2[10] ,
+    \data_arrays_0_0_ext_ram_rdata2[9] ,
+    \data_arrays_0_0_ext_ram_rdata2[8] ,
+    \data_arrays_0_0_ext_ram_rdata2[7] ,
+    \data_arrays_0_0_ext_ram_rdata2[6] ,
+    \data_arrays_0_0_ext_ram_rdata2[5] ,
+    \data_arrays_0_0_ext_ram_rdata2[4] ,
+    \data_arrays_0_0_ext_ram_rdata2[3] ,
+    \data_arrays_0_0_ext_ram_rdata2[2] ,
+    \data_arrays_0_0_ext_ram_rdata2[1] ,
+    \data_arrays_0_0_ext_ram_rdata2[0] }),
+    .data_arrays_0_0_ext_ram_rdata3({\data_arrays_0_0_ext_ram_rdata3[63] ,
+    \data_arrays_0_0_ext_ram_rdata3[62] ,
+    \data_arrays_0_0_ext_ram_rdata3[61] ,
+    \data_arrays_0_0_ext_ram_rdata3[60] ,
+    \data_arrays_0_0_ext_ram_rdata3[59] ,
+    \data_arrays_0_0_ext_ram_rdata3[58] ,
+    \data_arrays_0_0_ext_ram_rdata3[57] ,
+    \data_arrays_0_0_ext_ram_rdata3[56] ,
+    \data_arrays_0_0_ext_ram_rdata3[55] ,
+    \data_arrays_0_0_ext_ram_rdata3[54] ,
+    \data_arrays_0_0_ext_ram_rdata3[53] ,
+    \data_arrays_0_0_ext_ram_rdata3[52] ,
+    \data_arrays_0_0_ext_ram_rdata3[51] ,
+    \data_arrays_0_0_ext_ram_rdata3[50] ,
+    \data_arrays_0_0_ext_ram_rdata3[49] ,
+    \data_arrays_0_0_ext_ram_rdata3[48] ,
+    \data_arrays_0_0_ext_ram_rdata3[47] ,
+    \data_arrays_0_0_ext_ram_rdata3[46] ,
+    \data_arrays_0_0_ext_ram_rdata3[45] ,
+    \data_arrays_0_0_ext_ram_rdata3[44] ,
+    \data_arrays_0_0_ext_ram_rdata3[43] ,
+    \data_arrays_0_0_ext_ram_rdata3[42] ,
+    \data_arrays_0_0_ext_ram_rdata3[41] ,
+    \data_arrays_0_0_ext_ram_rdata3[40] ,
+    \data_arrays_0_0_ext_ram_rdata3[39] ,
+    \data_arrays_0_0_ext_ram_rdata3[38] ,
+    \data_arrays_0_0_ext_ram_rdata3[37] ,
+    \data_arrays_0_0_ext_ram_rdata3[36] ,
+    \data_arrays_0_0_ext_ram_rdata3[35] ,
+    \data_arrays_0_0_ext_ram_rdata3[34] ,
+    \data_arrays_0_0_ext_ram_rdata3[33] ,
+    \data_arrays_0_0_ext_ram_rdata3[32] ,
+    \data_arrays_0_0_ext_ram_rdata3[31] ,
+    \data_arrays_0_0_ext_ram_rdata3[30] ,
+    \data_arrays_0_0_ext_ram_rdata3[29] ,
+    \data_arrays_0_0_ext_ram_rdata3[28] ,
+    \data_arrays_0_0_ext_ram_rdata3[27] ,
+    \data_arrays_0_0_ext_ram_rdata3[26] ,
+    \data_arrays_0_0_ext_ram_rdata3[25] ,
+    \data_arrays_0_0_ext_ram_rdata3[24] ,
+    \data_arrays_0_0_ext_ram_rdata3[23] ,
+    \data_arrays_0_0_ext_ram_rdata3[22] ,
+    \data_arrays_0_0_ext_ram_rdata3[21] ,
+    \data_arrays_0_0_ext_ram_rdata3[20] ,
+    \data_arrays_0_0_ext_ram_rdata3[19] ,
+    \data_arrays_0_0_ext_ram_rdata3[18] ,
+    \data_arrays_0_0_ext_ram_rdata3[17] ,
+    \data_arrays_0_0_ext_ram_rdata3[16] ,
+    \data_arrays_0_0_ext_ram_rdata3[15] ,
+    \data_arrays_0_0_ext_ram_rdata3[14] ,
+    \data_arrays_0_0_ext_ram_rdata3[13] ,
+    \data_arrays_0_0_ext_ram_rdata3[12] ,
+    \data_arrays_0_0_ext_ram_rdata3[11] ,
+    \data_arrays_0_0_ext_ram_rdata3[10] ,
+    \data_arrays_0_0_ext_ram_rdata3[9] ,
+    \data_arrays_0_0_ext_ram_rdata3[8] ,
+    \data_arrays_0_0_ext_ram_rdata3[7] ,
+    \data_arrays_0_0_ext_ram_rdata3[6] ,
+    \data_arrays_0_0_ext_ram_rdata3[5] ,
+    \data_arrays_0_0_ext_ram_rdata3[4] ,
+    \data_arrays_0_0_ext_ram_rdata3[3] ,
+    \data_arrays_0_0_ext_ram_rdata3[2] ,
+    \data_arrays_0_0_ext_ram_rdata3[1] ,
+    \data_arrays_0_0_ext_ram_rdata3[0] }),
+    .data_arrays_0_0_ext_ram_wdata({\data_arrays_0_0_ext_ram_wdata[63] ,
+    \data_arrays_0_0_ext_ram_wdata[62] ,
+    \data_arrays_0_0_ext_ram_wdata[61] ,
+    \data_arrays_0_0_ext_ram_wdata[60] ,
+    \data_arrays_0_0_ext_ram_wdata[59] ,
+    \data_arrays_0_0_ext_ram_wdata[58] ,
+    \data_arrays_0_0_ext_ram_wdata[57] ,
+    \data_arrays_0_0_ext_ram_wdata[56] ,
+    \data_arrays_0_0_ext_ram_wdata[55] ,
+    \data_arrays_0_0_ext_ram_wdata[54] ,
+    \data_arrays_0_0_ext_ram_wdata[53] ,
+    \data_arrays_0_0_ext_ram_wdata[52] ,
+    \data_arrays_0_0_ext_ram_wdata[51] ,
+    \data_arrays_0_0_ext_ram_wdata[50] ,
+    \data_arrays_0_0_ext_ram_wdata[49] ,
+    \data_arrays_0_0_ext_ram_wdata[48] ,
+    \data_arrays_0_0_ext_ram_wdata[47] ,
+    \data_arrays_0_0_ext_ram_wdata[46] ,
+    \data_arrays_0_0_ext_ram_wdata[45] ,
+    \data_arrays_0_0_ext_ram_wdata[44] ,
+    \data_arrays_0_0_ext_ram_wdata[43] ,
+    \data_arrays_0_0_ext_ram_wdata[42] ,
+    \data_arrays_0_0_ext_ram_wdata[41] ,
+    \data_arrays_0_0_ext_ram_wdata[40] ,
+    \data_arrays_0_0_ext_ram_wdata[39] ,
+    \data_arrays_0_0_ext_ram_wdata[38] ,
+    \data_arrays_0_0_ext_ram_wdata[37] ,
+    \data_arrays_0_0_ext_ram_wdata[36] ,
+    \data_arrays_0_0_ext_ram_wdata[35] ,
+    \data_arrays_0_0_ext_ram_wdata[34] ,
+    \data_arrays_0_0_ext_ram_wdata[33] ,
+    \data_arrays_0_0_ext_ram_wdata[32] ,
+    \data_arrays_0_0_ext_ram_wdata[31] ,
+    \data_arrays_0_0_ext_ram_wdata[30] ,
+    \data_arrays_0_0_ext_ram_wdata[29] ,
+    \data_arrays_0_0_ext_ram_wdata[28] ,
+    \data_arrays_0_0_ext_ram_wdata[27] ,
+    \data_arrays_0_0_ext_ram_wdata[26] ,
+    \data_arrays_0_0_ext_ram_wdata[25] ,
+    \data_arrays_0_0_ext_ram_wdata[24] ,
+    \data_arrays_0_0_ext_ram_wdata[23] ,
+    \data_arrays_0_0_ext_ram_wdata[22] ,
+    \data_arrays_0_0_ext_ram_wdata[21] ,
+    \data_arrays_0_0_ext_ram_wdata[20] ,
+    \data_arrays_0_0_ext_ram_wdata[19] ,
+    \data_arrays_0_0_ext_ram_wdata[18] ,
+    \data_arrays_0_0_ext_ram_wdata[17] ,
+    \data_arrays_0_0_ext_ram_wdata[16] ,
+    \data_arrays_0_0_ext_ram_wdata[15] ,
+    \data_arrays_0_0_ext_ram_wdata[14] ,
+    \data_arrays_0_0_ext_ram_wdata[13] ,
+    \data_arrays_0_0_ext_ram_wdata[12] ,
+    \data_arrays_0_0_ext_ram_wdata[11] ,
+    \data_arrays_0_0_ext_ram_wdata[10] ,
+    \data_arrays_0_0_ext_ram_wdata[9] ,
+    \data_arrays_0_0_ext_ram_wdata[8] ,
+    \data_arrays_0_0_ext_ram_wdata[7] ,
+    \data_arrays_0_0_ext_ram_wdata[6] ,
+    \data_arrays_0_0_ext_ram_wdata[5] ,
+    \data_arrays_0_0_ext_ram_wdata[4] ,
+    \data_arrays_0_0_ext_ram_wdata[3] ,
+    \data_arrays_0_0_ext_ram_wdata[2] ,
+    \data_arrays_0_0_ext_ram_wdata[1] ,
+    \data_arrays_0_0_ext_ram_wdata[0] }),
+    .data_arrays_0_0_ext_ram_wmask({\data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[0] }),
     .io_in({io_in[37],
     io_in[36],
     io_in[35],
@@ -563,6 +1425,154 @@ module user_project_wrapper (user_clock2,
     la_oenb[2],
     la_oenb[1],
     la_oenb[0]}),
+    .tag_array_ext_ram_addr({\tag_array_ext_ram_addr[7] ,
+    \tag_array_ext_ram_addr[6] ,
+    \tag_array_ext_ram_addr[5] ,
+    \tag_array_ext_ram_addr[4] ,
+    \tag_array_ext_ram_addr[3] ,
+    \tag_array_ext_ram_addr[2] ,
+    \tag_array_ext_ram_addr[1] ,
+    \tag_array_ext_ram_addr[0] }),
+    .tag_array_ext_ram_addr1({\tag_array_ext_ram_addr1[7] ,
+    \tag_array_ext_ram_addr1[6] ,
+    \tag_array_ext_ram_addr1[5] ,
+    \tag_array_ext_ram_addr1[4] ,
+    \tag_array_ext_ram_addr1[3] ,
+    \tag_array_ext_ram_addr1[2] ,
+    \tag_array_ext_ram_addr1[1] ,
+    \tag_array_ext_ram_addr1[0] }),
+    .tag_array_ext_ram_csb1({\tag_array_ext_ram_csb1[1] ,
+    \tag_array_ext_ram_csb1[0] }),
+    .tag_array_ext_ram_rdata0({\tag_array_ext_ram_rdata0[31] ,
+    \tag_array_ext_ram_rdata0[30] ,
+    \tag_array_ext_ram_rdata0[29] ,
+    \tag_array_ext_ram_rdata0[28] ,
+    \tag_array_ext_ram_rdata0[27] ,
+    \tag_array_ext_ram_rdata0[26] ,
+    \tag_array_ext_ram_rdata0[25] ,
+    \tag_array_ext_ram_rdata0[24] ,
+    \tag_array_ext_ram_rdata0[23] ,
+    \tag_array_ext_ram_rdata0[22] ,
+    \tag_array_ext_ram_rdata0[21] ,
+    \tag_array_ext_ram_rdata0[20] ,
+    \tag_array_ext_ram_rdata0[19] ,
+    \tag_array_ext_ram_rdata0[18] ,
+    \tag_array_ext_ram_rdata0[17] ,
+    \tag_array_ext_ram_rdata0[16] ,
+    \tag_array_ext_ram_rdata0[15] ,
+    \tag_array_ext_ram_rdata0[14] ,
+    \tag_array_ext_ram_rdata0[13] ,
+    \tag_array_ext_ram_rdata0[12] ,
+    \tag_array_ext_ram_rdata0[11] ,
+    \tag_array_ext_ram_rdata0[10] ,
+    \tag_array_ext_ram_rdata0[9] ,
+    \tag_array_ext_ram_rdata0[8] ,
+    \tag_array_ext_ram_rdata0[7] ,
+    \tag_array_ext_ram_rdata0[6] ,
+    \tag_array_ext_ram_rdata0[5] ,
+    \tag_array_ext_ram_rdata0[4] ,
+    \tag_array_ext_ram_rdata0[3] ,
+    \tag_array_ext_ram_rdata0[2] ,
+    \tag_array_ext_ram_rdata0[1] ,
+    \tag_array_ext_ram_rdata0[0] }),
+    .tag_array_ext_ram_rdata1({\tag_array_ext_ram_rdata1[31] ,
+    \tag_array_ext_ram_rdata1[30] ,
+    \tag_array_ext_ram_rdata1[29] ,
+    \tag_array_ext_ram_rdata1[28] ,
+    \tag_array_ext_ram_rdata1[27] ,
+    \tag_array_ext_ram_rdata1[26] ,
+    \tag_array_ext_ram_rdata1[25] ,
+    \tag_array_ext_ram_rdata1[24] ,
+    \tag_array_ext_ram_rdata1[23] ,
+    \tag_array_ext_ram_rdata1[22] ,
+    \tag_array_ext_ram_rdata1[21] ,
+    \tag_array_ext_ram_rdata1[20] ,
+    \tag_array_ext_ram_rdata1[19] ,
+    \tag_array_ext_ram_rdata1[18] ,
+    \tag_array_ext_ram_rdata1[17] ,
+    \tag_array_ext_ram_rdata1[16] ,
+    \tag_array_ext_ram_rdata1[15] ,
+    \tag_array_ext_ram_rdata1[14] ,
+    \tag_array_ext_ram_rdata1[13] ,
+    \tag_array_ext_ram_rdata1[12] ,
+    \tag_array_ext_ram_rdata1[11] ,
+    \tag_array_ext_ram_rdata1[10] ,
+    \tag_array_ext_ram_rdata1[9] ,
+    \tag_array_ext_ram_rdata1[8] ,
+    \tag_array_ext_ram_rdata1[7] ,
+    \tag_array_ext_ram_rdata1[6] ,
+    \tag_array_ext_ram_rdata1[5] ,
+    \tag_array_ext_ram_rdata1[4] ,
+    \tag_array_ext_ram_rdata1[3] ,
+    \tag_array_ext_ram_rdata1[2] ,
+    \tag_array_ext_ram_rdata1[1] ,
+    \tag_array_ext_ram_rdata1[0] }),
+    .tag_array_ext_ram_wdata({\tag_array_ext_ram_wdata[63] ,
+    \tag_array_ext_ram_wdata[62] ,
+    \tag_array_ext_ram_wdata[61] ,
+    \tag_array_ext_ram_wdata[60] ,
+    \tag_array_ext_ram_wdata[59] ,
+    \tag_array_ext_ram_wdata[58] ,
+    \tag_array_ext_ram_wdata[57] ,
+    \tag_array_ext_ram_wdata[56] ,
+    \tag_array_ext_ram_wdata[55] ,
+    \tag_array_ext_ram_wdata[54] ,
+    \tag_array_ext_ram_wdata[53] ,
+    \tag_array_ext_ram_wdata[52] ,
+    \tag_array_ext_ram_wdata[51] ,
+    \tag_array_ext_ram_wdata[50] ,
+    \tag_array_ext_ram_wdata[49] ,
+    \tag_array_ext_ram_wdata[48] ,
+    \tag_array_ext_ram_wdata[47] ,
+    \tag_array_ext_ram_wdata[46] ,
+    \tag_array_ext_ram_wdata[45] ,
+    \tag_array_ext_ram_wdata[44] ,
+    \tag_array_ext_ram_wdata[43] ,
+    \tag_array_ext_ram_wdata[42] ,
+    \tag_array_ext_ram_wdata[41] ,
+    \tag_array_ext_ram_wdata[40] ,
+    \tag_array_ext_ram_wdata[39] ,
+    \tag_array_ext_ram_wdata[38] ,
+    \tag_array_ext_ram_wdata[37] ,
+    \tag_array_ext_ram_wdata[36] ,
+    \tag_array_ext_ram_wdata[35] ,
+    \tag_array_ext_ram_wdata[34] ,
+    \tag_array_ext_ram_wdata[33] ,
+    \tag_array_ext_ram_wdata[32] ,
+    \tag_array_ext_ram_wdata[31] ,
+    \tag_array_ext_ram_wdata[30] ,
+    \tag_array_ext_ram_wdata[29] ,
+    \tag_array_ext_ram_wdata[28] ,
+    \tag_array_ext_ram_wdata[27] ,
+    \tag_array_ext_ram_wdata[26] ,
+    \tag_array_ext_ram_wdata[25] ,
+    \tag_array_ext_ram_wdata[24] ,
+    \tag_array_ext_ram_wdata[23] ,
+    \tag_array_ext_ram_wdata[22] ,
+    \tag_array_ext_ram_wdata[21] ,
+    \tag_array_ext_ram_wdata[20] ,
+    \tag_array_ext_ram_wdata[19] ,
+    \tag_array_ext_ram_wdata[18] ,
+    \tag_array_ext_ram_wdata[17] ,
+    \tag_array_ext_ram_wdata[16] ,
+    \tag_array_ext_ram_wdata[15] ,
+    \tag_array_ext_ram_wdata[14] ,
+    \tag_array_ext_ram_wdata[13] ,
+    \tag_array_ext_ram_wdata[12] ,
+    \tag_array_ext_ram_wdata[11] ,
+    \tag_array_ext_ram_wdata[10] ,
+    \tag_array_ext_ram_wdata[9] ,
+    \tag_array_ext_ram_wdata[8] ,
+    \tag_array_ext_ram_wdata[7] ,
+    \tag_array_ext_ram_wdata[6] ,
+    \tag_array_ext_ram_wdata[5] ,
+    \tag_array_ext_ram_wdata[4] ,
+    \tag_array_ext_ram_wdata[3] ,
+    \tag_array_ext_ram_wdata[2] ,
+    \tag_array_ext_ram_wdata[1] ,
+    \tag_array_ext_ram_wdata[0] }),
+    .tag_array_ext_ram_wmask({\tag_array_ext_ram_wmask[1] ,
+    \tag_array_ext_ram_wmask[0] }),
     .wbs_adr_i({wbs_adr_i[31],
     wbs_adr_i[30],
     wbs_adr_i[29],
@@ -663,4 +1673,1250 @@ module user_project_wrapper (user_clock2,
     wbs_sel_i[2],
     wbs_sel_i[1],
     wbs_sel_i[0]}));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram0h (.csb0(\data_arrays_0_0_ext_ram_csb[0] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[0] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[63] ,
+    \data_arrays_0_0_ext_ram_wdata[62] ,
+    \data_arrays_0_0_ext_ram_wdata[61] ,
+    \data_arrays_0_0_ext_ram_wdata[60] ,
+    \data_arrays_0_0_ext_ram_wdata[59] ,
+    \data_arrays_0_0_ext_ram_wdata[58] ,
+    \data_arrays_0_0_ext_ram_wdata[57] ,
+    \data_arrays_0_0_ext_ram_wdata[56] ,
+    \data_arrays_0_0_ext_ram_wdata[55] ,
+    \data_arrays_0_0_ext_ram_wdata[54] ,
+    \data_arrays_0_0_ext_ram_wdata[53] ,
+    \data_arrays_0_0_ext_ram_wdata[52] ,
+    \data_arrays_0_0_ext_ram_wdata[51] ,
+    \data_arrays_0_0_ext_ram_wdata[50] ,
+    \data_arrays_0_0_ext_ram_wdata[49] ,
+    \data_arrays_0_0_ext_ram_wdata[48] ,
+    \data_arrays_0_0_ext_ram_wdata[47] ,
+    \data_arrays_0_0_ext_ram_wdata[46] ,
+    \data_arrays_0_0_ext_ram_wdata[45] ,
+    \data_arrays_0_0_ext_ram_wdata[44] ,
+    \data_arrays_0_0_ext_ram_wdata[43] ,
+    \data_arrays_0_0_ext_ram_wdata[42] ,
+    \data_arrays_0_0_ext_ram_wdata[41] ,
+    \data_arrays_0_0_ext_ram_wdata[40] ,
+    \data_arrays_0_0_ext_ram_wdata[39] ,
+    \data_arrays_0_0_ext_ram_wdata[38] ,
+    \data_arrays_0_0_ext_ram_wdata[37] ,
+    \data_arrays_0_0_ext_ram_wdata[36] ,
+    \data_arrays_0_0_ext_ram_wdata[35] ,
+    \data_arrays_0_0_ext_ram_wdata[34] ,
+    \data_arrays_0_0_ext_ram_wdata[33] ,
+    \data_arrays_0_0_ext_ram_wdata[32] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata0[63] ,
+    \data_arrays_0_0_ext_ram_rdata0[62] ,
+    \data_arrays_0_0_ext_ram_rdata0[61] ,
+    \data_arrays_0_0_ext_ram_rdata0[60] ,
+    \data_arrays_0_0_ext_ram_rdata0[59] ,
+    \data_arrays_0_0_ext_ram_rdata0[58] ,
+    \data_arrays_0_0_ext_ram_rdata0[57] ,
+    \data_arrays_0_0_ext_ram_rdata0[56] ,
+    \data_arrays_0_0_ext_ram_rdata0[55] ,
+    \data_arrays_0_0_ext_ram_rdata0[54] ,
+    \data_arrays_0_0_ext_ram_rdata0[53] ,
+    \data_arrays_0_0_ext_ram_rdata0[52] ,
+    \data_arrays_0_0_ext_ram_rdata0[51] ,
+    \data_arrays_0_0_ext_ram_rdata0[50] ,
+    \data_arrays_0_0_ext_ram_rdata0[49] ,
+    \data_arrays_0_0_ext_ram_rdata0[48] ,
+    \data_arrays_0_0_ext_ram_rdata0[47] ,
+    \data_arrays_0_0_ext_ram_rdata0[46] ,
+    \data_arrays_0_0_ext_ram_rdata0[45] ,
+    \data_arrays_0_0_ext_ram_rdata0[44] ,
+    \data_arrays_0_0_ext_ram_rdata0[43] ,
+    \data_arrays_0_0_ext_ram_rdata0[42] ,
+    \data_arrays_0_0_ext_ram_rdata0[41] ,
+    \data_arrays_0_0_ext_ram_rdata0[40] ,
+    \data_arrays_0_0_ext_ram_rdata0[39] ,
+    \data_arrays_0_0_ext_ram_rdata0[38] ,
+    \data_arrays_0_0_ext_ram_rdata0[37] ,
+    \data_arrays_0_0_ext_ram_rdata0[36] ,
+    \data_arrays_0_0_ext_ram_rdata0[35] ,
+    \data_arrays_0_0_ext_ram_rdata0[34] ,
+    \data_arrays_0_0_ext_ram_rdata0[33] ,
+    \data_arrays_0_0_ext_ram_rdata0[32] }),
+    .dout1({_NC1,
+    _NC2,
+    _NC3,
+    _NC4,
+    _NC5,
+    _NC6,
+    _NC7,
+    _NC8,
+    _NC9,
+    _NC10,
+    _NC11,
+    _NC12,
+    _NC13,
+    _NC14,
+    _NC15,
+    _NC16,
+    _NC17,
+    _NC18,
+    _NC19,
+    _NC20,
+    _NC21,
+    _NC22,
+    _NC23,
+    _NC24,
+    _NC25,
+    _NC26,
+    _NC27,
+    _NC28,
+    _NC29,
+    _NC30,
+    _NC31,
+    _NC32}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram0l (.csb0(\data_arrays_0_0_ext_ram_csb[0] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[1] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[31] ,
+    \data_arrays_0_0_ext_ram_wdata[30] ,
+    \data_arrays_0_0_ext_ram_wdata[29] ,
+    \data_arrays_0_0_ext_ram_wdata[28] ,
+    \data_arrays_0_0_ext_ram_wdata[27] ,
+    \data_arrays_0_0_ext_ram_wdata[26] ,
+    \data_arrays_0_0_ext_ram_wdata[25] ,
+    \data_arrays_0_0_ext_ram_wdata[24] ,
+    \data_arrays_0_0_ext_ram_wdata[23] ,
+    \data_arrays_0_0_ext_ram_wdata[22] ,
+    \data_arrays_0_0_ext_ram_wdata[21] ,
+    \data_arrays_0_0_ext_ram_wdata[20] ,
+    \data_arrays_0_0_ext_ram_wdata[19] ,
+    \data_arrays_0_0_ext_ram_wdata[18] ,
+    \data_arrays_0_0_ext_ram_wdata[17] ,
+    \data_arrays_0_0_ext_ram_wdata[16] ,
+    \data_arrays_0_0_ext_ram_wdata[15] ,
+    \data_arrays_0_0_ext_ram_wdata[14] ,
+    \data_arrays_0_0_ext_ram_wdata[13] ,
+    \data_arrays_0_0_ext_ram_wdata[12] ,
+    \data_arrays_0_0_ext_ram_wdata[11] ,
+    \data_arrays_0_0_ext_ram_wdata[10] ,
+    \data_arrays_0_0_ext_ram_wdata[9] ,
+    \data_arrays_0_0_ext_ram_wdata[8] ,
+    \data_arrays_0_0_ext_ram_wdata[7] ,
+    \data_arrays_0_0_ext_ram_wdata[6] ,
+    \data_arrays_0_0_ext_ram_wdata[5] ,
+    \data_arrays_0_0_ext_ram_wdata[4] ,
+    \data_arrays_0_0_ext_ram_wdata[3] ,
+    \data_arrays_0_0_ext_ram_wdata[2] ,
+    \data_arrays_0_0_ext_ram_wdata[1] ,
+    \data_arrays_0_0_ext_ram_wdata[0] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata0[31] ,
+    \data_arrays_0_0_ext_ram_rdata0[30] ,
+    \data_arrays_0_0_ext_ram_rdata0[29] ,
+    \data_arrays_0_0_ext_ram_rdata0[28] ,
+    \data_arrays_0_0_ext_ram_rdata0[27] ,
+    \data_arrays_0_0_ext_ram_rdata0[26] ,
+    \data_arrays_0_0_ext_ram_rdata0[25] ,
+    \data_arrays_0_0_ext_ram_rdata0[24] ,
+    \data_arrays_0_0_ext_ram_rdata0[23] ,
+    \data_arrays_0_0_ext_ram_rdata0[22] ,
+    \data_arrays_0_0_ext_ram_rdata0[21] ,
+    \data_arrays_0_0_ext_ram_rdata0[20] ,
+    \data_arrays_0_0_ext_ram_rdata0[19] ,
+    \data_arrays_0_0_ext_ram_rdata0[18] ,
+    \data_arrays_0_0_ext_ram_rdata0[17] ,
+    \data_arrays_0_0_ext_ram_rdata0[16] ,
+    \data_arrays_0_0_ext_ram_rdata0[15] ,
+    \data_arrays_0_0_ext_ram_rdata0[14] ,
+    \data_arrays_0_0_ext_ram_rdata0[13] ,
+    \data_arrays_0_0_ext_ram_rdata0[12] ,
+    \data_arrays_0_0_ext_ram_rdata0[11] ,
+    \data_arrays_0_0_ext_ram_rdata0[10] ,
+    \data_arrays_0_0_ext_ram_rdata0[9] ,
+    \data_arrays_0_0_ext_ram_rdata0[8] ,
+    \data_arrays_0_0_ext_ram_rdata0[7] ,
+    \data_arrays_0_0_ext_ram_rdata0[6] ,
+    \data_arrays_0_0_ext_ram_rdata0[5] ,
+    \data_arrays_0_0_ext_ram_rdata0[4] ,
+    \data_arrays_0_0_ext_ram_rdata0[3] ,
+    \data_arrays_0_0_ext_ram_rdata0[2] ,
+    \data_arrays_0_0_ext_ram_rdata0[1] ,
+    \data_arrays_0_0_ext_ram_rdata0[0] }),
+    .dout1({_NC33,
+    _NC34,
+    _NC35,
+    _NC36,
+    _NC37,
+    _NC38,
+    _NC39,
+    _NC40,
+    _NC41,
+    _NC42,
+    _NC43,
+    _NC44,
+    _NC45,
+    _NC46,
+    _NC47,
+    _NC48,
+    _NC49,
+    _NC50,
+    _NC51,
+    _NC52,
+    _NC53,
+    _NC54,
+    _NC55,
+    _NC56,
+    _NC57,
+    _NC58,
+    _NC59,
+    _NC60,
+    _NC61,
+    _NC62,
+    _NC63,
+    _NC64}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram1h (.csb0(\data_arrays_0_0_ext_ram_csb[1] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[2] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[63] ,
+    \data_arrays_0_0_ext_ram_wdata[62] ,
+    \data_arrays_0_0_ext_ram_wdata[61] ,
+    \data_arrays_0_0_ext_ram_wdata[60] ,
+    \data_arrays_0_0_ext_ram_wdata[59] ,
+    \data_arrays_0_0_ext_ram_wdata[58] ,
+    \data_arrays_0_0_ext_ram_wdata[57] ,
+    \data_arrays_0_0_ext_ram_wdata[56] ,
+    \data_arrays_0_0_ext_ram_wdata[55] ,
+    \data_arrays_0_0_ext_ram_wdata[54] ,
+    \data_arrays_0_0_ext_ram_wdata[53] ,
+    \data_arrays_0_0_ext_ram_wdata[52] ,
+    \data_arrays_0_0_ext_ram_wdata[51] ,
+    \data_arrays_0_0_ext_ram_wdata[50] ,
+    \data_arrays_0_0_ext_ram_wdata[49] ,
+    \data_arrays_0_0_ext_ram_wdata[48] ,
+    \data_arrays_0_0_ext_ram_wdata[47] ,
+    \data_arrays_0_0_ext_ram_wdata[46] ,
+    \data_arrays_0_0_ext_ram_wdata[45] ,
+    \data_arrays_0_0_ext_ram_wdata[44] ,
+    \data_arrays_0_0_ext_ram_wdata[43] ,
+    \data_arrays_0_0_ext_ram_wdata[42] ,
+    \data_arrays_0_0_ext_ram_wdata[41] ,
+    \data_arrays_0_0_ext_ram_wdata[40] ,
+    \data_arrays_0_0_ext_ram_wdata[39] ,
+    \data_arrays_0_0_ext_ram_wdata[38] ,
+    \data_arrays_0_0_ext_ram_wdata[37] ,
+    \data_arrays_0_0_ext_ram_wdata[36] ,
+    \data_arrays_0_0_ext_ram_wdata[35] ,
+    \data_arrays_0_0_ext_ram_wdata[34] ,
+    \data_arrays_0_0_ext_ram_wdata[33] ,
+    \data_arrays_0_0_ext_ram_wdata[32] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata1[63] ,
+    \data_arrays_0_0_ext_ram_rdata1[62] ,
+    \data_arrays_0_0_ext_ram_rdata1[61] ,
+    \data_arrays_0_0_ext_ram_rdata1[60] ,
+    \data_arrays_0_0_ext_ram_rdata1[59] ,
+    \data_arrays_0_0_ext_ram_rdata1[58] ,
+    \data_arrays_0_0_ext_ram_rdata1[57] ,
+    \data_arrays_0_0_ext_ram_rdata1[56] ,
+    \data_arrays_0_0_ext_ram_rdata1[55] ,
+    \data_arrays_0_0_ext_ram_rdata1[54] ,
+    \data_arrays_0_0_ext_ram_rdata1[53] ,
+    \data_arrays_0_0_ext_ram_rdata1[52] ,
+    \data_arrays_0_0_ext_ram_rdata1[51] ,
+    \data_arrays_0_0_ext_ram_rdata1[50] ,
+    \data_arrays_0_0_ext_ram_rdata1[49] ,
+    \data_arrays_0_0_ext_ram_rdata1[48] ,
+    \data_arrays_0_0_ext_ram_rdata1[47] ,
+    \data_arrays_0_0_ext_ram_rdata1[46] ,
+    \data_arrays_0_0_ext_ram_rdata1[45] ,
+    \data_arrays_0_0_ext_ram_rdata1[44] ,
+    \data_arrays_0_0_ext_ram_rdata1[43] ,
+    \data_arrays_0_0_ext_ram_rdata1[42] ,
+    \data_arrays_0_0_ext_ram_rdata1[41] ,
+    \data_arrays_0_0_ext_ram_rdata1[40] ,
+    \data_arrays_0_0_ext_ram_rdata1[39] ,
+    \data_arrays_0_0_ext_ram_rdata1[38] ,
+    \data_arrays_0_0_ext_ram_rdata1[37] ,
+    \data_arrays_0_0_ext_ram_rdata1[36] ,
+    \data_arrays_0_0_ext_ram_rdata1[35] ,
+    \data_arrays_0_0_ext_ram_rdata1[34] ,
+    \data_arrays_0_0_ext_ram_rdata1[33] ,
+    \data_arrays_0_0_ext_ram_rdata1[32] }),
+    .dout1({_NC65,
+    _NC66,
+    _NC67,
+    _NC68,
+    _NC69,
+    _NC70,
+    _NC71,
+    _NC72,
+    _NC73,
+    _NC74,
+    _NC75,
+    _NC76,
+    _NC77,
+    _NC78,
+    _NC79,
+    _NC80,
+    _NC81,
+    _NC82,
+    _NC83,
+    _NC84,
+    _NC85,
+    _NC86,
+    _NC87,
+    _NC88,
+    _NC89,
+    _NC90,
+    _NC91,
+    _NC92,
+    _NC93,
+    _NC94,
+    _NC95,
+    _NC96}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram1l (.csb0(\data_arrays_0_0_ext_ram_csb[1] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[3] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[31] ,
+    \data_arrays_0_0_ext_ram_wdata[30] ,
+    \data_arrays_0_0_ext_ram_wdata[29] ,
+    \data_arrays_0_0_ext_ram_wdata[28] ,
+    \data_arrays_0_0_ext_ram_wdata[27] ,
+    \data_arrays_0_0_ext_ram_wdata[26] ,
+    \data_arrays_0_0_ext_ram_wdata[25] ,
+    \data_arrays_0_0_ext_ram_wdata[24] ,
+    \data_arrays_0_0_ext_ram_wdata[23] ,
+    \data_arrays_0_0_ext_ram_wdata[22] ,
+    \data_arrays_0_0_ext_ram_wdata[21] ,
+    \data_arrays_0_0_ext_ram_wdata[20] ,
+    \data_arrays_0_0_ext_ram_wdata[19] ,
+    \data_arrays_0_0_ext_ram_wdata[18] ,
+    \data_arrays_0_0_ext_ram_wdata[17] ,
+    \data_arrays_0_0_ext_ram_wdata[16] ,
+    \data_arrays_0_0_ext_ram_wdata[15] ,
+    \data_arrays_0_0_ext_ram_wdata[14] ,
+    \data_arrays_0_0_ext_ram_wdata[13] ,
+    \data_arrays_0_0_ext_ram_wdata[12] ,
+    \data_arrays_0_0_ext_ram_wdata[11] ,
+    \data_arrays_0_0_ext_ram_wdata[10] ,
+    \data_arrays_0_0_ext_ram_wdata[9] ,
+    \data_arrays_0_0_ext_ram_wdata[8] ,
+    \data_arrays_0_0_ext_ram_wdata[7] ,
+    \data_arrays_0_0_ext_ram_wdata[6] ,
+    \data_arrays_0_0_ext_ram_wdata[5] ,
+    \data_arrays_0_0_ext_ram_wdata[4] ,
+    \data_arrays_0_0_ext_ram_wdata[3] ,
+    \data_arrays_0_0_ext_ram_wdata[2] ,
+    \data_arrays_0_0_ext_ram_wdata[1] ,
+    \data_arrays_0_0_ext_ram_wdata[0] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata1[31] ,
+    \data_arrays_0_0_ext_ram_rdata1[30] ,
+    \data_arrays_0_0_ext_ram_rdata1[29] ,
+    \data_arrays_0_0_ext_ram_rdata1[28] ,
+    \data_arrays_0_0_ext_ram_rdata1[27] ,
+    \data_arrays_0_0_ext_ram_rdata1[26] ,
+    \data_arrays_0_0_ext_ram_rdata1[25] ,
+    \data_arrays_0_0_ext_ram_rdata1[24] ,
+    \data_arrays_0_0_ext_ram_rdata1[23] ,
+    \data_arrays_0_0_ext_ram_rdata1[22] ,
+    \data_arrays_0_0_ext_ram_rdata1[21] ,
+    \data_arrays_0_0_ext_ram_rdata1[20] ,
+    \data_arrays_0_0_ext_ram_rdata1[19] ,
+    \data_arrays_0_0_ext_ram_rdata1[18] ,
+    \data_arrays_0_0_ext_ram_rdata1[17] ,
+    \data_arrays_0_0_ext_ram_rdata1[16] ,
+    \data_arrays_0_0_ext_ram_rdata1[15] ,
+    \data_arrays_0_0_ext_ram_rdata1[14] ,
+    \data_arrays_0_0_ext_ram_rdata1[13] ,
+    \data_arrays_0_0_ext_ram_rdata1[12] ,
+    \data_arrays_0_0_ext_ram_rdata1[11] ,
+    \data_arrays_0_0_ext_ram_rdata1[10] ,
+    \data_arrays_0_0_ext_ram_rdata1[9] ,
+    \data_arrays_0_0_ext_ram_rdata1[8] ,
+    \data_arrays_0_0_ext_ram_rdata1[7] ,
+    \data_arrays_0_0_ext_ram_rdata1[6] ,
+    \data_arrays_0_0_ext_ram_rdata1[5] ,
+    \data_arrays_0_0_ext_ram_rdata1[4] ,
+    \data_arrays_0_0_ext_ram_rdata1[3] ,
+    \data_arrays_0_0_ext_ram_rdata1[2] ,
+    \data_arrays_0_0_ext_ram_rdata1[1] ,
+    \data_arrays_0_0_ext_ram_rdata1[0] }),
+    .dout1({_NC97,
+    _NC98,
+    _NC99,
+    _NC100,
+    _NC101,
+    _NC102,
+    _NC103,
+    _NC104,
+    _NC105,
+    _NC106,
+    _NC107,
+    _NC108,
+    _NC109,
+    _NC110,
+    _NC111,
+    _NC112,
+    _NC113,
+    _NC114,
+    _NC115,
+    _NC116,
+    _NC117,
+    _NC118,
+    _NC119,
+    _NC120,
+    _NC121,
+    _NC122,
+    _NC123,
+    _NC124,
+    _NC125,
+    _NC126,
+    _NC127,
+    _NC128}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram2h (.csb0(\data_arrays_0_0_ext_ram_csb[2] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[4] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[63] ,
+    \data_arrays_0_0_ext_ram_wdata[62] ,
+    \data_arrays_0_0_ext_ram_wdata[61] ,
+    \data_arrays_0_0_ext_ram_wdata[60] ,
+    \data_arrays_0_0_ext_ram_wdata[59] ,
+    \data_arrays_0_0_ext_ram_wdata[58] ,
+    \data_arrays_0_0_ext_ram_wdata[57] ,
+    \data_arrays_0_0_ext_ram_wdata[56] ,
+    \data_arrays_0_0_ext_ram_wdata[55] ,
+    \data_arrays_0_0_ext_ram_wdata[54] ,
+    \data_arrays_0_0_ext_ram_wdata[53] ,
+    \data_arrays_0_0_ext_ram_wdata[52] ,
+    \data_arrays_0_0_ext_ram_wdata[51] ,
+    \data_arrays_0_0_ext_ram_wdata[50] ,
+    \data_arrays_0_0_ext_ram_wdata[49] ,
+    \data_arrays_0_0_ext_ram_wdata[48] ,
+    \data_arrays_0_0_ext_ram_wdata[47] ,
+    \data_arrays_0_0_ext_ram_wdata[46] ,
+    \data_arrays_0_0_ext_ram_wdata[45] ,
+    \data_arrays_0_0_ext_ram_wdata[44] ,
+    \data_arrays_0_0_ext_ram_wdata[43] ,
+    \data_arrays_0_0_ext_ram_wdata[42] ,
+    \data_arrays_0_0_ext_ram_wdata[41] ,
+    \data_arrays_0_0_ext_ram_wdata[40] ,
+    \data_arrays_0_0_ext_ram_wdata[39] ,
+    \data_arrays_0_0_ext_ram_wdata[38] ,
+    \data_arrays_0_0_ext_ram_wdata[37] ,
+    \data_arrays_0_0_ext_ram_wdata[36] ,
+    \data_arrays_0_0_ext_ram_wdata[35] ,
+    \data_arrays_0_0_ext_ram_wdata[34] ,
+    \data_arrays_0_0_ext_ram_wdata[33] ,
+    \data_arrays_0_0_ext_ram_wdata[32] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata2[63] ,
+    \data_arrays_0_0_ext_ram_rdata2[62] ,
+    \data_arrays_0_0_ext_ram_rdata2[61] ,
+    \data_arrays_0_0_ext_ram_rdata2[60] ,
+    \data_arrays_0_0_ext_ram_rdata2[59] ,
+    \data_arrays_0_0_ext_ram_rdata2[58] ,
+    \data_arrays_0_0_ext_ram_rdata2[57] ,
+    \data_arrays_0_0_ext_ram_rdata2[56] ,
+    \data_arrays_0_0_ext_ram_rdata2[55] ,
+    \data_arrays_0_0_ext_ram_rdata2[54] ,
+    \data_arrays_0_0_ext_ram_rdata2[53] ,
+    \data_arrays_0_0_ext_ram_rdata2[52] ,
+    \data_arrays_0_0_ext_ram_rdata2[51] ,
+    \data_arrays_0_0_ext_ram_rdata2[50] ,
+    \data_arrays_0_0_ext_ram_rdata2[49] ,
+    \data_arrays_0_0_ext_ram_rdata2[48] ,
+    \data_arrays_0_0_ext_ram_rdata2[47] ,
+    \data_arrays_0_0_ext_ram_rdata2[46] ,
+    \data_arrays_0_0_ext_ram_rdata2[45] ,
+    \data_arrays_0_0_ext_ram_rdata2[44] ,
+    \data_arrays_0_0_ext_ram_rdata2[43] ,
+    \data_arrays_0_0_ext_ram_rdata2[42] ,
+    \data_arrays_0_0_ext_ram_rdata2[41] ,
+    \data_arrays_0_0_ext_ram_rdata2[40] ,
+    \data_arrays_0_0_ext_ram_rdata2[39] ,
+    \data_arrays_0_0_ext_ram_rdata2[38] ,
+    \data_arrays_0_0_ext_ram_rdata2[37] ,
+    \data_arrays_0_0_ext_ram_rdata2[36] ,
+    \data_arrays_0_0_ext_ram_rdata2[35] ,
+    \data_arrays_0_0_ext_ram_rdata2[34] ,
+    \data_arrays_0_0_ext_ram_rdata2[33] ,
+    \data_arrays_0_0_ext_ram_rdata2[32] }),
+    .dout1({_NC129,
+    _NC130,
+    _NC131,
+    _NC132,
+    _NC133,
+    _NC134,
+    _NC135,
+    _NC136,
+    _NC137,
+    _NC138,
+    _NC139,
+    _NC140,
+    _NC141,
+    _NC142,
+    _NC143,
+    _NC144,
+    _NC145,
+    _NC146,
+    _NC147,
+    _NC148,
+    _NC149,
+    _NC150,
+    _NC151,
+    _NC152,
+    _NC153,
+    _NC154,
+    _NC155,
+    _NC156,
+    _NC157,
+    _NC158,
+    _NC159,
+    _NC160}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram2l (.csb0(\data_arrays_0_0_ext_ram_csb[2] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[5] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[31] ,
+    \data_arrays_0_0_ext_ram_wdata[30] ,
+    \data_arrays_0_0_ext_ram_wdata[29] ,
+    \data_arrays_0_0_ext_ram_wdata[28] ,
+    \data_arrays_0_0_ext_ram_wdata[27] ,
+    \data_arrays_0_0_ext_ram_wdata[26] ,
+    \data_arrays_0_0_ext_ram_wdata[25] ,
+    \data_arrays_0_0_ext_ram_wdata[24] ,
+    \data_arrays_0_0_ext_ram_wdata[23] ,
+    \data_arrays_0_0_ext_ram_wdata[22] ,
+    \data_arrays_0_0_ext_ram_wdata[21] ,
+    \data_arrays_0_0_ext_ram_wdata[20] ,
+    \data_arrays_0_0_ext_ram_wdata[19] ,
+    \data_arrays_0_0_ext_ram_wdata[18] ,
+    \data_arrays_0_0_ext_ram_wdata[17] ,
+    \data_arrays_0_0_ext_ram_wdata[16] ,
+    \data_arrays_0_0_ext_ram_wdata[15] ,
+    \data_arrays_0_0_ext_ram_wdata[14] ,
+    \data_arrays_0_0_ext_ram_wdata[13] ,
+    \data_arrays_0_0_ext_ram_wdata[12] ,
+    \data_arrays_0_0_ext_ram_wdata[11] ,
+    \data_arrays_0_0_ext_ram_wdata[10] ,
+    \data_arrays_0_0_ext_ram_wdata[9] ,
+    \data_arrays_0_0_ext_ram_wdata[8] ,
+    \data_arrays_0_0_ext_ram_wdata[7] ,
+    \data_arrays_0_0_ext_ram_wdata[6] ,
+    \data_arrays_0_0_ext_ram_wdata[5] ,
+    \data_arrays_0_0_ext_ram_wdata[4] ,
+    \data_arrays_0_0_ext_ram_wdata[3] ,
+    \data_arrays_0_0_ext_ram_wdata[2] ,
+    \data_arrays_0_0_ext_ram_wdata[1] ,
+    \data_arrays_0_0_ext_ram_wdata[0] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata2[31] ,
+    \data_arrays_0_0_ext_ram_rdata2[30] ,
+    \data_arrays_0_0_ext_ram_rdata2[29] ,
+    \data_arrays_0_0_ext_ram_rdata2[28] ,
+    \data_arrays_0_0_ext_ram_rdata2[27] ,
+    \data_arrays_0_0_ext_ram_rdata2[26] ,
+    \data_arrays_0_0_ext_ram_rdata2[25] ,
+    \data_arrays_0_0_ext_ram_rdata2[24] ,
+    \data_arrays_0_0_ext_ram_rdata2[23] ,
+    \data_arrays_0_0_ext_ram_rdata2[22] ,
+    \data_arrays_0_0_ext_ram_rdata2[21] ,
+    \data_arrays_0_0_ext_ram_rdata2[20] ,
+    \data_arrays_0_0_ext_ram_rdata2[19] ,
+    \data_arrays_0_0_ext_ram_rdata2[18] ,
+    \data_arrays_0_0_ext_ram_rdata2[17] ,
+    \data_arrays_0_0_ext_ram_rdata2[16] ,
+    \data_arrays_0_0_ext_ram_rdata2[15] ,
+    \data_arrays_0_0_ext_ram_rdata2[14] ,
+    \data_arrays_0_0_ext_ram_rdata2[13] ,
+    \data_arrays_0_0_ext_ram_rdata2[12] ,
+    \data_arrays_0_0_ext_ram_rdata2[11] ,
+    \data_arrays_0_0_ext_ram_rdata2[10] ,
+    \data_arrays_0_0_ext_ram_rdata2[9] ,
+    \data_arrays_0_0_ext_ram_rdata2[8] ,
+    \data_arrays_0_0_ext_ram_rdata2[7] ,
+    \data_arrays_0_0_ext_ram_rdata2[6] ,
+    \data_arrays_0_0_ext_ram_rdata2[5] ,
+    \data_arrays_0_0_ext_ram_rdata2[4] ,
+    \data_arrays_0_0_ext_ram_rdata2[3] ,
+    \data_arrays_0_0_ext_ram_rdata2[2] ,
+    \data_arrays_0_0_ext_ram_rdata2[1] ,
+    \data_arrays_0_0_ext_ram_rdata2[0] }),
+    .dout1({_NC161,
+    _NC162,
+    _NC163,
+    _NC164,
+    _NC165,
+    _NC166,
+    _NC167,
+    _NC168,
+    _NC169,
+    _NC170,
+    _NC171,
+    _NC172,
+    _NC173,
+    _NC174,
+    _NC175,
+    _NC176,
+    _NC177,
+    _NC178,
+    _NC179,
+    _NC180,
+    _NC181,
+    _NC182,
+    _NC183,
+    _NC184,
+    _NC185,
+    _NC186,
+    _NC187,
+    _NC188,
+    _NC189,
+    _NC190,
+    _NC191,
+    _NC192}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram3h (.csb0(\data_arrays_0_0_ext_ram_csb[3] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[6] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[63] ,
+    \data_arrays_0_0_ext_ram_wdata[62] ,
+    \data_arrays_0_0_ext_ram_wdata[61] ,
+    \data_arrays_0_0_ext_ram_wdata[60] ,
+    \data_arrays_0_0_ext_ram_wdata[59] ,
+    \data_arrays_0_0_ext_ram_wdata[58] ,
+    \data_arrays_0_0_ext_ram_wdata[57] ,
+    \data_arrays_0_0_ext_ram_wdata[56] ,
+    \data_arrays_0_0_ext_ram_wdata[55] ,
+    \data_arrays_0_0_ext_ram_wdata[54] ,
+    \data_arrays_0_0_ext_ram_wdata[53] ,
+    \data_arrays_0_0_ext_ram_wdata[52] ,
+    \data_arrays_0_0_ext_ram_wdata[51] ,
+    \data_arrays_0_0_ext_ram_wdata[50] ,
+    \data_arrays_0_0_ext_ram_wdata[49] ,
+    \data_arrays_0_0_ext_ram_wdata[48] ,
+    \data_arrays_0_0_ext_ram_wdata[47] ,
+    \data_arrays_0_0_ext_ram_wdata[46] ,
+    \data_arrays_0_0_ext_ram_wdata[45] ,
+    \data_arrays_0_0_ext_ram_wdata[44] ,
+    \data_arrays_0_0_ext_ram_wdata[43] ,
+    \data_arrays_0_0_ext_ram_wdata[42] ,
+    \data_arrays_0_0_ext_ram_wdata[41] ,
+    \data_arrays_0_0_ext_ram_wdata[40] ,
+    \data_arrays_0_0_ext_ram_wdata[39] ,
+    \data_arrays_0_0_ext_ram_wdata[38] ,
+    \data_arrays_0_0_ext_ram_wdata[37] ,
+    \data_arrays_0_0_ext_ram_wdata[36] ,
+    \data_arrays_0_0_ext_ram_wdata[35] ,
+    \data_arrays_0_0_ext_ram_wdata[34] ,
+    \data_arrays_0_0_ext_ram_wdata[33] ,
+    \data_arrays_0_0_ext_ram_wdata[32] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata3[63] ,
+    \data_arrays_0_0_ext_ram_rdata3[62] ,
+    \data_arrays_0_0_ext_ram_rdata3[61] ,
+    \data_arrays_0_0_ext_ram_rdata3[60] ,
+    \data_arrays_0_0_ext_ram_rdata3[59] ,
+    \data_arrays_0_0_ext_ram_rdata3[58] ,
+    \data_arrays_0_0_ext_ram_rdata3[57] ,
+    \data_arrays_0_0_ext_ram_rdata3[56] ,
+    \data_arrays_0_0_ext_ram_rdata3[55] ,
+    \data_arrays_0_0_ext_ram_rdata3[54] ,
+    \data_arrays_0_0_ext_ram_rdata3[53] ,
+    \data_arrays_0_0_ext_ram_rdata3[52] ,
+    \data_arrays_0_0_ext_ram_rdata3[51] ,
+    \data_arrays_0_0_ext_ram_rdata3[50] ,
+    \data_arrays_0_0_ext_ram_rdata3[49] ,
+    \data_arrays_0_0_ext_ram_rdata3[48] ,
+    \data_arrays_0_0_ext_ram_rdata3[47] ,
+    \data_arrays_0_0_ext_ram_rdata3[46] ,
+    \data_arrays_0_0_ext_ram_rdata3[45] ,
+    \data_arrays_0_0_ext_ram_rdata3[44] ,
+    \data_arrays_0_0_ext_ram_rdata3[43] ,
+    \data_arrays_0_0_ext_ram_rdata3[42] ,
+    \data_arrays_0_0_ext_ram_rdata3[41] ,
+    \data_arrays_0_0_ext_ram_rdata3[40] ,
+    \data_arrays_0_0_ext_ram_rdata3[39] ,
+    \data_arrays_0_0_ext_ram_rdata3[38] ,
+    \data_arrays_0_0_ext_ram_rdata3[37] ,
+    \data_arrays_0_0_ext_ram_rdata3[36] ,
+    \data_arrays_0_0_ext_ram_rdata3[35] ,
+    \data_arrays_0_0_ext_ram_rdata3[34] ,
+    \data_arrays_0_0_ext_ram_rdata3[33] ,
+    \data_arrays_0_0_ext_ram_rdata3[32] }),
+    .dout1({_NC193,
+    _NC194,
+    _NC195,
+    _NC196,
+    _NC197,
+    _NC198,
+    _NC199,
+    _NC200,
+    _NC201,
+    _NC202,
+    _NC203,
+    _NC204,
+    _NC205,
+    _NC206,
+    _NC207,
+    _NC208,
+    _NC209,
+    _NC210,
+    _NC211,
+    _NC212,
+    _NC213,
+    _NC214,
+    _NC215,
+    _NC216,
+    _NC217,
+    _NC218,
+    _NC219,
+    _NC220,
+    _NC221,
+    _NC222,
+    _NC223,
+    _NC224}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] ,
+    \data_arrays_0_0_ext_ram_wmask[1] }));
+ sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram3l (.csb0(\data_arrays_0_0_ext_ram_csb[3] ),
+    .csb1(\data_arrays_0_0_ext_ram_csb1[7] ),
+    .web0(data_arrays_0_0_ext_ram_web),
+    .clk0(data_arrays_0_0_ext_ram_clk),
+    .clk1(data_arrays_0_0_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
+    \data_arrays_0_0_ext_ram_addr[7] ,
+    \data_arrays_0_0_ext_ram_addr[6] ,
+    \data_arrays_0_0_ext_ram_addr[5] ,
+    \data_arrays_0_0_ext_ram_addr[4] ,
+    \data_arrays_0_0_ext_ram_addr[3] ,
+    \data_arrays_0_0_ext_ram_addr[2] ,
+    \data_arrays_0_0_ext_ram_addr[1] ,
+    \data_arrays_0_0_ext_ram_addr[0] }),
+    .addr1({\data_arrays_0_0_ext_ram_addr1[8] ,
+    \data_arrays_0_0_ext_ram_addr1[7] ,
+    \data_arrays_0_0_ext_ram_addr1[6] ,
+    \data_arrays_0_0_ext_ram_addr1[5] ,
+    \data_arrays_0_0_ext_ram_addr1[4] ,
+    \data_arrays_0_0_ext_ram_addr1[3] ,
+    \data_arrays_0_0_ext_ram_addr1[2] ,
+    \data_arrays_0_0_ext_ram_addr1[1] ,
+    \data_arrays_0_0_ext_ram_addr1[0] }),
+    .din0({\data_arrays_0_0_ext_ram_wdata[31] ,
+    \data_arrays_0_0_ext_ram_wdata[30] ,
+    \data_arrays_0_0_ext_ram_wdata[29] ,
+    \data_arrays_0_0_ext_ram_wdata[28] ,
+    \data_arrays_0_0_ext_ram_wdata[27] ,
+    \data_arrays_0_0_ext_ram_wdata[26] ,
+    \data_arrays_0_0_ext_ram_wdata[25] ,
+    \data_arrays_0_0_ext_ram_wdata[24] ,
+    \data_arrays_0_0_ext_ram_wdata[23] ,
+    \data_arrays_0_0_ext_ram_wdata[22] ,
+    \data_arrays_0_0_ext_ram_wdata[21] ,
+    \data_arrays_0_0_ext_ram_wdata[20] ,
+    \data_arrays_0_0_ext_ram_wdata[19] ,
+    \data_arrays_0_0_ext_ram_wdata[18] ,
+    \data_arrays_0_0_ext_ram_wdata[17] ,
+    \data_arrays_0_0_ext_ram_wdata[16] ,
+    \data_arrays_0_0_ext_ram_wdata[15] ,
+    \data_arrays_0_0_ext_ram_wdata[14] ,
+    \data_arrays_0_0_ext_ram_wdata[13] ,
+    \data_arrays_0_0_ext_ram_wdata[12] ,
+    \data_arrays_0_0_ext_ram_wdata[11] ,
+    \data_arrays_0_0_ext_ram_wdata[10] ,
+    \data_arrays_0_0_ext_ram_wdata[9] ,
+    \data_arrays_0_0_ext_ram_wdata[8] ,
+    \data_arrays_0_0_ext_ram_wdata[7] ,
+    \data_arrays_0_0_ext_ram_wdata[6] ,
+    \data_arrays_0_0_ext_ram_wdata[5] ,
+    \data_arrays_0_0_ext_ram_wdata[4] ,
+    \data_arrays_0_0_ext_ram_wdata[3] ,
+    \data_arrays_0_0_ext_ram_wdata[2] ,
+    \data_arrays_0_0_ext_ram_wdata[1] ,
+    \data_arrays_0_0_ext_ram_wdata[0] }),
+    .dout0({\data_arrays_0_0_ext_ram_rdata3[31] ,
+    \data_arrays_0_0_ext_ram_rdata3[30] ,
+    \data_arrays_0_0_ext_ram_rdata3[29] ,
+    \data_arrays_0_0_ext_ram_rdata3[28] ,
+    \data_arrays_0_0_ext_ram_rdata3[27] ,
+    \data_arrays_0_0_ext_ram_rdata3[26] ,
+    \data_arrays_0_0_ext_ram_rdata3[25] ,
+    \data_arrays_0_0_ext_ram_rdata3[24] ,
+    \data_arrays_0_0_ext_ram_rdata3[23] ,
+    \data_arrays_0_0_ext_ram_rdata3[22] ,
+    \data_arrays_0_0_ext_ram_rdata3[21] ,
+    \data_arrays_0_0_ext_ram_rdata3[20] ,
+    \data_arrays_0_0_ext_ram_rdata3[19] ,
+    \data_arrays_0_0_ext_ram_rdata3[18] ,
+    \data_arrays_0_0_ext_ram_rdata3[17] ,
+    \data_arrays_0_0_ext_ram_rdata3[16] ,
+    \data_arrays_0_0_ext_ram_rdata3[15] ,
+    \data_arrays_0_0_ext_ram_rdata3[14] ,
+    \data_arrays_0_0_ext_ram_rdata3[13] ,
+    \data_arrays_0_0_ext_ram_rdata3[12] ,
+    \data_arrays_0_0_ext_ram_rdata3[11] ,
+    \data_arrays_0_0_ext_ram_rdata3[10] ,
+    \data_arrays_0_0_ext_ram_rdata3[9] ,
+    \data_arrays_0_0_ext_ram_rdata3[8] ,
+    \data_arrays_0_0_ext_ram_rdata3[7] ,
+    \data_arrays_0_0_ext_ram_rdata3[6] ,
+    \data_arrays_0_0_ext_ram_rdata3[5] ,
+    \data_arrays_0_0_ext_ram_rdata3[4] ,
+    \data_arrays_0_0_ext_ram_rdata3[3] ,
+    \data_arrays_0_0_ext_ram_rdata3[2] ,
+    \data_arrays_0_0_ext_ram_rdata3[1] ,
+    \data_arrays_0_0_ext_ram_rdata3[0] }),
+    .dout1({_NC225,
+    _NC226,
+    _NC227,
+    _NC228,
+    _NC229,
+    _NC230,
+    _NC231,
+    _NC232,
+    _NC233,
+    _NC234,
+    _NC235,
+    _NC236,
+    _NC237,
+    _NC238,
+    _NC239,
+    _NC240,
+    _NC241,
+    _NC242,
+    _NC243,
+    _NC244,
+    _NC245,
+    _NC246,
+    _NC247,
+    _NC248,
+    _NC249,
+    _NC250,
+    _NC251,
+    _NC252,
+    _NC253,
+    _NC254,
+    _NC255,
+    _NC256}),
+    .wmask0({\data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] ,
+    \data_arrays_0_0_ext_ram_wmask[0] }));
+ sky130_sram_1kbyte_1rw1r_32x256_8 tag_array_ext_ram0h (.csb0(tag_array_ext_ram_csb),
+    .csb1(\tag_array_ext_ram_csb1[1] ),
+    .web0(tag_array_ext_ram_web),
+    .clk0(tag_array_ext_ram_clk),
+    .clk1(tag_array_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\tag_array_ext_ram_addr[7] ,
+    \tag_array_ext_ram_addr[6] ,
+    \tag_array_ext_ram_addr[5] ,
+    \tag_array_ext_ram_addr[4] ,
+    \tag_array_ext_ram_addr[3] ,
+    \tag_array_ext_ram_addr[2] ,
+    \tag_array_ext_ram_addr[1] ,
+    \tag_array_ext_ram_addr[0] }),
+    .addr1({\tag_array_ext_ram_addr1[7] ,
+    \tag_array_ext_ram_addr1[6] ,
+    \tag_array_ext_ram_addr1[5] ,
+    \tag_array_ext_ram_addr1[4] ,
+    \tag_array_ext_ram_addr1[3] ,
+    \tag_array_ext_ram_addr1[2] ,
+    \tag_array_ext_ram_addr1[1] ,
+    \tag_array_ext_ram_addr1[0] }),
+    .din0({\tag_array_ext_ram_wdata[63] ,
+    \tag_array_ext_ram_wdata[62] ,
+    \tag_array_ext_ram_wdata[61] ,
+    \tag_array_ext_ram_wdata[60] ,
+    \tag_array_ext_ram_wdata[59] ,
+    \tag_array_ext_ram_wdata[58] ,
+    \tag_array_ext_ram_wdata[57] ,
+    \tag_array_ext_ram_wdata[56] ,
+    \tag_array_ext_ram_wdata[55] ,
+    \tag_array_ext_ram_wdata[54] ,
+    \tag_array_ext_ram_wdata[53] ,
+    \tag_array_ext_ram_wdata[52] ,
+    \tag_array_ext_ram_wdata[51] ,
+    \tag_array_ext_ram_wdata[50] ,
+    \tag_array_ext_ram_wdata[49] ,
+    \tag_array_ext_ram_wdata[48] ,
+    \tag_array_ext_ram_wdata[47] ,
+    \tag_array_ext_ram_wdata[46] ,
+    \tag_array_ext_ram_wdata[45] ,
+    \tag_array_ext_ram_wdata[44] ,
+    \tag_array_ext_ram_wdata[43] ,
+    \tag_array_ext_ram_wdata[42] ,
+    \tag_array_ext_ram_wdata[41] ,
+    \tag_array_ext_ram_wdata[40] ,
+    \tag_array_ext_ram_wdata[39] ,
+    \tag_array_ext_ram_wdata[38] ,
+    \tag_array_ext_ram_wdata[37] ,
+    \tag_array_ext_ram_wdata[36] ,
+    \tag_array_ext_ram_wdata[35] ,
+    \tag_array_ext_ram_wdata[34] ,
+    \tag_array_ext_ram_wdata[33] ,
+    \tag_array_ext_ram_wdata[32] }),
+    .dout0({\tag_array_ext_ram_rdata1[31] ,
+    \tag_array_ext_ram_rdata1[30] ,
+    \tag_array_ext_ram_rdata1[29] ,
+    \tag_array_ext_ram_rdata1[28] ,
+    \tag_array_ext_ram_rdata1[27] ,
+    \tag_array_ext_ram_rdata1[26] ,
+    \tag_array_ext_ram_rdata1[25] ,
+    \tag_array_ext_ram_rdata1[24] ,
+    \tag_array_ext_ram_rdata1[23] ,
+    \tag_array_ext_ram_rdata1[22] ,
+    \tag_array_ext_ram_rdata1[21] ,
+    \tag_array_ext_ram_rdata1[20] ,
+    \tag_array_ext_ram_rdata1[19] ,
+    \tag_array_ext_ram_rdata1[18] ,
+    \tag_array_ext_ram_rdata1[17] ,
+    \tag_array_ext_ram_rdata1[16] ,
+    \tag_array_ext_ram_rdata1[15] ,
+    \tag_array_ext_ram_rdata1[14] ,
+    \tag_array_ext_ram_rdata1[13] ,
+    \tag_array_ext_ram_rdata1[12] ,
+    \tag_array_ext_ram_rdata1[11] ,
+    \tag_array_ext_ram_rdata1[10] ,
+    \tag_array_ext_ram_rdata1[9] ,
+    \tag_array_ext_ram_rdata1[8] ,
+    \tag_array_ext_ram_rdata1[7] ,
+    \tag_array_ext_ram_rdata1[6] ,
+    \tag_array_ext_ram_rdata1[5] ,
+    \tag_array_ext_ram_rdata1[4] ,
+    \tag_array_ext_ram_rdata1[3] ,
+    \tag_array_ext_ram_rdata1[2] ,
+    \tag_array_ext_ram_rdata1[1] ,
+    \tag_array_ext_ram_rdata1[0] }),
+    .dout1({_NC257,
+    _NC258,
+    _NC259,
+    _NC260,
+    _NC261,
+    _NC262,
+    _NC263,
+    _NC264,
+    _NC265,
+    _NC266,
+    _NC267,
+    _NC268,
+    _NC269,
+    _NC270,
+    _NC271,
+    _NC272,
+    _NC273,
+    _NC274,
+    _NC275,
+    _NC276,
+    _NC277,
+    _NC278,
+    _NC279,
+    _NC280,
+    _NC281,
+    _NC282,
+    _NC283,
+    _NC284,
+    _NC285,
+    _NC286,
+    _NC287,
+    _NC288}),
+    .wmask0({\tag_array_ext_ram_wmask[1] ,
+    \tag_array_ext_ram_wmask[1] ,
+    \tag_array_ext_ram_wmask[1] ,
+    \tag_array_ext_ram_wmask[1] }));
+ sky130_sram_1kbyte_1rw1r_32x256_8 tag_array_ext_ram0l (.csb0(tag_array_ext_ram_csb),
+    .csb1(\tag_array_ext_ram_csb1[0] ),
+    .web0(tag_array_ext_ram_web),
+    .clk0(tag_array_ext_ram_clk),
+    .clk1(tag_array_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .addr0({\tag_array_ext_ram_addr[7] ,
+    \tag_array_ext_ram_addr[6] ,
+    \tag_array_ext_ram_addr[5] ,
+    \tag_array_ext_ram_addr[4] ,
+    \tag_array_ext_ram_addr[3] ,
+    \tag_array_ext_ram_addr[2] ,
+    \tag_array_ext_ram_addr[1] ,
+    \tag_array_ext_ram_addr[0] }),
+    .addr1({\tag_array_ext_ram_addr1[7] ,
+    \tag_array_ext_ram_addr1[6] ,
+    \tag_array_ext_ram_addr1[5] ,
+    \tag_array_ext_ram_addr1[4] ,
+    \tag_array_ext_ram_addr1[3] ,
+    \tag_array_ext_ram_addr1[2] ,
+    \tag_array_ext_ram_addr1[1] ,
+    \tag_array_ext_ram_addr1[0] }),
+    .din0({\tag_array_ext_ram_wdata[31] ,
+    \tag_array_ext_ram_wdata[30] ,
+    \tag_array_ext_ram_wdata[29] ,
+    \tag_array_ext_ram_wdata[28] ,
+    \tag_array_ext_ram_wdata[27] ,
+    \tag_array_ext_ram_wdata[26] ,
+    \tag_array_ext_ram_wdata[25] ,
+    \tag_array_ext_ram_wdata[24] ,
+    \tag_array_ext_ram_wdata[23] ,
+    \tag_array_ext_ram_wdata[22] ,
+    \tag_array_ext_ram_wdata[21] ,
+    \tag_array_ext_ram_wdata[20] ,
+    \tag_array_ext_ram_wdata[19] ,
+    \tag_array_ext_ram_wdata[18] ,
+    \tag_array_ext_ram_wdata[17] ,
+    \tag_array_ext_ram_wdata[16] ,
+    \tag_array_ext_ram_wdata[15] ,
+    \tag_array_ext_ram_wdata[14] ,
+    \tag_array_ext_ram_wdata[13] ,
+    \tag_array_ext_ram_wdata[12] ,
+    \tag_array_ext_ram_wdata[11] ,
+    \tag_array_ext_ram_wdata[10] ,
+    \tag_array_ext_ram_wdata[9] ,
+    \tag_array_ext_ram_wdata[8] ,
+    \tag_array_ext_ram_wdata[7] ,
+    \tag_array_ext_ram_wdata[6] ,
+    \tag_array_ext_ram_wdata[5] ,
+    \tag_array_ext_ram_wdata[4] ,
+    \tag_array_ext_ram_wdata[3] ,
+    \tag_array_ext_ram_wdata[2] ,
+    \tag_array_ext_ram_wdata[1] ,
+    \tag_array_ext_ram_wdata[0] }),
+    .dout0({\tag_array_ext_ram_rdata0[31] ,
+    \tag_array_ext_ram_rdata0[30] ,
+    \tag_array_ext_ram_rdata0[29] ,
+    \tag_array_ext_ram_rdata0[28] ,
+    \tag_array_ext_ram_rdata0[27] ,
+    \tag_array_ext_ram_rdata0[26] ,
+    \tag_array_ext_ram_rdata0[25] ,
+    \tag_array_ext_ram_rdata0[24] ,
+    \tag_array_ext_ram_rdata0[23] ,
+    \tag_array_ext_ram_rdata0[22] ,
+    \tag_array_ext_ram_rdata0[21] ,
+    \tag_array_ext_ram_rdata0[20] ,
+    \tag_array_ext_ram_rdata0[19] ,
+    \tag_array_ext_ram_rdata0[18] ,
+    \tag_array_ext_ram_rdata0[17] ,
+    \tag_array_ext_ram_rdata0[16] ,
+    \tag_array_ext_ram_rdata0[15] ,
+    \tag_array_ext_ram_rdata0[14] ,
+    \tag_array_ext_ram_rdata0[13] ,
+    \tag_array_ext_ram_rdata0[12] ,
+    \tag_array_ext_ram_rdata0[11] ,
+    \tag_array_ext_ram_rdata0[10] ,
+    \tag_array_ext_ram_rdata0[9] ,
+    \tag_array_ext_ram_rdata0[8] ,
+    \tag_array_ext_ram_rdata0[7] ,
+    \tag_array_ext_ram_rdata0[6] ,
+    \tag_array_ext_ram_rdata0[5] ,
+    \tag_array_ext_ram_rdata0[4] ,
+    \tag_array_ext_ram_rdata0[3] ,
+    \tag_array_ext_ram_rdata0[2] ,
+    \tag_array_ext_ram_rdata0[1] ,
+    \tag_array_ext_ram_rdata0[0] }),
+    .dout1({_NC289,
+    _NC290,
+    _NC291,
+    _NC292,
+    _NC293,
+    _NC294,
+    _NC295,
+    _NC296,
+    _NC297,
+    _NC298,
+    _NC299,
+    _NC300,
+    _NC301,
+    _NC302,
+    _NC303,
+    _NC304,
+    _NC305,
+    _NC306,
+    _NC307,
+    _NC308,
+    _NC309,
+    _NC310,
+    _NC311,
+    _NC312,
+    _NC313,
+    _NC314,
+    _NC315,
+    _NC316,
+    _NC317,
+    _NC318,
+    _NC319,
+    _NC320}),
+    .wmask0({\tag_array_ext_ram_wmask[0] ,
+    \tag_array_ext_ram_wmask[0] ,
+    \tag_array_ext_ram_wmask[0] ,
+    \tag_array_ext_ram_wmask[0] }));
 endmodule
