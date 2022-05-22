@@ -60,7 +60,7 @@ set ::env(CLOCK_PERIOD) "40"
 set ::env(FP_PDN_HPITCH) 100
 set ::env(FP_PDN_VPITCH) 100
 
-set ::env(FP_PDN_HWIDTH) 2.9
+set ::env(FP_PDN_HWIDTH) 2.8
 
 ## Internal Macros
 ### Macro PDN Connections
