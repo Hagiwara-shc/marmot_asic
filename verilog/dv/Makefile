@@ -20,7 +20,8 @@
 .SILENT: clean all
 
 
-PATTERNS = io_ports la_test1 la_test2 wb_port mprj_stimulus
+PATTERNS = io_ports la_test1 la_test2 wb_port mprj_stimulus \
+           marmot_test1
 
 all:  ${PATTERNS}
 
@@ -34,7 +35,7 @@ $(DV_PATTERNS): verify-% :
 
 clean:  ${PATTERNS}
 	for i in ${PATTERNS}; do \
-		( cd $$i && \rm  -f *.elf *.hex *.bin *.vvp *.log *.vcd *.lst *.hexe ) ; \
+		( cd $$i && \rm  -f *.elf *.hex *.bin *.vvp *.log *.vcd *.lst *.hexe ac_check.err) ; \
 	done
 	rm -rf *.log
 	
