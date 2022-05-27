@@ -38,7 +38,7 @@ void main()
   /* Set up the housekeeping SPI to be connected internally so  */
   /* that external pin changes don't affect it.     */
 
-  reg_spi_enable = 1;
+  // reg_spi_enable = 1;
   reg_wb_enable = 1;
   // reg_spimaster_config = 0xa002; // Enable, prescaler = 2,
                                         // connect to housekeeping SPI
@@ -47,23 +47,15 @@ void main()
   // so that the CSB line is not left floating.  This allows
   // all of the GPIO pins to be used for user functions.
 
-  // Configure LA[65] (reset to Marmot) as outputs from the mgmt_soc
-  // Configure other LA probes as inputs to the mgmt_soc 
-  //reg_la0_oenb = reg_la0_iena = 0x00000000;    // [31:0]
-  //reg_la1_oenb = reg_la1_iena = 0x00000000;    // [63:32]
-  //reg_la2_oenb = reg_la2_iena = 0x00000002;    // [95:64]
-  //reg_la3_oenb = reg_la3_iena = 0x00000000;    // [127:96]
-
-  // Assert reset to Marmot
-  //reg_la2_data = 0x00000002;
-
-  // All GPIO pins are configured to be bi-directional
+  // All GPIO pins are configured to be bi-directional for Marmot use
   reg_mprj_io_37 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_36 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_35 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_34 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_33 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_32 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+
+#if 0
   reg_mprj_io_31 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_30 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_29 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
@@ -80,6 +72,25 @@ void main()
   reg_mprj_io_18 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_17 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_16 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+#else
+  reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_30 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_29 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_28 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_27 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_26 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_25 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_24 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_23 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_22 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_21 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_20 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_19 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_18 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_17 = GPIO_MODE_MGMT_STD_OUTPUT;
+  reg_mprj_io_16 = GPIO_MODE_MGMT_STD_OUTPUT;
+#endif
+
   reg_mprj_io_15 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_14 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_13 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
@@ -89,6 +100,7 @@ void main()
   reg_mprj_io_9  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_8  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_7  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+  reg_mprj_io_6  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_5  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_4  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_3  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
@@ -100,11 +112,37 @@ void main()
   reg_mprj_xfer = 1;
   while (reg_mprj_xfer == 1);
 
-  // Negate reset to Marmot
-  //reg_la2_data = 0x00000000;
+  // Initialize LA probes [127:0]
+  reg_la0_oenb = reg_la0_iena = 0xffffffff; // [31:0]
+  reg_la1_oenb = reg_la1_iena = 0xffffffff; // [63:32]
+  reg_la2_oenb = reg_la2_iena = 0xffffffff; // [95:64]
+  reg_la3_oenb = reg_la3_iena = 0xffffffff; // [127:96]
+  reg_la0_data = 0xffffffff;
+  reg_la1_data = 0xffffffff;
+  reg_la2_data = 0xffffffff;
+  reg_la3_data = 0xffffffff;
+  reg_la0_data = 0x00000000;
+  reg_la1_data = 0x00000000;
+  reg_la2_data = 0x00000000;
+  reg_la3_data = 0x00000000;
 
-  // Negate reset to Marmot
+  // Configure LA probes [31:0] as inputs to mgmt_soc
+  reg_la0_oenb = reg_la0_iena = 0x00000000; // [31:0], connecting to Marmot's gpio_out[31:0]
+
+  // Start Marmot
   reg_mprj_slave = 0x00000001;
 
-  while (1) {}
+  // Wait for Marmot to finish and check result
+  while (1) {
+    if ((reg_la0_data_in & 0xc0000000) != 0x0) {
+
+      if ((reg_la0_data_in & 0xc0000000) == 0x80000000) {
+        reg_mprj_datal = 0x12340000;  // Pass
+      } else {
+        reg_mprj_datal = 0xdead0000;  // Fail
+      }
+
+      break;
+    }
+  }
 }

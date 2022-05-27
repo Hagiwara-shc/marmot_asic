@@ -177,7 +177,7 @@ module Marmot
     // Logic Analyzer Signals
     wire [127:0] la_data_out;
 
-    assign la_data_out = 128'd0;
+    assign la_data_out[127:32] = 96'd0;
 
     //------------------------------------------------------------------------------
     // IRQ
@@ -304,6 +304,38 @@ module Marmot
      .io_oeb_35(io_oeb[35]),
      .io_oeb_36(io_oeb[36]),
      .io_oeb_37(io_oeb[37]),
+     .gpio_out_0(la_data_out[0]),
+     .gpio_out_1(la_data_out[1]),
+     .gpio_out_2(la_data_out[2]),
+     .gpio_out_3(la_data_out[3]),
+     .gpio_out_4(la_data_out[4]),
+     .gpio_out_5(la_data_out[5]),
+     .gpio_out_6(la_data_out[6]),
+     .gpio_out_7(la_data_out[7]),
+     .gpio_out_8(la_data_out[8]),
+     .gpio_out_9(la_data_out[9]),
+     .gpio_out_10(la_data_out[10]),
+     .gpio_out_11(la_data_out[11]),
+     .gpio_out_12(la_data_out[12]),
+     .gpio_out_13(la_data_out[13]),
+     .gpio_out_14(la_data_out[14]),
+     .gpio_out_15(la_data_out[15]),
+     .gpio_out_16(la_data_out[16]),
+     .gpio_out_17(la_data_out[17]),
+     .gpio_out_18(la_data_out[18]),
+     .gpio_out_19(la_data_out[19]),
+     .gpio_out_20(la_data_out[20]),
+     .gpio_out_21(la_data_out[21]),
+     .gpio_out_22(la_data_out[22]),
+     .gpio_out_23(la_data_out[23]),
+     .gpio_out_24(la_data_out[24]),
+     .gpio_out_25(la_data_out[25]),
+     .gpio_out_26(la_data_out[26]),
+     .gpio_out_27(la_data_out[27]),
+     .gpio_out_28(la_data_out[28]),
+     .gpio_out_29(la_data_out[29]),
+     .gpio_out_30(la_data_out[30]),
+     .gpio_out_31(la_data_out[31]),
      .data_arrays_0_ext_RW0_addr(data_arrays_0_ext_RW0_addr),
      .data_arrays_0_ext_RW0_en(data_arrays_0_ext_RW0_en),
      .data_arrays_0_ext_RW0_clk(data_arrays_0_ext_RW0_clk),

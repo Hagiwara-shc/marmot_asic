@@ -15,9 +15,28 @@
 
 `default_nettype none
 
-`timescale 1 ns / 1 ps
+`timescale 1 ns / 100 ps
+
+`define TB testbench
+`define CARAVEL `TB.uut
+`define CHIP `CARAVEL.mprj.Marmot.MarmotCaravelChip
+`define PLATFORM `CHIP.MarmotCaravelPlatform
+`define SYS `PLATFORM.sys
+`define TILE `SYS.tile
+`define CORE `TILE.core
+`define UART0 `SYS.uart_0_1
+`define UART1 `SYS.uart_1_1
+`define UART2 `SYS.uart_2_1
+`define UART3 `SYS.uart_3_1
+`define UART4 `SYS.uart_4_1
+`define TLSPIRAM `SYS.qspi_ram_0_1
 
 module testbench;
+  `include "io_mapping.v"
+
+  localparam CLOCK_PERIOD = 25; // ns
+  localparam MAX_CYCLE    = 100000;
+
   reg clock;
   wire clock_wire = clock;
   reg RSTB;
@@ -28,6 +47,11 @@ module testbench;
   wire gpio;
   wire [37:0] mprj_io;
 
+  wire        core_reset = `CORE.reset;
+  wire [31:0] core_valid = `CORE.coreMonitorBundle_valid;
+  wire [31:0] core_pc    = `CORE.coreMonitorBundle_pc;
+  wire [31:0] core_cycle = `CORE.coreMonitorBundle_time;
+
 `ifdef PULLUP_IO
   genvar gen_i;
   generate
@@ -37,28 +61,44 @@ module testbench;
   endgenerate
 `endif
 
-  always #12.5 clock <= (clock === 1'b0);
-
   initial begin
     clock = 0;
   end
 
-  initial begin
-    $dumpfile("marmot_test1.vcd");
-    $dumpvars(0, testbench);
+  always #(CLOCK_PERIOD/2) clock <= (clock === 1'b0);
 
-    // Repeat cycles of 1000 clock edges as needed to complete testbench
-    repeat (75) begin
-      repeat (1000) @(posedge clock);
-      // $display("+1000 cycles");
-    end
-    $display("%c[1;31m",27);
-    `ifdef GL
-      $display ("Monitor: Timeout, Test Mega-Project IO (GL) Failed");
-    `else
-      $display ("Monitor: Timeout, Test Mega-Project IO (RTL) Failed");
+  initial begin
+    `ifdef WAVEFORM
+      $dumpfile("marmot_test1.vcd");
+      $dumpvars(0, testbench);
     `endif
-    $display("%c[0m",27);
+  end
+
+  // Timeout
+  reg  [31:0] max_cycle;
+  initial begin
+    if (! $value$plusargs("max_cycle=%d", max_cycle)) begin
+      max_cycle = MAX_CYCLE;
+    end
+
+    wait (core_reset === 1'b0);
+    wait (core_cycle < 10);
+    wait (core_cycle >= max_cycle);
+    $display("\n*** Timeout ***");
+    $finish;
+  end
+
+  // Pass
+  initial begin
+    wait (mprj_io[31:16] == 16'h1234);
+    $display("\n*** Test Pass ***");
+    $finish;
+  end
+
+  // Fail
+  initial begin
+    wait (mprj_io[31:16] == 16'hdead);
+    $display("\n*** Test Fail ***");
     $finish;
   end
 
@@ -133,6 +173,61 @@ module testbench;
     .io2(),
     .io3()
   );
+
+//-------------------------------------------------------------------------------
+// SPI Flash model for Marmot
+MX25U3235F #(.Init_File("spi_flash.mem")) spi_flash
+(
+    .SCLK   (mprj_io[io_spi0_flash_sck]),
+    .CS     (mprj_io[io_spi0_flash_csb]),
+    .SI     (mprj_io[io_spi0_flash_io_0]),
+    .SO     (mprj_io[io_spi0_flash_io_1]),
+    .WP     (mprj_io[io_spi0_flash_io_2]),
+    .SIO3   (mprj_io[io_spi0_flash_io_3])
+);
+
+//-------------------------------------------------------------------------------
+// SPI RAM model for Marmot
+`ifdef SIMULATOR_QUESTA
+// SPI RAM model (APM APS6404L-3SQN_SQPI_PSRAM)
+sqpi_model #(.VeriOutStr(1), .STOP_ON_ERROR(1)) spi_ram
+(
+    .SCK_i  (mprj_io[io_spi2_sck]),
+    .nCE_i  (mprj_io[io_spi2_csb]),
+    .SI_io  (mprj_io[io_spi2_io_0]),
+    .SO_io  (mprj_io[io_spi2_io_1]),
+    .nWP_io (mprj_io[io_spi2_io_2]),
+    .NC_io  (mprj_io[io_spi2_io_3])
+);
+`else
+// SPI Flash model
+MX25U3235F spi_ram
+(
+    .SCLK   (mprj_io[io_spi2_sck]),
+    .CS     (mprj_io[io_spi2_csb]),
+    .SI     (mprj_io[io_spi2_io_0]),
+    .SO     (mprj_io[io_spi2_io_1]),
+    .WP     (mprj_io[io_spi2_io_2]),
+    .SIO3   (mprj_io[io_spi2_io_3])
+);
+`endif
+
+//-------------------------------------------------------------------------------
+// UART model for Marmot
+`ifdef UART_HIGH_SPEED
+  `define CLKS_PER_BIT  16  // F_CLK / 16 baud
+`else
+  `define CLKS_PER_BIT ((1000/CLOCK_PERIOD)*1000000 / 115200)  // 115200 baud
+  //`define CLKS_PER_BIT 104  // 12MHz / 115200 baud
+`endif
+
+uart_tb #(.CLKS_PER_BIT(`CLKS_PER_BIT)) uart0_tb
+(
+    .clk        (clock_wire),
+    .rst        (~RSTB),
+    .rxd        (mprj_io[io_uart0_tx]),
+    .txd        (mprj_io[io_uart0_rx])
+);
 
 endmodule
 `default_nettype wire
