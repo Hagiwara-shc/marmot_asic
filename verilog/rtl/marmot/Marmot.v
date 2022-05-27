@@ -135,20 +135,43 @@ module Marmot
     wire [31:0] data_arrays_0_ext_ram_rdata7 = 32'd0;
 
     //------------------------------------------------------------------------------
-    // Wishbone Slave ports (WB MI A)
-    reg wbs_ack_o;
-    wire [31:0] wbs_dat_o;
+    // Clock and Reset to MarmotCaravelChip
+    wire clk;
+    wire rst_n;
+    reg  [31:0] reg_val;  // Wishbone register value
 
-    always @(posedge wb_clk_i) begin
+    assign clk   = wb_clk_i;
+    assign rst_n = reg_val[0];
+
+    //------------------------------------------------------------------------------
+    // Wishbone slave port & register
+    wire        valid;
+    wire [3:0]  wstrb;
+    reg         ready;
+
+    assign valid = wbs_cyc_i & wbs_stb_i; 
+    assign wstrb = wbs_sel_i & {4{wbs_we_i}};
+    assign wbs_ack_o = ready;
+    assign wbs_dat_o = reg_val;
+
+    always @(posedge clk) begin
       if (wb_rst_i) begin
-        wbs_ack_o <= 1'b0;
+        reg_val <= 32'h00000000;
+        ready <= 1'b0;
       end
       else begin
-        wbs_ack_o <= wbs_stb_i & wbs_cyc_i;
+        if (valid && !ready) begin
+          ready <= 1'b1;
+          if (wstrb[0]) reg_val[7:0]   <= wbs_dat_i[7:0];
+          if (wstrb[1]) reg_val[15:8]  <= wbs_dat_i[15:8];
+          if (wstrb[2]) reg_val[23:16] <= wbs_dat_i[23:16];
+          if (wstrb[3]) reg_val[31:24] <= wbs_dat_i[31:24];
+        end
+        else begin
+          ready <= 1'b0;
+        end
       end
     end
-
-    assign wbs_dat_o = 32'd0;
 
     //------------------------------------------------------------------------------
     // Logic Analyzer Signals
@@ -161,14 +184,6 @@ module Marmot
     wire [2:0] irq;
 
     assign irq = 3'b000;
-
-    //------------------------------------------------------------------------------
-    // Clock and Reset to MarmotCaravelChip
-    wire clk;
-    wire rst_n;
-
-    assign clk   = wb_clk_i;
-    assign rst_n = ~wb_rst_i;
 
     //------------------------------------------------------------------------------
     // MarmotCaravelChip
