@@ -56,6 +56,7 @@ void main()
   reg_mprj_io_32 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
 
 #if 0
+  // For actual use
   reg_mprj_io_31 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_30 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_29 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
@@ -73,6 +74,7 @@ void main()
   reg_mprj_io_17 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_16 = GPIO_MODE_USER_STD_BIDIRECTIONAL;
 #else
+  // For simulation
   reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
   reg_mprj_io_30 = GPIO_MODE_MGMT_STD_OUTPUT;
   reg_mprj_io_29 = GPIO_MODE_MGMT_STD_OUTPUT;
@@ -127,7 +129,7 @@ void main()
   reg_la3_data = 0x00000000;
 
   // Configure LA probes [31:0] as inputs to mgmt_soc
-  reg_la0_oenb = reg_la0_iena = 0x00000000; // [31:0], connecting to Marmot's gpio_out[31:0]
+  reg_la0_iena = 0x00000000; // [31:0], connecting to Marmot's gpio_out[31:0]
 
   // Start Marmot
   reg_mprj_slave = 0x00000001;
@@ -135,13 +137,11 @@ void main()
   // Wait for Marmot to finish and check result
   while (1) {
     if ((reg_la0_data_in & 0xc0000000) != 0x0) {
-
       if ((reg_la0_data_in & 0xc0000000) == 0x80000000) {
         reg_mprj_datal = 0x12340000;  // Pass
       } else {
         reg_mprj_datal = 0xdead0000;  // Fail
       }
-
       break;
     }
   }
