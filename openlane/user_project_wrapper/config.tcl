@@ -57,6 +57,8 @@ set ::env(CLOCK_PORT) "wb_clk_i"
 
 set ::env(CLOCK_PERIOD) "40"
 
+set ::env(BASE_SDC_FILE) $script_dir/base.sdc
+
 set ::env(FP_PDN_HPITCH) 105
 set ::env(FP_PDN_VPITCH) 100
 

@@ -47,10 +47,15 @@ module testbench;
   wire gpio;
   wire [37:0] mprj_io;
 
+`ifdef RTL
   wire        core_reset = `CORE.reset;
-  wire [31:0] core_valid = `CORE.coreMonitorBundle_valid;
   wire [31:0] core_pc    = `CORE.coreMonitorBundle_pc;
   wire [31:0] core_cycle = `CORE.coreMonitorBundle_time;
+`else
+  wire        core_reset = 1'b0;
+  wire [31:0] core_pc    = 32'd0;
+  wire [31:0] core_cycle = 32'd0;
+`endif
 
 `ifdef PULLUP_IO
   genvar gen_i;

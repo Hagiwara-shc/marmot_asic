@@ -136,6 +136,8 @@ void main()
 
   // Wait for Marmot to finish and check result
   while (1) {
+    reg_la0_data ^= 0xffffffff;
+
     if ((reg_la0_data_in & 0xc0000000) != 0x0) {
       if ((reg_la0_data_in & 0xc0000000) == 0x80000000) {
         reg_mprj_datal = 0x12340000;  // Pass
