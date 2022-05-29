@@ -58,7 +58,7 @@ Caravel SoC->>Rocket SoC: "Went full power".
 |Reset|1|1|0|-|From mgmt.SoC
 |QSPI 0 (XIP)|1|6|6|No|For Flash
 |QSPI 1 (no XIP)|1|7|7|Yes|For ADC, etc. (CS x2)
-|QSPI 2 (no XIP)|1|6|6|Yes|For PSRAM (no time to support XIP)
+|QSPI 2 (XIP)|1|6|6|No|For PSRAM
 |UART 0|1|2|2|No	
 |UART 1-4|4|2|8|Yes	
 |I2C 0-1|2|2|4|Yes	
@@ -66,7 +66,7 @@ Caravel SoC->>Rocket SoC: "Went full power".
 |Total|||37||Max. 38
 
 ## Pinouts
-Caravel mprj_io[#]|Caravel Mgmt. SoC|Rocket (Marmot) IOF0|Rocket (Marmot) GPIO
+Caravel mprj_io[#]|Caravel Mgmt. SoC|Marmot IOF0|Marmot GPIO
 |-------|-------|-------|-------|
 0|JTAG|-|-
 1|SDO|TDO|-
@@ -88,12 +88,12 @@ Caravel mprj_io[#]|Caravel Mgmt. SoC|Rocket (Marmot) IOF0|Rocket (Marmot) GPIO
 17|-|spi1_io[1]|gpio[3]
 18|-|spi1_io[2]|gpio[4]
 19|-|spi1_io[3]|gpio[5]
-20|-|spi2_csb|gpio[6]
-21|-|spi2_sck|gpio[7]
-22|-|spi2_io[0]|gpio[8]
-23|-|spi2_io[1]|gpio[9]
-24|-|spi2_io[2]|gpio[10]
-25|-|spi2_io[3]|gpio[11]
+20|-|spi2_csb|-
+21|-|spi2_sck|-
+22|-|spi2_io[0]|-
+23|-|spi2_io[1]|-
+24|-|spi2_io[2]|-
+25|-|spi2_io[3]|-
 26|-|i2c0_sda|gpio[12]
 27|-|i2c0_scl|gpio[13]
 28|-|i2c1_sda|gpio[14]
@@ -118,7 +118,7 @@ Base|Top|Attribute|Description|Notes
 0x0001_2000|0x0002_1FFF||Reserved|On-Chip Non Volatile Memory
 0x0200_0000|0x0200_FFFF|RW A|CLINT|On-Chip Peripherals
 0x0201_0000|0x07FF_FFFF||Reserved|On-Chip Peripherals
-0x0800_0000|0x0800_1FFF|RWX A|ITIM (8 KiB)[^1]|On-Chip Volatile Memory
+0x0800_0000|0x0800_1FFF|RWX A|ITIM (8 KiB)|On-Chip Volatile Memory
 0x0800_2000|0x0BFF_FFFF||Reserved|On-Chip Volatile Memory
 0x0C00_0000|0x0FFF_FFFF|RW A|PLIC|On-Chip Peripherals
 0x1000_0000|0x1000_0FFF|RW A|AON|On-Chip Peripherals
@@ -142,11 +142,11 @@ Base|Top|Attribute|Description|Notes
 0x1005_3000|0x1005_3FFF|RW A|UART 4|On-Chip Peripherals
 0x1005_4000|0x1FFF_FFFF||Reserved|On-Chip Peripherals
 0x2000_0000|0x3FFF_FFFF|R XC|QSPI 0 Flash (512 MiB)|Off-Chip Non-Volatile Memory
-0x4000_0000|0x7FFF_FFFF||Reserved|Off-Chip Non-Volatile Memory
-0x8000_0000|0x8000_3FFF|RWX A|DTIM (16 KiB)[^1]|On-Chip Volatile Memory
+0x4000_0000|0x5FFF_FFFF|RWX A|QSPI 2 PSRAM (512 MiB)|Off-Chip Volatile Memory
+0x6000_0000|0x7FFF_FFFF||Reserved|Off-Chip Memory
+0x8000_0000|0x8000_3FFF|~~RWX A~~|Reserved ~~DTIM (16 KiB)~~|On-Chip Volatile Memory
 0x8000_4000|0xFFFF_FFFF||Reserved|On-Chip Volatile Memory
 
-[^1]: Memory size may be reduced due to chip size limitation.
 
 ## Reference
 
