@@ -47,7 +47,10 @@ module Marmot
     // IRQ
     output [2:0] irq,
 
-    // RAM signals
+    // RAM clock delay select
+    output [31:0] ram_clk_delay_sel,
+
+    // DTIM RAM I/F
 //  output        data_arrays_0_ext_ram_clk,
 //  output [7:0]  data_arrays_0_ext_ram_csb,
 //  output        data_arrays_0_ext_ram_web,
@@ -65,6 +68,7 @@ module Marmot
 //  output [7:0]  data_arrays_0_ext_ram_csb1,
 //  output [8:0]  data_arrays_0_ext_ram_addr1,
 
+    // I-Cache Tag RAM I/F
     output        tag_array_ext_ram_clk,
     output        tag_array_ext_ram_csb,
     output        tag_array_ext_ram_web,
@@ -76,6 +80,7 @@ module Marmot
     output [1:0]  tag_array_ext_ram_csb1,
     output [7:0]  tag_array_ext_ram_addr1,
 
+    // I-Cache Data RAM I/F
     output        data_arrays_0_0_ext_ram_clk,
     output [3:0]  data_arrays_0_0_ext_ram_csb,
     output        data_arrays_0_0_ext_ram_web,
@@ -177,15 +182,15 @@ module Marmot
     // Logic Analyzer Signals
     wire [127:0] la_data_out;   // [127:32] <- 0
                                 // [ 31: 0] <- gpio_out[31:0]
-
-    wire [127:0] la_data_input; // [127:47] -> not in use
-                                // [ 46:42] -> clock skew adjust for I-Cache Data RAMs
-                                // [ 41:37] -> clock skew adjust for I-Cache Tag RAMs
-                                // [ 36:32] -> clock skew adjust for DTIM RAMs
-                                // [ 31: 0] -> gpio_in[31:0]
-
     assign la_data_out[127:32] = 96'd0;
+
+    wire [127:0] la_data_input; // [127:64] -> not in use
+                                // [ 63:32] -> RAM clock delay select
+                                // [ 31: 0] -> gpio_in[31:0]
     assign la_data_input = ~la_oenb & la_data_in;
+
+    wire [31:0] ram_clk_delay_sel;
+    assign ram_clk_delay_sel = la_data_input[63:32];
 
     //------------------------------------------------------------------------------
     // IRQ
@@ -421,21 +426,11 @@ module Marmot
     );
 
     assign data_arrays_0_ext_ram_addr  = data_arrays_0_ext_RW0_addr[8:0];
-    //assign data_arrays_0_ext_ram_clk   = data_arrays_0_ext_RW0_clk;
+    assign data_arrays_0_ext_ram_clk   = data_arrays_0_ext_RW0_clk;
     assign data_arrays_0_ext_ram_wdata = data_arrays_0_ext_RW0_wdata;
     assign data_arrays_0_ext_ram_wmask = data_arrays_0_ext_RW0_wmask;
     assign data_arrays_0_ext_ram_csb1  = 8'hff;
     assign data_arrays_0_ext_ram_addr1 = 9'h000;
-
-    clk_skew_adjust u_clk_skew_adjust_0 (
-      `ifdef USE_POWER_PINS
-         .vccd1(vccd1),
-         .vssd1(vssd1),
-       `endif
-         .clk_in(clk),
-         .sel(la_data_input[36:32]),
-         .clk_out(data_arrays_0_ext_ram_clk)
-    );
 
     // I-Cache Tag RAM interfaces
     tag_array_ext tag_array_ext (
@@ -453,21 +448,11 @@ module Marmot
     );
 
     assign tag_array_ext_ram_addr  = {1'b0, tag_array_ext_RW0_addr};
-    //assign tag_array_ext_ram_clk   = tag_array_ext_RW0_clk;
+    assign tag_array_ext_ram_clk   = tag_array_ext_RW0_clk;
     assign tag_array_ext_ram_wdata = {12'd0, tag_array_ext_RW0_wdata[39:20], 12'd0, tag_array_ext_RW0_wdata[19:0]};
     assign tag_array_ext_ram_wmask = tag_array_ext_RW0_wmask;
     assign tag_array_ext_ram_csb1  = 2'b11;
     assign tag_array_ext_ram_addr1 = 8'h00;
-
-    clk_skew_adjust u_clk_skew_adjust_1 (
-      `ifdef USE_POWER_PINS
-         .vccd1(vccd1),
-         .vssd1(vssd1),
-       `endif
-         .clk_in(clk),
-         .sel(la_data_input[41:37]),
-         .clk_out(tag_array_ext_ram_clk)
-    );
 
     // I-Cache Data RAM interfaces
     data_arrays_0_0_ext data_arrays_0_0_ext (
@@ -487,21 +472,11 @@ module Marmot
     );
 
     assign data_arrays_0_0_ext_ram_addr  = data_arrays_0_0_ext_RW0_addr[8:0];
-    //assign data_arrays_0_0_ext_ram_clk   = data_arrays_0_0_ext_RW0_clk;
+    assign data_arrays_0_0_ext_ram_clk   = data_arrays_0_0_ext_RW0_clk;
     assign data_arrays_0_0_ext_ram_wdata = data_arrays_0_0_ext_RW0_wdata;
     assign data_arrays_0_0_ext_ram_wmask = data_arrays_0_0_ext_RW0_wmask;
     assign data_arrays_0_0_ext_ram_csb1  = 8'hff;
     assign data_arrays_0_0_ext_ram_addr1 = 9'h000;
-
-    clk_skew_adjust u_clk_skew_adjust_2 (
-      `ifdef USE_POWER_PINS
-         .vccd1(vccd1),
-         .vssd1(vssd1),
-       `endif
-         .clk_in(clk),
-         .sel(la_data_input[46:42]),
-         .clk_out(data_arrays_0_0_ext_ram_clk)
-    );
 
 `endif  // MARMOT_EMPTY
 endmodule
