@@ -41,12 +41,12 @@ set ::env(CLOCK_PERIOD) "40"
 
 #set ::env(SYNTH_MAX_FANOUT) 4
 
-set ::env(CTS_TOLERANCE) 70
-#set ::env(CTS_CLK_BUFFER_LIST) "sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8"
+set ::env(CTS_TOLERANCE) 30
+set ::env(CTS_CLK_BUFFER_LIST) "sky130_fd_sc_hd__clkbuf_8"
 #set ::env(CTS_SINK_CLUSTERING_SIZE) "16"
 #set ::env(CLOCK_BUFFER_FANOUT) "8"
 
-set ::env(SYNTH_CAP_LOAD) 70
+#set ::env(SYNTH_CAP_LOAD) 70
 
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
 
