@@ -178,10 +178,10 @@ module Marmot
     wire [127:0] la_data_out;   // [127:32] <- 0
                                 // [ 31: 0] <- gpio_out[31:0]
 
-    wire [127:0] la_data_input; // [127:44] -> not in use
-                                // [ 43:40] -> clock skew adjust for I-Cache Data RAMs
-                                // [ 39:36] -> clock skew adjust for I-Cache Tag RAMs
-                                // [ 35:32] -> clock skew adjust for DTIM RAMs
+    wire [127:0] la_data_input; // [127:47] -> not in use
+                                // [ 46:42] -> clock skew adjust for I-Cache Data RAMs
+                                // [ 41:37] -> clock skew adjust for I-Cache Tag RAMs
+                                // [ 36:32] -> clock skew adjust for DTIM RAMs
                                 // [ 31: 0] -> gpio_in[31:0]
 
     assign la_data_out[127:32] = 96'd0;
@@ -433,7 +433,7 @@ module Marmot
          .vssd1(vssd1),
        `endif
          .clk_in(clk),
-         .sel(la_data_input[35:32]),
+         .sel(la_data_input[36:32]),
          .clk_out(data_arrays_0_ext_ram_clk)
     );
 
@@ -465,7 +465,7 @@ module Marmot
          .vssd1(vssd1),
        `endif
          .clk_in(clk),
-         .sel(la_data_input[39:36]),
+         .sel(la_data_input[41:37]),
          .clk_out(tag_array_ext_ram_clk)
     );
 
@@ -499,7 +499,7 @@ module Marmot
          .vssd1(vssd1),
        `endif
          .clk_in(clk),
-         .sel(la_data_input[43:40]),
+         .sel(la_data_input[46:42]),
          .clk_out(data_arrays_0_0_ext_ram_clk)
     );
 
