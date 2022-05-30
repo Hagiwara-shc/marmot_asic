@@ -226,6 +226,7 @@ clk_in, sel, clk_out);
   // fifth level mux - 1
   ctech_mux2x1_4 u_mux_level_40 ( .X (d40) , .A0 (d30), .A1(d31), .S(sel[4]));
 
-  assign clk_out = d40;
+  // output clock
+  ctech_clk_buf u_clk_out_buf (.A(d40), .X(clk_out));
 
 endmodule
