@@ -25,27 +25,23 @@ set ::env(SYNTH_DEFINES) "SYNTHESIS"
 set ::env(SYNTH_READ_BLACKBOX_LIB) 1
 
 set ::env(DESIGN_IS_CORE) 0
+
 set ::env(DESIGN_NAME) Marmot
 
 set ::env(VERILOG_INCLUDE_DIRS) [glob $script_dir/../../verilog/rtl/marmot]
 
 set ::env(VERILOG_FILES) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
-  $script_dir/../../verilog/lib/clk_skew_adjust.gv \
-  $script_dir/../../verilog/lib/ctech_cells.sv \
 	[glob $script_dir/../../verilog/rtl/marmot/*.v]"
 
 set ::env(CLOCK_PORT) "wb_clk_i"
-set ::env(CLOCK_PERIOD) 40
+set ::env(CLOCK_PERIOD) 35
 set ::env(IO_PCT)     0.2
 set ::env(IO_PCT_RAM) 0.3
-
-#set ::env(SYNTH_CAP_LOAD) 70
 
 set ::env(BASE_SDC_FILE) $script_dir/base.sdc
 
 #set ::env(SYNTH_STRATEGY) "AREA 0"
-#set ::env(SYNTH_NO_FLAT) 1
 
 set ::env(FP_CORE_UTIL) 30
 #set ::env(FP_SIZING) absolute

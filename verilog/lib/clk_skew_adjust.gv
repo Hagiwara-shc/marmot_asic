@@ -89,6 +89,7 @@ clk_in, sel, clk_out);
   output clk_out;
   input [4:0] sel;
 
+`ifndef clk_skew_adjust_EMPTY
   wire clk_d1;
   wire clk_d2;
   wire clk_d3;
@@ -228,5 +229,7 @@ clk_in, sel, clk_out);
 
   // output clock
   ctech_clk_buf u_clk_out_buf (.A(d40), .X(clk_out));
+
+`endif  // clk_skew_adjust_EMPTY
 
 endmodule

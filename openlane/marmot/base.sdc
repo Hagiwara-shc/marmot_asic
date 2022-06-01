@@ -31,10 +31,10 @@ set_clock_groups -name async_clock -asynchronous \
  -group [get_clocks {jtag_TCK}]\
 
 # max delay for RAM clocks
-set MAX_DELAY_RAM_CLOCK 6.0
+#set MAX_DELAY_RAM_CLOCK 6.0
 #set_max_delay $MAX_DELAY_RAM_CLOCK -from [get_ports wb_clk_i] -to [get_ports data_arrays_0_ext_ram_clk]
-set_max_delay $MAX_DELAY_RAM_CLOCK -from [get_ports wb_clk_i] -to [get_ports tag_array_ext_ram_clk]
-set_max_delay $MAX_DELAY_RAM_CLOCK -from [get_ports wb_clk_i] -to [get_ports data_arrays_0_0_ext_ram_clk]
+#set_max_delay $MAX_DELAY_RAM_CLOCK -from [get_ports wb_clk_i] -to [get_ports tag_array_ext_ram_clk]
+#set_max_delay $MAX_DELAY_RAM_CLOCK -from [get_ports wb_clk_i] -to [get_ports data_arrays_0_0_ext_ram_clk]
 
 # input/output delay
 set input_delay_value [expr $::env(CLOCK_PERIOD) * $::env(IO_PCT)]
@@ -102,10 +102,6 @@ set_output_delay $output_delay_value_ram -clock [get_clocks data_arrays_0_0_ext_
 set_input_delay  $input_delay_value  -clock [get_clocks jtag_TCK] [get_ports $TMS_port]
 set_input_delay  $input_delay_value  -clock [get_clocks jtag_TCK] [get_ports $TDI_port]
 set_output_delay $output_delay_value -clock [get_clocks jtag_TCK] [get_ports $TDO_port]
-
-# false path: static RAM clock skew adjust signals
-set_false_path -from [get_ports la_data_in[46:32]]
-set_false_path -from [get_ports la_oenb[46:32]]
 
 # max fanout
 set_max_fanout $::env(SYNTH_MAX_FANOUT) [current_design]

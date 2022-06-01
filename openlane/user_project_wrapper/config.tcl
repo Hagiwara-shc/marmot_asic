@@ -44,64 +44,69 @@ set ::env(QUIT_ON_MAGIC_DRC) 0
 set ::env(ROUTING_CORES) 4
 
 # Define
-set ::env(SYNTH_DEFINES) "MARMOT_EMPTY"
+set ::env(SYNTH_DEFINES) "MARMOT_EMPTY clk_skew_adjust_EMPTY"
 
 ## Source Verilog Files
 set ::env(VERILOG_FILES) "\
-	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/user_project_wrapper.v"
+  $::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
+  $script_dir/../../verilog/rtl/user_project_wrapper.v"
 
 ## Clock configurations
 set ::env(CLOCK_PORT) "wb_clk_i"
-#set ::env(CLOCK_NET) "Marmot.clk"
 
-set ::env(CLOCK_PERIOD) "40"
+set ::env(CLOCK_PERIOD) 35
 
 set ::env(BASE_SDC_FILE) $script_dir/base.sdc
 
 set ::env(FP_PDN_HPITCH) 105
 set ::env(FP_PDN_VPITCH) 100
 
-#set ::env(FP_PDN_HWIDTH) 2.9
-
 ## Internal Macros
 ### Macro PDN Connections
 set ::env(FP_PDN_MACRO_HOOKS) "\
-	Marmot vccd1 vssd1 \
-        data_arrays_0_0_ext_ram0l vccd1 vssd1 \
-        data_arrays_0_0_ext_ram0h vccd1 vssd1 \
-        data_arrays_0_0_ext_ram1l vccd1 vssd1 \
-        data_arrays_0_0_ext_ram1h vccd1 vssd1 \
-        data_arrays_0_0_ext_ram2l vccd1 vssd1 \
-        data_arrays_0_0_ext_ram2h vccd1 vssd1 \
-        data_arrays_0_0_ext_ram3l vccd1 vssd1 \
-        data_arrays_0_0_ext_ram3h vccd1 vssd1 \
-        tag_array_ext_ram0l vccd1 vssd1 \
-        tag_array_ext_ram0h vccd1 vssd1"
+  Marmot vccd1 vssd1 \
+  u_clk_skew_adjust_0 vccd1 vssd1 \
+  u_clk_skew_adjust_1 vccd1 vssd1 \
+  u_clk_skew_adjust_2 vccd1 vssd1 \
+  u_clk_skew_adjust_3 vccd1 vssd1 \
+  u_clk_skew_adjust_4 vccd1 vssd1 \
+  data_arrays_0_0_ext_ram0l vccd1 vssd1 \
+  data_arrays_0_0_ext_ram0h vccd1 vssd1 \
+  data_arrays_0_0_ext_ram1l vccd1 vssd1 \
+  data_arrays_0_0_ext_ram1h vccd1 vssd1 \
+  data_arrays_0_0_ext_ram2l vccd1 vssd1 \
+  data_arrays_0_0_ext_ram2h vccd1 vssd1 \
+  data_arrays_0_0_ext_ram3l vccd1 vssd1 \
+  data_arrays_0_0_ext_ram3h vccd1 vssd1 \
+  tag_array_ext_ram0l vccd1 vssd1 \
+  tag_array_ext_ram0h vccd1 vssd1"
 
 ### Macro Placement
 set ::env(MACRO_PLACEMENT_CFG) $script_dir/macro.cfg
 
 ### Black-box verilog and views
 set ::env(VERILOG_FILES_BLACKBOX) "\
-	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
-	$script_dir/../../verilog/rtl/marmot/Marmot.v \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_2kbyte_1rw1r_32x512_8.v \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
+  $::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
+  $script_dir/../../verilog/rtl/marmot/Marmot.v \
+  $script_dir/../../verilog/lib/clk_skew_adjust.gv \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_2kbyte_1rw1r_32x512_8.v \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v"
 
 set ::env(EXTRA_LEFS) "\
-	$script_dir/../../lef/Marmot.lef \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
+  $script_dir/../../lef/Marmot.lef \
+  $script_dir/../../lef/clk_skew_adjust.lef \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_2kbyte_1rw1r_32x512_8.lef \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef"
 
 set ::env(EXTRA_GDS_FILES) "\
-	$script_dir/../../gds/Marmot.gds \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
+  $script_dir/../../gds/Marmot.gds \
+  $script_dir/../../gds/clk_skew_adjust.gds \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_2kbyte_1rw1r_32x512_8.gds \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds"
 
 set ::env(EXTRA_LIBS) "\
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib \
-        $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib"
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib \
+  $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_2kbyte_1rw1r_32x512_8_TT_1p8V_25C.lib"
 
 # Obstruction over SRAMs
 set ::env(GLB_RT_OBS) " \
@@ -157,6 +162,7 @@ set ::env(FP_PDN_CHECK_NODES) 0
 
 # The following is because there are no std cells in the example wrapper project.
 set ::env(SYNTH_TOP_LEVEL) 1
+#set ::env(PL_TIME_DRIVEN) 1
 set ::env(PL_RANDOM_GLB_PLACEMENT) 1
 
 set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
