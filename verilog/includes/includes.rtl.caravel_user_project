@@ -17,6 +17,8 @@
 -v $(USER_PROJECT_VERILOG)/rtl/marmot/shc.marmotcaravel.MarmotCaravelConfig.no_sram.v
 -v $(USER_PROJECT_VERILOG)/rtl/marmot/SRLatch.v
  
+-v $(USER_PROJECT_VERILOG)/lib/clk_skew_adjust.gv
+-v $(USER_PROJECT_VERILOG)/lib/ctech_cells.sv
 -v $(USER_PROJECT_VERILOG)/lib/sky130_sram_1kbyte_1rw1r_32x256_8.v
 #-v $(USER_PROJECT_VERILOG)/lib/sky130_sram_2kbyte_1rw1r_32x512_8.v
 
