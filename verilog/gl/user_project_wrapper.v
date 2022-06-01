@@ -71,7 +71,10 @@ module user_project_wrapper (user_clock2,
  wire \data_arrays_0_0_ext_ram_addr[6] ;
  wire \data_arrays_0_0_ext_ram_addr[7] ;
  wire \data_arrays_0_0_ext_ram_addr[8] ;
- wire data_arrays_0_0_ext_ram_clk;
+ wire data_arrays_0_0_ext_ram_clk0;
+ wire data_arrays_0_0_ext_ram_clk1;
+ wire data_arrays_0_0_ext_ram_clk2;
+ wire data_arrays_0_0_ext_ram_clk3;
  wire \data_arrays_0_0_ext_ram_csb1[0] ;
  wire \data_arrays_0_0_ext_ram_csb1[1] ;
  wire \data_arrays_0_0_ext_ram_csb1[2] ;
@@ -407,6 +410,38 @@ module user_project_wrapper (user_clock2,
  wire data_arrays_0_0_ext_ram_web;
  wire \data_arrays_0_0_ext_ram_wmask[0] ;
  wire \data_arrays_0_0_ext_ram_wmask[1] ;
+ wire \ram_clk_delay_sel[0] ;
+ wire \ram_clk_delay_sel[10] ;
+ wire \ram_clk_delay_sel[11] ;
+ wire \ram_clk_delay_sel[12] ;
+ wire \ram_clk_delay_sel[13] ;
+ wire \ram_clk_delay_sel[14] ;
+ wire \ram_clk_delay_sel[15] ;
+ wire \ram_clk_delay_sel[16] ;
+ wire \ram_clk_delay_sel[17] ;
+ wire \ram_clk_delay_sel[18] ;
+ wire \ram_clk_delay_sel[19] ;
+ wire \ram_clk_delay_sel[1] ;
+ wire \ram_clk_delay_sel[20] ;
+ wire \ram_clk_delay_sel[21] ;
+ wire \ram_clk_delay_sel[22] ;
+ wire \ram_clk_delay_sel[23] ;
+ wire \ram_clk_delay_sel[24] ;
+ wire \ram_clk_delay_sel[25] ;
+ wire \ram_clk_delay_sel[26] ;
+ wire \ram_clk_delay_sel[27] ;
+ wire \ram_clk_delay_sel[28] ;
+ wire \ram_clk_delay_sel[29] ;
+ wire \ram_clk_delay_sel[2] ;
+ wire \ram_clk_delay_sel[30] ;
+ wire \ram_clk_delay_sel[31] ;
+ wire \ram_clk_delay_sel[3] ;
+ wire \ram_clk_delay_sel[4] ;
+ wire \ram_clk_delay_sel[5] ;
+ wire \ram_clk_delay_sel[6] ;
+ wire \ram_clk_delay_sel[7] ;
+ wire \ram_clk_delay_sel[8] ;
+ wire \ram_clk_delay_sel[9] ;
  wire \tag_array_ext_ram_addr1[0] ;
  wire \tag_array_ext_ram_addr1[1] ;
  wire \tag_array_ext_ram_addr1[2] ;
@@ -559,9 +594,7 @@ module user_project_wrapper (user_clock2,
  wire \tag_array_ext_ram_wmask[0] ;
  wire \tag_array_ext_ram_wmask[1] ;
 
- Marmot Marmot (.data_arrays_0_0_ext_ram_clk(data_arrays_0_0_ext_ram_clk),
-    .data_arrays_0_0_ext_ram_web(data_arrays_0_0_ext_ram_web),
-    .tag_array_ext_ram_clk(tag_array_ext_ram_clk),
+ Marmot Marmot (.data_arrays_0_0_ext_ram_web(data_arrays_0_0_ext_ram_web),
     .tag_array_ext_ram_csb(tag_array_ext_ram_csb),
     .tag_array_ext_ram_web(tag_array_ext_ram_web),
     .vccd1(vccd1),
@@ -1425,6 +1458,38 @@ module user_project_wrapper (user_clock2,
     la_oenb[2],
     la_oenb[1],
     la_oenb[0]}),
+    .ram_clk_delay_sel({\ram_clk_delay_sel[31] ,
+    \ram_clk_delay_sel[30] ,
+    \ram_clk_delay_sel[29] ,
+    \ram_clk_delay_sel[28] ,
+    \ram_clk_delay_sel[27] ,
+    \ram_clk_delay_sel[26] ,
+    \ram_clk_delay_sel[25] ,
+    \ram_clk_delay_sel[24] ,
+    \ram_clk_delay_sel[23] ,
+    \ram_clk_delay_sel[22] ,
+    \ram_clk_delay_sel[21] ,
+    \ram_clk_delay_sel[20] ,
+    \ram_clk_delay_sel[19] ,
+    \ram_clk_delay_sel[18] ,
+    \ram_clk_delay_sel[17] ,
+    \ram_clk_delay_sel[16] ,
+    \ram_clk_delay_sel[15] ,
+    \ram_clk_delay_sel[14] ,
+    \ram_clk_delay_sel[13] ,
+    \ram_clk_delay_sel[12] ,
+    \ram_clk_delay_sel[11] ,
+    \ram_clk_delay_sel[10] ,
+    \ram_clk_delay_sel[9] ,
+    \ram_clk_delay_sel[8] ,
+    \ram_clk_delay_sel[7] ,
+    \ram_clk_delay_sel[6] ,
+    \ram_clk_delay_sel[5] ,
+    \ram_clk_delay_sel[4] ,
+    \ram_clk_delay_sel[3] ,
+    \ram_clk_delay_sel[2] ,
+    \ram_clk_delay_sel[1] ,
+    \ram_clk_delay_sel[0] }),
     .tag_array_ext_ram_addr({\tag_array_ext_ram_addr[7] ,
     \tag_array_ext_ram_addr[6] ,
     \tag_array_ext_ram_addr[5] ,
@@ -1676,8 +1741,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram0h (.csb0(\data_arrays_0_0_ext_ram_csb[0] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[0] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk0),
+    .clk1(data_arrays_0_0_ext_ram_clk0),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -1801,8 +1866,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram0l (.csb0(\data_arrays_0_0_ext_ram_csb[0] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[1] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk0),
+    .clk1(data_arrays_0_0_ext_ram_clk0),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -1926,8 +1991,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram1h (.csb0(\data_arrays_0_0_ext_ram_csb[1] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[2] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk1),
+    .clk1(data_arrays_0_0_ext_ram_clk1),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -2051,8 +2116,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram1l (.csb0(\data_arrays_0_0_ext_ram_csb[1] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[3] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk1),
+    .clk1(data_arrays_0_0_ext_ram_clk1),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -2176,8 +2241,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram2h (.csb0(\data_arrays_0_0_ext_ram_csb[2] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[4] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk2),
+    .clk1(data_arrays_0_0_ext_ram_clk2),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -2301,8 +2366,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram2l (.csb0(\data_arrays_0_0_ext_ram_csb[2] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[5] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk2),
+    .clk1(data_arrays_0_0_ext_ram_clk2),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -2426,8 +2491,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram3h (.csb0(\data_arrays_0_0_ext_ram_csb[3] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[6] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk3),
+    .clk1(data_arrays_0_0_ext_ram_clk3),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -2551,8 +2616,8 @@ module user_project_wrapper (user_clock2,
  sky130_sram_2kbyte_1rw1r_32x512_8 data_arrays_0_0_ext_ram3l (.csb0(\data_arrays_0_0_ext_ram_csb[3] ),
     .csb1(\data_arrays_0_0_ext_ram_csb1[7] ),
     .web0(data_arrays_0_0_ext_ram_web),
-    .clk0(data_arrays_0_0_ext_ram_clk),
-    .clk1(data_arrays_0_0_ext_ram_clk),
+    .clk0(data_arrays_0_0_ext_ram_clk3),
+    .clk1(data_arrays_0_0_ext_ram_clk3),
     .vccd1(vccd1),
     .vssd1(vssd1),
     .addr0({\data_arrays_0_0_ext_ram_addr[8] ,
@@ -2919,4 +2984,49 @@ module user_project_wrapper (user_clock2,
     \tag_array_ext_ram_wmask[0] ,
     \tag_array_ext_ram_wmask[0] ,
     \tag_array_ext_ram_wmask[0] }));
+ clk_skew_adjust u_clk_skew_adjust_0 (.clk_in(wb_clk_i),
+    .clk_out(tag_array_ext_ram_clk),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .sel({\ram_clk_delay_sel[4] ,
+    \ram_clk_delay_sel[3] ,
+    \ram_clk_delay_sel[2] ,
+    \ram_clk_delay_sel[1] ,
+    \ram_clk_delay_sel[0] }));
+ clk_skew_adjust u_clk_skew_adjust_1 (.clk_in(wb_clk_i),
+    .clk_out(data_arrays_0_0_ext_ram_clk0),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .sel({\ram_clk_delay_sel[9] ,
+    \ram_clk_delay_sel[8] ,
+    \ram_clk_delay_sel[7] ,
+    \ram_clk_delay_sel[6] ,
+    \ram_clk_delay_sel[5] }));
+ clk_skew_adjust u_clk_skew_adjust_2 (.clk_in(wb_clk_i),
+    .clk_out(data_arrays_0_0_ext_ram_clk1),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .sel({\ram_clk_delay_sel[14] ,
+    \ram_clk_delay_sel[13] ,
+    \ram_clk_delay_sel[12] ,
+    \ram_clk_delay_sel[11] ,
+    \ram_clk_delay_sel[10] }));
+ clk_skew_adjust u_clk_skew_adjust_3 (.clk_in(wb_clk_i),
+    .clk_out(data_arrays_0_0_ext_ram_clk2),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .sel({\ram_clk_delay_sel[19] ,
+    \ram_clk_delay_sel[18] ,
+    \ram_clk_delay_sel[17] ,
+    \ram_clk_delay_sel[16] ,
+    \ram_clk_delay_sel[15] }));
+ clk_skew_adjust u_clk_skew_adjust_4 (.clk_in(wb_clk_i),
+    .clk_out(data_arrays_0_0_ext_ram_clk3),
+    .vccd1(vccd1),
+    .vssd1(vssd1),
+    .sel({\ram_clk_delay_sel[24] ,
+    \ram_clk_delay_sel[23] ,
+    \ram_clk_delay_sel[22] ,
+    \ram_clk_delay_sel[21] ,
+    \ram_clk_delay_sel[20] }));
 endmodule
