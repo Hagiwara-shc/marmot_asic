@@ -108,33 +108,48 @@ module user_project_wrapper #(
 //wire [8:0]  data_arrays_0_ext_ram_addr1;
 
   // I-Cache Tag RAM I/F
-  wire [7:0]  tag_array_ext_ram_addr;
   wire        tag_array_ext_ram_clk;
-  wire [63:0] tag_array_ext_ram_wdata;
-  wire [1:0]  tag_array_ext_ram_wmask;
   wire        tag_array_ext_ram_csb;
   wire        tag_array_ext_ram_web;
+  wire [7:0]  tag_array_ext_ram_addr;
+  wire [63:0] tag_array_ext_ram_wdata;
+  wire [1:0]  tag_array_ext_ram_wmask;
   wire [31:0] tag_array_ext_ram_rdata0;
   wire [31:0] tag_array_ext_ram_rdata1;
-  wire [1:0]  tag_array_ext_ram_csb1;
+  wire        tag_array_ext_ram_csb1;
   wire [7:0]  tag_array_ext_ram_addr1;
 
   // I-Cache Data RAM I/F
-  wire [8:0]  data_arrays_0_0_ext_ram_addr;
   wire        data_arrays_0_0_ext_ram_clk0;
   wire        data_arrays_0_0_ext_ram_clk1;
   wire        data_arrays_0_0_ext_ram_clk2;
   wire        data_arrays_0_0_ext_ram_clk3;
-  wire [63:0] data_arrays_0_0_ext_ram_wdata;
-  wire [1:0]  data_arrays_0_0_ext_ram_wmask;
   wire [3:0]  data_arrays_0_0_ext_ram_csb;
-  wire        data_arrays_0_0_ext_ram_web;
+  wire        data_arrays_0_0_ext_ram_web0;
+  wire        data_arrays_0_0_ext_ram_web1;
+  wire        data_arrays_0_0_ext_ram_web2;
+  wire        data_arrays_0_0_ext_ram_web3;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr00;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr01;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr02;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr03;
+  wire [63:0] data_arrays_0_0_ext_ram_wdata0;
+  wire [63:0] data_arrays_0_0_ext_ram_wdata1;
+  wire [63:0] data_arrays_0_0_ext_ram_wdata2;
+  wire [63:0] data_arrays_0_0_ext_ram_wdata3;
+  wire [1:0]  data_arrays_0_0_ext_ram_wmask0;
+  wire [1:0]  data_arrays_0_0_ext_ram_wmask1;
+  wire [1:0]  data_arrays_0_0_ext_ram_wmask2;
+  wire [1:0]  data_arrays_0_0_ext_ram_wmask3;
   wire [63:0] data_arrays_0_0_ext_ram_rdata0;
   wire [63:0] data_arrays_0_0_ext_ram_rdata1;
   wire [63:0] data_arrays_0_0_ext_ram_rdata2;
   wire [63:0] data_arrays_0_0_ext_ram_rdata3;
-  wire [7:0]  data_arrays_0_0_ext_ram_csb1;
-  wire [8:0]  data_arrays_0_0_ext_ram_addr1;
+  wire [3:0]  data_arrays_0_0_ext_ram_csb1;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr10;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr11;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr12;
+  wire [8:0]  data_arrays_0_0_ext_ram_addr13;
 
 Marmot Marmot (
 `ifdef USE_POWER_PINS
@@ -190,30 +205,45 @@ Marmot Marmot (
 //  .data_arrays_0_ext_ram_addr1(data_arrays_0_ext_ram_addr1),
 
     // I-Cache Tag RAM I/F
-    .tag_array_ext_ram_addr(tag_array_ext_ram_addr),
     .tag_array_ext_ram_clk(),
-    .tag_array_ext_ram_wdata(tag_array_ext_ram_wdata),
-    .tag_array_ext_ram_wmask(tag_array_ext_ram_wmask),
     .tag_array_ext_ram_csb(tag_array_ext_ram_csb),
     .tag_array_ext_ram_web(tag_array_ext_ram_web),
+    .tag_array_ext_ram_addr(tag_array_ext_ram_addr),
+    .tag_array_ext_ram_wdata(tag_array_ext_ram_wdata),
+    .tag_array_ext_ram_wmask(tag_array_ext_ram_wmask),
     .tag_array_ext_ram_rdata0(tag_array_ext_ram_rdata0),
     .tag_array_ext_ram_rdata1(tag_array_ext_ram_rdata1),
     .tag_array_ext_ram_csb1(tag_array_ext_ram_csb1),
     .tag_array_ext_ram_addr1(tag_array_ext_ram_addr1),
 
     // I-Cache Data RAM I/F
-    .data_arrays_0_0_ext_ram_addr(data_arrays_0_0_ext_ram_addr),
     .data_arrays_0_0_ext_ram_clk(),
-    .data_arrays_0_0_ext_ram_wdata(data_arrays_0_0_ext_ram_wdata),
-    .data_arrays_0_0_ext_ram_wmask(data_arrays_0_0_ext_ram_wmask),
     .data_arrays_0_0_ext_ram_csb(data_arrays_0_0_ext_ram_csb),
-    .data_arrays_0_0_ext_ram_web(data_arrays_0_0_ext_ram_web),
+    .data_arrays_0_0_ext_ram_web0(data_arrays_0_0_ext_ram_web0),
+    .data_arrays_0_0_ext_ram_web1(data_arrays_0_0_ext_ram_web1),
+    .data_arrays_0_0_ext_ram_web2(data_arrays_0_0_ext_ram_web2),
+    .data_arrays_0_0_ext_ram_web3(data_arrays_0_0_ext_ram_web3),
+    .data_arrays_0_0_ext_ram_addr00(data_arrays_0_0_ext_ram_addr00),
+    .data_arrays_0_0_ext_ram_addr01(data_arrays_0_0_ext_ram_addr01),
+    .data_arrays_0_0_ext_ram_addr02(data_arrays_0_0_ext_ram_addr02),
+    .data_arrays_0_0_ext_ram_addr03(data_arrays_0_0_ext_ram_addr03),
+    .data_arrays_0_0_ext_ram_wdata0(data_arrays_0_0_ext_ram_wdata0),
+    .data_arrays_0_0_ext_ram_wdata1(data_arrays_0_0_ext_ram_wdata1),
+    .data_arrays_0_0_ext_ram_wdata2(data_arrays_0_0_ext_ram_wdata2),
+    .data_arrays_0_0_ext_ram_wdata3(data_arrays_0_0_ext_ram_wdata3),
+    .data_arrays_0_0_ext_ram_wmask0(data_arrays_0_0_ext_ram_wmask0),
+    .data_arrays_0_0_ext_ram_wmask1(data_arrays_0_0_ext_ram_wmask1),
+    .data_arrays_0_0_ext_ram_wmask2(data_arrays_0_0_ext_ram_wmask2),
+    .data_arrays_0_0_ext_ram_wmask3(data_arrays_0_0_ext_ram_wmask3),
     .data_arrays_0_0_ext_ram_rdata0(data_arrays_0_0_ext_ram_rdata0),
     .data_arrays_0_0_ext_ram_rdata1(data_arrays_0_0_ext_ram_rdata1),
     .data_arrays_0_0_ext_ram_rdata2(data_arrays_0_0_ext_ram_rdata2),
     .data_arrays_0_0_ext_ram_rdata3(data_arrays_0_0_ext_ram_rdata3),
     .data_arrays_0_0_ext_ram_csb1(data_arrays_0_0_ext_ram_csb1),
-    .data_arrays_0_0_ext_ram_addr1(data_arrays_0_0_ext_ram_addr1)
+    .data_arrays_0_0_ext_ram_addr10(data_arrays_0_0_ext_ram_addr10),
+    .data_arrays_0_0_ext_ram_addr11(data_arrays_0_0_ext_ram_addr11),
+    .data_arrays_0_0_ext_ram_addr12(data_arrays_0_0_ext_ram_addr12),
+    .data_arrays_0_0_ext_ram_addr13(data_arrays_0_0_ext_ram_addr13)
 );
 
 //-----------------------------------------------------------------------
@@ -391,7 +421,7 @@ Marmot Marmot (
     .din0   (tag_array_ext_ram_wdata[63:32]),
     .dout0  (tag_array_ext_ram_rdata1),
     .clk1   (tag_array_ext_ram_clk),    // clock
-    .csb1   (tag_array_ext_ram_csb1[1]),// active low chip select
+    .csb1   (tag_array_ext_ram_csb1),   // active low chip select
     .addr1  (tag_array_ext_ram_addr1),
     .dout1  ()
   );
@@ -409,7 +439,7 @@ Marmot Marmot (
     .din0   (tag_array_ext_ram_wdata[31:0]),
     .dout0  (tag_array_ext_ram_rdata0),
     .clk1   (tag_array_ext_ram_clk),    // clock
-    .csb1   (tag_array_ext_ram_csb1[0]),// active low chip select
+    .csb1   (tag_array_ext_ram_csb1),   // active low chip select
     .addr1  (tag_array_ext_ram_addr1),
     .dout1  ()
   );
@@ -464,14 +494,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk0),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[0]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .web0   (data_arrays_0_0_ext_ram_web0),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask0[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr00),
+    .din0   (data_arrays_0_0_ext_ram_wdata0[63:32]),
     .dout0  (data_arrays_0_0_ext_ram_rdata0[63:32]),
     .clk1   (data_arrays_0_0_ext_ram_clk0),   // clock
     .csb1   (data_arrays_0_0_ext_ram_csb1[0]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .addr1  (data_arrays_0_0_ext_ram_addr10),
     .dout1  ()
   );
 
@@ -482,14 +512,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk0),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[0]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .web0   (data_arrays_0_0_ext_ram_web0),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask0[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr00),
+    .din0   (data_arrays_0_0_ext_ram_wdata0[31:0]),
     .dout0  (data_arrays_0_0_ext_ram_rdata0[31:0]),
     .clk1   (data_arrays_0_0_ext_ram_clk0),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[1]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[0]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr10),
     .dout1  ()
   );
 
@@ -500,14 +530,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk1),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[1]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .web0   (data_arrays_0_0_ext_ram_web1),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask1[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr01),
+    .din0   (data_arrays_0_0_ext_ram_wdata1[63:32]),
     .dout0  (data_arrays_0_0_ext_ram_rdata1[63:32]),
     .clk1   (data_arrays_0_0_ext_ram_clk1),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[2]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[1]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr11),
     .dout1  ()
   );
 
@@ -518,14 +548,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk1),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[1]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .web0   (data_arrays_0_0_ext_ram_web1),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask1[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr01),
+    .din0   (data_arrays_0_0_ext_ram_wdata1[31:0]),
     .dout0  (data_arrays_0_0_ext_ram_rdata1[31:0]),
     .clk1   (data_arrays_0_0_ext_ram_clk1),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[3]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[1]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr11),
     .dout1  ()
   );
 
@@ -536,14 +566,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk2),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[2]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .web0   (data_arrays_0_0_ext_ram_web2),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask2[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr02),
+    .din0   (data_arrays_0_0_ext_ram_wdata2[63:32]),
     .dout0  (data_arrays_0_0_ext_ram_rdata2[63:32]),
     .clk1   (data_arrays_0_0_ext_ram_clk2),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[4]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[2]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr12),
     .dout1  ()
   );
 
@@ -554,14 +584,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk2),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[2]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .web0   (data_arrays_0_0_ext_ram_web2),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask2[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr02),
+    .din0   (data_arrays_0_0_ext_ram_wdata2[31:0]),
     .dout0  (data_arrays_0_0_ext_ram_rdata2[31:0]),
     .clk1   (data_arrays_0_0_ext_ram_clk2),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[5]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[2]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr12),
     .dout1  ()
   );
 
@@ -572,14 +602,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk3),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[3]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[1]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[63:32]),
+    .web0   (data_arrays_0_0_ext_ram_web3),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask3[1]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr03),
+    .din0   (data_arrays_0_0_ext_ram_wdata3[63:32]),
     .dout0  (data_arrays_0_0_ext_ram_rdata3[63:32]),
     .clk1   (data_arrays_0_0_ext_ram_clk3),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[6]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[3]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr13),
     .dout1  ()
   );
 
@@ -590,14 +620,14 @@ Marmot Marmot (
 `endif
     .clk0   (data_arrays_0_0_ext_ram_clk3),   // clock
     .csb0   (data_arrays_0_0_ext_ram_csb[3]), // active low chip select
-    .web0   (data_arrays_0_0_ext_ram_web),    // active low write control
-    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask[0]}}), // write mask
-    .addr0  (data_arrays_0_0_ext_ram_addr),
-    .din0   (data_arrays_0_0_ext_ram_wdata[31:0]),
+    .web0   (data_arrays_0_0_ext_ram_web3),    // active low write control
+    .wmask0 ({4{data_arrays_0_0_ext_ram_wmask3[0]}}), // write mask
+    .addr0  (data_arrays_0_0_ext_ram_addr03),
+    .din0   (data_arrays_0_0_ext_ram_wdata3[31:0]),
     .dout0  (data_arrays_0_0_ext_ram_rdata3[31:0]),
     .clk1   (data_arrays_0_0_ext_ram_clk3),   // clock
-    .csb1   (data_arrays_0_0_ext_ram_csb1[7]),// active low chip select
-    .addr1  (data_arrays_0_0_ext_ram_addr1),
+    .csb1   (data_arrays_0_0_ext_ram_csb1[3]),// active low chip select
+    .addr1  (data_arrays_0_0_ext_ram_addr13),
     .dout1  ()
   );
 
