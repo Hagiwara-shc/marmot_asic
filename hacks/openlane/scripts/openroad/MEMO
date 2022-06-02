@@ -1,0 +1,4 @@
+pdn_cfg.tcl:
+  Modified to avoid the following error during Tapeout job.
+    Klayout Metal Minimum Clear Area Density: m5_ca_density > 0.55
+
