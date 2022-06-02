@@ -1,0 +1,118 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO clk_skew_adjust
+  CLASS BLOCK ;
+  FOREIGN clk_skew_adjust ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 60.140 BY 70.860 ;
+  PIN clk_in
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 4.690 0.000 4.970 4.000 ;
+    END
+  END clk_in
+  PIN clk_out
+    DIRECTION OUTPUT TRISTATE ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 29.990 66.860 30.270 70.860 ;
+    END
+  END clk_out
+  PIN sel[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 14.350 0.000 14.630 4.000 ;
+    END
+  END sel[0]
+  PIN sel[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 24.470 0.000 24.750 4.000 ;
+    END
+  END sel[1]
+  PIN sel[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 34.590 0.000 34.870 4.000 ;
+    END
+  END sel[2]
+  PIN sel[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 44.710 0.000 44.990 4.000 ;
+    END
+  END sel[3]
+  PIN sel[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 54.830 0.000 55.110 4.000 ;
+    END
+  END sel[4]
+  PIN vccd1
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met4 ;
+        RECT 12.850 10.640 14.450 60.080 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 29.100 10.640 30.700 60.080 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 45.355 10.640 46.955 60.080 ;
+    END
+  END vccd1
+  PIN vssd1
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met4 ;
+        RECT 20.970 10.640 22.570 60.080 ;
+    END
+    PORT
+      LAYER met4 ;
+        RECT 37.225 10.640 38.825 60.080 ;
+    END
+  END vssd1
+  OBS
+      LAYER li1 ;
+        RECT 5.520 10.795 54.280 59.925 ;
+      LAYER met1 ;
+        RECT 4.670 10.640 55.130 60.080 ;
+      LAYER met2 ;
+        RECT 4.700 66.580 29.710 66.860 ;
+        RECT 30.550 66.580 55.100 66.860 ;
+        RECT 4.700 4.280 55.100 66.580 ;
+        RECT 5.250 4.000 14.070 4.280 ;
+        RECT 14.910 4.000 24.190 4.280 ;
+        RECT 25.030 4.000 34.310 4.280 ;
+        RECT 35.150 4.000 44.430 4.280 ;
+        RECT 45.270 4.000 54.550 4.280 ;
+      LAYER met3 ;
+        RECT 12.845 10.715 46.950 60.005 ;
+      LAYER met4 ;
+        RECT 14.850 10.640 20.570 60.080 ;
+        RECT 22.970 10.640 28.700 60.080 ;
+        RECT 31.100 10.640 36.825 60.080 ;
+        RECT 39.225 10.640 44.955 60.080 ;
+  END
+END clk_skew_adjust
+END LIBRARY
+
