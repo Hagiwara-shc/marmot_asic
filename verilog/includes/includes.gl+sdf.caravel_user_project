@@ -1,3 +1,26 @@
-// Caravel user project includes		
-$USER_PROJECT_VERILOG/gl/user_project_wrapper.v	     
-$USER_PROJECT_VERILOG/gl/user_proj_example.v
++define+PRINTF_COND=1
++define+RANDOMIZE_MEM_INIT
++define+RANDOMIZE_REG_INIT
++define+RANDOMIZE_DELAY=1
++define+UART_HIGH_SPEED
++define+WAVEFORM
+
+# Caravel user project includes
+-v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v
+-v $(USER_PROJECT_VERILOG)/gl/Marmot.v
+-v $(USER_PROJECT_VERILOG)/gl/clk_skew_adjust.v
+
+-v $(USER_PROJECT_VERILOG)/lib/sky130_sram_1kbyte_1rw1r_32x256_8.v
+#-v $(USER_PROJECT_VERILOG)/lib/sky130_sram_2kbyte_1rw1r_32x512_8.v
+
+// SPI Flash model
++define+SPEEDSIM
+-v $(USER_PROJECT_VERILOG)/dv/vip/MX25U3235F.v
+
+// SPI RAM model (protected, Questa is needed)
+//-v $(USER_PROJECT_VERILOG)/dv/vip/APM_APS6404L-3SQN_SQPI_PSRAM_model_v2.9_encrypt.vp_modelsim
+
+// UART model
++incdir+$(USER_PROJECT_VERILOG)/dv/vip/uart
+-v $(USER_PROJECT_VERILOG)/dv/vip/uart/uart_tb.v
+

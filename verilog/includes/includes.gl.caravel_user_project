@@ -8,6 +8,7 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v
 -v $(USER_PROJECT_VERILOG)/gl/Marmot.v
+-v $(USER_PROJECT_VERILOG)/gl/clk_skew_adjust.v
 
 -v $(USER_PROJECT_VERILOG)/lib/sky130_sram_1kbyte_1rw1r_32x256_8.v
 #-v $(USER_PROJECT_VERILOG)/lib/sky130_sram_2kbyte_1rw1r_32x512_8.v

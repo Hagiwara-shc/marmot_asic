@@ -19,6 +19,12 @@
 #include <defs.h>
 #include <stub.c>
 
+#define MARMOT_ICACHE_TAG_RAM_CLK_DELAY   2
+#define MARMOT_ICACHE_DATA_RAM0_CLK_DELAY 5
+#define MARMOT_ICACHE_DATA_RAM1_CLK_DELAY 4
+#define MARMOT_ICACHE_DATA_RAM2_CLK_DELAY 1
+#define MARMOT_ICACHE_DATA_RAM3_CLK_DELAY 3
+
 void main()
 {
   /* 
@@ -38,9 +44,9 @@ void main()
   /* Set up the housekeeping SPI to be connected internally so  */
   /* that external pin changes don't affect it.     */
 
-  // reg_spi_enable = 1;
+  reg_spi_enable = 1;
   reg_wb_enable = 1;
-  // reg_spimaster_config = 0xa002; // Enable, prescaler = 2,
+  //reg_spimaster_config = 0xa002; // Enable, prescaler = 2,
                                         // connect to housekeeping SPI
 
   // Connect the housekeeping SPI to the SPI master
@@ -104,17 +110,28 @@ void main()
   reg_mprj_io_7  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_6  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
   reg_mprj_io_5  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-  reg_mprj_io_4  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-  reg_mprj_io_3  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-  reg_mprj_io_2  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-  reg_mprj_io_1  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
-  reg_mprj_io_0  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+  //reg_mprj_io_4  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+  //reg_mprj_io_3  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+  //reg_mprj_io_2  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+  //reg_mprj_io_1  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
+  //reg_mprj_io_0  = GPIO_MODE_USER_STD_BIDIRECTIONAL;
 
   /* Apply configuration */
   reg_mprj_xfer = 1;
   while (reg_mprj_xfer == 1);
 
   // Initialize LA probes [127:0]
+  //  Input:
+  //    [31: 0] <- Marmot.gpio_out[31:0]
+  //  Output:
+  //    [31: 0] -> Marmot.gpio_in[31:0]
+  //    [63:32] -> Marmot.ram_clk_delay_sel[31:0]
+  //                                       [ 4: 0] -> u_clk_skew_adjust_0.sel[4:0] (I-$ Tag RAM)
+  //                                       [ 9: 5] -> u_clk_skew_adjust_1.sel[4:0] (I-$ Data RAM0)
+  //                                       [14:10] -> u_clk_skew_adjust_1.sel[4:0] (I-$ Data RAM1)
+  //                                       [19:15] -> u_clk_skew_adjust_1.sel[4:0] (I-$ Data RAM2)
+  //                                       [24:20] -> u_clk_skew_adjust_1.sel[4:0] (I-$ Data RAM3)
+
   reg_la0_oenb = reg_la0_iena = 0xffffffff; // [31:0]
   reg_la1_oenb = reg_la1_iena = 0xffffffff; // [63:32]
   reg_la2_oenb = reg_la2_iena = 0xffffffff; // [95:64]
@@ -129,7 +146,14 @@ void main()
   reg_la3_data = 0x00000000;
 
   // Configure LA probes [31:0] as inputs to mgmt_soc
-  reg_la0_iena = 0x00000000; // [31:0], connecting to Marmot's gpio_out[31:0]
+  reg_la0_iena = 0x00000000; // [31:0] <- Marmot.gpio_out[31:0]
+
+  // Set clock delay for Marmot RAMs
+  reg_la1_data =   (MARMOT_ICACHE_TAG_RAM_CLK_DELAY)
+                 | (MARMOT_ICACHE_DATA_RAM0_CLK_DELAY << 5)
+                 | (MARMOT_ICACHE_DATA_RAM1_CLK_DELAY << 10)
+                 | (MARMOT_ICACHE_DATA_RAM2_CLK_DELAY << 15)
+                 | (MARMOT_ICACHE_DATA_RAM3_CLK_DELAY << 20);
 
   // Start Marmot
   reg_mprj_slave = 0x00000001;

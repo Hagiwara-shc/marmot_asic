@@ -1,0 +1,2 @@
+sky130_fd_sc_hd__tt_025C_1v80_for_clk_skew_adjust.lib
+  Used to harden clk_skew_adjust to limit usable cells.

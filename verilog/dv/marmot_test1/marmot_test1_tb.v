@@ -19,7 +19,9 @@
 
 `define TB testbench
 `define CARAVEL `TB.uut
-`define CHIP `CARAVEL.mprj.Marmot.MarmotCaravelChip
+`define USER_PROJECT_WRAPPER `CARAVEL.mprj
+`define MARMOT `USER_PROJECT_WRAPPER.Marmot
+`define CHIP `MARMOT.MarmotCaravelChip
 `define PLATFORM `CHIP.MarmotCaravelPlatform
 `define SYS `PLATFORM.sys
 `define TILE `SYS.tile
@@ -34,12 +36,15 @@
 module testbench;
   `include "io_mapping.v"
 
-  localparam CLOCK_PERIOD = 25; // ns
-  localparam MAX_CYCLE    = 100000;
+  localparam CLOCK_PERIOD = 40; // ns
+  localparam TCK_PERIOD = 100;
+  localparam MAX_CYCLE    = 200000;
+  localparam MAX_EXCEPTION_PC_COUNT = 100;
 
   reg clock;
   wire clock_wire = clock;
   reg RSTB;
+  reg tck;
   reg CSB;
 
   reg power1, power2;
@@ -47,16 +52,53 @@ module testbench;
   wire gpio;
   wire [37:0] mprj_io;
 
-`ifdef RTL
-  wire        core_reset = `CORE.reset;
-  wire [31:0] core_pc    = `CORE.coreMonitorBundle_pc;
-  wire [31:0] core_cycle = `CORE.coreMonitorBundle_time;
+  wire        reset = `MARMOT.wb_rst_i;
+
+`ifdef SIM
+  wire [31:0] PC    = `CORE.coreMonitorBundle_pc;
 `else
-  wire        core_reset = 1'b0;
-  wire [31:0] core_pc    = 32'd0;
-  wire [31:0] core_cycle = 32'd0;
+  wire [31:0] PC    = {`MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[31] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[30] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[29] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[28] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[27] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[26] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[25] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[24] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[23] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[22] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[21] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[20] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[19] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[18] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[17] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[16] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[15] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[14] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[13] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[12] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[11] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[10] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[9] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[8] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[7] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[6] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[5] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[4] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[3] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[2] ,
+                       `MARMOT.\MarmotCaravelChip.MarmotCaravelPlatform.sys.tile.core.coreMonitorBundle_pc[1] ,
+                       1'b0};
 `endif
 
+//-------------------------------------------------------------------------------
+// Timeformat
+  initial begin
+    $timeformat(-9, 0, " ns", 12);
+  end
+
+//-------------------------------------------------------------------------------
+// Pull-up
 `ifdef PULLUP_IO
   genvar gen_i;
   generate
@@ -66,47 +108,123 @@ module testbench;
   endgenerate
 `endif
 
+//-------------------------------------------------------------------------------
+// Clock
   initial begin
     clock = 0;
+    tck = 0;
   end
 
   always #(CLOCK_PERIOD/2) clock <= (clock === 1'b0);
+  always #(TCK_PERIOD/2) tck <= (tck === 1'b0);
 
+//-------------------------------------------------------------------------------
+// Waveform
   initial begin
     `ifdef WAVEFORM
       $dumpfile("marmot_test1.vcd");
-      $dumpvars(0, testbench);
+      $dumpvars(0, `TB);
     `endif
   end
 
-  // Timeout
+//-------------------------------------------------------------------------------
+// Initialize FFs for gate level sim.
+`ifdef GL
+  `include "init_ff.v"
+`endif
+
+//-------------------------------------------------------------------------------
+// SDF annotate
+`ifdef ENABLE_SDF
+  initial begin
+    $sdf_annotate("../../../mgmt_core_wrapper/sdf/DFFRAM.sdf", `CARAVEL.soc.DFFRAM_0 );
+    $sdf_annotate("../../../mgmt_core_wrapper/sdf/mgmt_core.sdf", `CARAVEL.soc.core);
+    $sdf_annotate("../../../mgmt_core_wrapper/sdf/mgmt_core_wrapper.sdf", `CARAVEL.soc);
+    $sdf_annotate("../../../sdf/user_project_wrapper.sdf.gz", `USER_PROJECT_WRAPPER);
+    $sdf_annotate("../../../sdf/Marmot.sdf.gz", `MARMOT);
+    $sdf_annotate("../../../sdf/clk_skew_adjust.sdf.gz", `USER_PROJECT_WRAPPER.u_clk_skew_adjust_0);
+    $sdf_annotate("../../../sdf/clk_skew_adjust.sdf.gz", `USER_PROJECT_WRAPPER.u_clk_skew_adjust_1);
+    $sdf_annotate("../../../sdf/clk_skew_adjust.sdf.gz", `USER_PROJECT_WRAPPER.u_clk_skew_adjust_2);
+    $sdf_annotate("../../../sdf/clk_skew_adjust.sdf.gz", `USER_PROJECT_WRAPPER.u_clk_skew_adjust_3);
+    $sdf_annotate("../../../sdf/clk_skew_adjust.sdf.gz", `USER_PROJECT_WRAPPER.u_clk_skew_adjust_4);
+  end
+`endif
+
+//-------------------------------------------------------------------------------
+// Count cycle
+  reg [31:0] cycle;
+  initial begin
+    cycle = 0;
+  end
+
+  always @(posedge clock) begin
+    cycle = cycle + 1;
+  end
+
+//-------------------------------------------------------------------------------
+// Monitor PC
+  integer exception_pc_count;
+
+  always @ (posedge clock) begin
+  //if ($test$plusargs("pc_monitor")) begin
+      if (cycle % 1000 == 0) begin
+        $fwrite(32'h80000002, "[%t] %10d pc=%08x\n", $time, cycle, PC);
+      end
+  //end
+
+    // Finish on PC=x
+    if (^PC === 1'bx) begin
+      $display("[%t] PC=xxxxxxxx", $time);
+      repeat (50) @(posedge clock);
+      $finish;
+    end
+
+    // Finish on exception
+    if (PC == 32'h00000000 || PC == 32'h00000002) begin
+      exception_pc_count <= exception_pc_count + 1;
+      if (exception_pc_count > MAX_EXCEPTION_PC_COUNT) begin
+        $display("[%t] Exception occurred.", $time);
+        $finish;
+      end
+    end
+    else begin
+      exception_pc_count <= 0;
+    end
+  end
+
+//-------------------------------------------------------------------------------
+// Timeout
   reg  [31:0] max_cycle;
   initial begin
     if (! $value$plusargs("max_cycle=%d", max_cycle)) begin
       max_cycle = MAX_CYCLE;
     end
 
-    wait (core_reset === 1'b0);
-    wait (core_cycle < 10);
-    wait (core_cycle >= max_cycle);
+    wait (reset === 1'b0);
+    wait (cycle < 10);
+    wait (cycle >= max_cycle);
     $display("\n*** Timeout ***");
     $finish;
   end
 
-  // Pass
+//-------------------------------------------------------------------------------
+// Pass
   initial begin
     wait (mprj_io[31:16] == 16'h1234);
     $display("\n*** Test Pass ***");
     $finish;
   end
 
-  // Fail
+//-------------------------------------------------------------------------------
+// Fail
   initial begin
     wait (mprj_io[31:16] == 16'hdead);
     $display("\n*** Test Fail ***");
     $finish;
   end
 
+//-------------------------------------------------------------------------------
+// Reset
   initial begin
     RSTB <= 1'b0;
     #1000;
@@ -114,7 +232,9 @@ module testbench;
     #2000;
   end
 
-  initial begin   // Power-up sequence
+//-------------------------------------------------------------------------------
+// Power-up sequence
+  initial begin
     power1 <= 1'b0;
     power2 <= 1'b0;
     #200;
@@ -139,6 +259,14 @@ module testbench;
   assign mprj_io[3] = 1;  // Force CSB high.
   assign mprj_io[0] = 0;  // Disable debug mode
 
+//-------------------------------------------------------------------------------
+// JTAG
+  assign mprj_io[io_TCK] = tck;
+  //assign mprj_io[io_TMS] = 1; // same pin as CSB
+  assign mprj_io[io_TDI] = 0;
+
+//-------------------------------------------------------------------------------
+// Caravel
   caravel uut (
     .vddio    (VDD3V3),
     .vddio_2  (VDD3V3),
@@ -168,6 +296,8 @@ module testbench;
     .resetb   (RSTB)
   );
 
+//-------------------------------------------------------------------------------
+// SPI Flash for Mgmt. SoC
   spiflash #(
     .FILENAME("marmot_test1.hex")
   ) spiflash (
