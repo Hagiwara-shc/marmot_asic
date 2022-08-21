@@ -16,9 +16,13 @@
 MAKEFLAGS+=--warn-undefined-variables
 
 CARAVEL_ROOT?=$(PWD)/caravel
-PRECHECK_ROOT?=${HOME}/mpw_precheck
+#PRECHECK_ROOT?=${HOME}/mpw_precheck
 MCW_ROOT?=$(PWD)/mgmt_core_wrapper
 SIM?=RTL
+
+export OPENLANE_ROOT=$(PWD)/dependencies/openlane_src
+export PDK_ROOT=$(PWD)/dependencies/pdks
+export PRECHECK_ROOT=$(PWD)/dependencies/mpw_precheck
 
 export SKYWATER_COMMIT=c094b6e83a4f9298e47f696ec5a7fd53535ec5eb
 export OPEN_PDKS_COMMIT?=7519dfb04400f224f140749cda44ee7de6f5e095
